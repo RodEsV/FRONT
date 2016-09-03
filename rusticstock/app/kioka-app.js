@@ -27,7 +27,8 @@ System.register(['@angular/platform-browser-dynamic', '@angular/core'], function
                 HomeComponent = __decorate([
                     core_1.Component({
                         selector: 'kioka-app',
-                        template: "\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"app/css/utils.css\">\n    <video autoplay loop muted poster=\"screenshot.jpg\" id=\"background\">\n        <source src=\"home_video.mov\" type=\"video/mp4\">\n    </video>\n    "
+                        template: "\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"app/css/utils.css\">\n    <video autoplay loop muted poster=\"screenshot.png\" id=\"background\">\n        <source src=\"home_video.mov\" type=\"video/mp4\">\n    </video>\n    <div class=\"text\">\n      Soy un cambio muy misifus\n    </div>\n    ",
+                        styles: ['position: inherit ;  width: 100% ; height: 100%']
                     }), 
                     __metadata('design:paramtypes', [])
                 ], HomeComponent);

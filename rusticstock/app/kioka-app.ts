@@ -6,10 +6,14 @@ import {Component} from '@angular/core';
     selector: 'kioka-app',
     template:  `
     <link rel="stylesheet" type="text/css" href="app/css/utils.css">
-    <video autoplay loop muted poster="screenshot.jpg" id="background">
+    <video autoplay loop muted poster="screenshot.png" id="background">
         <source src="home_video.mov" type="video/mp4">
     </video>
-    `
+    <div class="text">
+      Soy un cambio muy misifus
+    </div>
+    `,
+    styles: ['position: inherit ;  width: 100% ; height: 100%']
   }
 )
 

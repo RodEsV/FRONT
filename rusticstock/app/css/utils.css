@@ -1,5 +1,5 @@
 #background {
-    position: fixed;
+    position: absolute;
     top: 50%;
     left: 50%;
     min-width: 100%;
@@ -14,4 +14,10 @@
 }
 .container h1 {
     color: white;
+}
+
+.text
+{
+  text-align: center;
+  
 }
