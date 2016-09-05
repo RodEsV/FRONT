@@ -1,32 +1,26 @@
-<!doctype html>
 <html>
   <head>
-    <title>Rusticstock</title>
-    <link rel="icon" type="image/png" href="resources/images/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" href="resources/images/favicon.ico" />
-    <!-- Libraries -->
-    <!-- coment 2 -->
-    <script src="node_modules/es6-shim/es6-shim.js"></script>
+    <title>Rustic Stock</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
     <script src="node_modules/zone.js/dist/zone.js"></script>
     <script src="node_modules/reflect-metadata/Reflect.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="app/css/bootstrap.min.css">
-  </head>
-  <body>
-
-    <!-- Configure System.js, our module loader -->
+    <!-- 2. Configure SystemJS -->
     <script src="systemjs.config.js"></script>
     <script>
-      System.import('app/kioka-app.js')
-            .then(null, console.error.bind(console));
+      System.import('app').catch(function(err){ console.error(err); });
     </script>
-
-    <kioka-app>
-    </kioka-app>
-
-
-
+  </head>
+  <!-- 3. Display the application -->
+  <body>
+    <my-app>Loading...</my-app>
   </body>
 </html>

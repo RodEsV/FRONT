@@ -1,0 +1,56 @@
+body {
+  background: url('http://www.fg-a.com/wallpapers/geo-shapes-black-1280.jpg') center;
+  color: white;
+  font-family: "Playfair Display", serif;
+  height: 100%;
+}
+
+.box-container {
+  position: relative;
+  margin-top: 35%;
+}
+
+.text-strong {
+  font-weight: bold;
+}
+
+.box-menu {
+  margin: auto;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.box-container img {
+  margin-bottom: 30px;
+}
+
+.box-menu .list-inline li {  
+  border-right: 1px solid white;
+  padding: 10px;
+}
+
+.box-menu .list-inline li a, .box-menu .list-inline li a:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.box-menu .list-inline li:last-child {
+  border-right: none
+}
+
+.box-search {
+  margin-top: 40px;
+}
+
+.box-search .input-group input {
+  box-shadow: none;
+  border: none;
+}
+
+.box-search .input-group .input-group-addon {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.border-flat {
+  border-radius: 0;
+}
