@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var HomeComponent = (function () {
-    function HomeComponent() {
+var BarsearchComponent = (function () {
+    function BarsearchComponent() {
     }
-    HomeComponent = __decorate([
+    BarsearchComponent = __decorate([
         core_1.Component({
-            selector: 'home-comp',
-            templateUrl: 'app/home/home.html',
-            styleUrls: ['app/home/home.css']
+            selector: 'barsearch-comp',
+            templateUrl: 'app/home/barsearch/barsearch.html',
+            styleUrls: ['app/home/barsearch/barsearch.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], HomeComponent);
-    return HomeComponent;
+    ], BarsearchComponent);
+    return BarsearchComponent;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.BarsearchComponent = BarsearchComponent;
+//# sourceMappingURL=barsearch.component.js.map

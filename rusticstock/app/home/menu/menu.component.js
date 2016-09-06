@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var HomeComponent = (function () {
-    function HomeComponent() {
+var MenuComponent = (function () {
+    function MenuComponent() {
     }
-    HomeComponent = __decorate([
+    MenuComponent = __decorate([
         core_1.Component({
-            selector: 'home-comp',
-            templateUrl: 'app/home/home.html',
-            styleUrls: ['app/home/home.css']
+            selector: 'menu-comp',
+            templateUrl: 'app/home/menu/menu.html',
+            styleUrls: ['app/home/menu/menu.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], HomeComponent);
-    return HomeComponent;
+    ], MenuComponent);
+    return MenuComponent;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.MenuComponent = MenuComponent;
+//# sourceMappingURL=menu.component.js.map

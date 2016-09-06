@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var HomeComponent = (function () {
-    function HomeComponent() {
+var ModalComponent = (function () {
+    function ModalComponent() {
     }
-    HomeComponent = __decorate([
+    ModalComponent = __decorate([
         core_1.Component({
-            selector: 'home-comp',
-            templateUrl: 'app/home/home.html',
-            styleUrls: ['app/home/home.css']
+            selector: 'modal-comp',
+            templateUrl: 'app/home/modal/modal.html',
+            styleUrls: ['app/home/modal/modal.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], HomeComponent);
-    return HomeComponent;
+    ], ModalComponent);
+    return ModalComponent;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.ModalComponent = ModalComponent;
+//# sourceMappingURL=modal.component.js.map

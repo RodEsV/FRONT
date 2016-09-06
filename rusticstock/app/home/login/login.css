@@ -1,0 +1,54 @@
+.login-container {
+  color: white;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  top: 1%;
+  right: 1%;
+}
+
+.login-bar li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.login-bar li a {
+  color: white;
+}
+
+.login-bar li a:hover {
+  text-decoration: none;
+  color: #ccc;
+}
+
+.login-bar ul li {
+  border-right: 1px solid white;
+}
+
+.login-bar ul li:last-child {
+  border-right: none;
+}
+
+
+/*
+.navbar-login {
+  margin-top: 15px;
+}
+
+.navbar-login ul li {
+  border-right: 1px solid white;
+  margin-top: 5px;
+}
+
+.navbar-login ul li:last-child {
+  border-right: none;
+}
+
+.navbar-login ul li a {
+  color: white;
+}
+
+.navbar-login ul li a:hover {
+  background-color: transparent;
+}
+*/
