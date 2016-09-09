@@ -14,17 +14,21 @@ var home_component_1 = require('./home.component');
 var menu_component_1 = require('./menu/menu.component');
 var barsearch_component_1 = require('./barsearch/barsearch.component');
 var modal_component_1 = require('./modal/modal.component');
+var ng2_bs3_modal_1 = require('ng2-bs3-modal/ng2-bs3-modal');
 var HomeModule = (function () {
     function HomeModule() {
     }
     HomeModule = __decorate([
         core_1.NgModule({
+            imports: [
+                ng2_bs3_modal_1.Ng2Bs3ModalModule
+            ],
             declarations: [
                 home_component_1.HomeComponent,
                 login_component_1.LoginComponent,
                 menu_component_1.MenuComponent,
                 barsearch_component_1.BarsearchComponent,
-                modal_component_1.ModalComponent
+                modal_component_1.ModalComponent,
             ],
             exports: [home_component_1.HomeComponent]
         }), 

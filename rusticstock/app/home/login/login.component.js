@@ -16,7 +16,7 @@ var LoginComponent = (function () {
         core_1.Component({
             selector: 'login-comp',
             templateUrl: 'app/home/login/login.html',
-            styleUrls: ['app/home/login/login.css']
+            styleUrls: ['app/home/login/login.css'],
         }), 
         __metadata('design:paramtypes', [])
     ], LoginComponent);

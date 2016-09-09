@@ -10,6 +10,7 @@
     },
     // map tells the System loader where to look for things
     map: {
+
       // our app is within the app folder
       app: 'app',
       // angular bundles
@@ -24,6 +25,8 @@
       // other libraries
       'rxjs':                       'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
+      //bootstrap modal ng2-bs3-modal
+      //'ng2-bs3-modal': 'node_modules/ng2-bs3-modal',
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
