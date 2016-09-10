@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>rusticstock</title>
+
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">    
+    <link href="css/custom.css" rel="stylesheet">
+
+    
+  </head>
+  <body>
+    
+   <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#login-modal">Log in</button>
+
+
+        <div id="login-modal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content modal-lg">
+              
+                <div class=" ">
+                <div class="log-in-half">
+                    <div class="inner-style">
+                        <form>
+                          <h5>Log in</h5>
+                          
+                          <div class="form-group">
+                           
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                          </div>
+                          <div class="form-group">
+                            <input placeholder="Password" type="password" class="form-control" id="pwd">
+                          </div>
+                          <div class="checkbox check-aling">
+                            <label><input type="checkbox"> Remember me</label>
+                          </div>
+                          <a id="log-in-button"  class="btn btn-default">Submit</a>
+                        </form>
+                    </div>                    
+                </div>
+                
+                <div class="sing-in-half">
+                    <div class=" half-center">
+                    
+                    <div class="inner-style">
+                        <form>
+                          <h5>Sing up</h5>
+                          <div class="form-group">
+                            
+                            <input type="text" class="form-control" placeholder="User" name="User">
+                          </div>
+                          <div class="form-group">
+                            <input placeholder="Email" type="email" class="form-control" name="email">
+                          </div>
+                          <div class="form-group">
+                            <input placeholder="Password" type="password" class="form-control" name="pwd">
+                          </div>
+                            
+                          <div class="form-group">
+                            <input placeholder="Confirm Password" type="password" class="form-control" name="comfirm-pwd">
+                          </div>
+                          
+                          <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    </div>
+                    <!--                    
+                    
+                    <video autoplay loop muted poster="img/v2-l_1_10.jpg" id="video-half">
+                        <source id="video" src="videos/v2-l_1.mp4" type="video/mp4">
+                    </video>
+                    
+                    -->
+                    
+                </div>
+             </div>
+                
+            </div>
+            </div>
+
+          </div>
+        </div>
+      
+    <div id="mask"></div> <!--correjir mascara -->
+    <video autoplay loop muted poster="img/v2-l_1_10.jpg" id="background">
+        <source id="video" src="videos/v2-l_1.mp4" type="video/mp4">
+    </video>
+      
+      
+ 
+    
+    <div class="middle-top">
+        
+        <div class="logo-block position-top">
+            <img id="logo" class="img-responsive logo" src="img/logo.png" alt="logo">
+            <div id="text">
+                <h1 class="subtext">Raw image, real life</h1>
+            </div>            
+        </div>        
+        
+    </div>
+    
+    
+    <div id="div1" style="height: 25vh"></div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script>
+        
+    $(document).ready(function(){
+        var video = document.getElementById('background');
+        video.play();
+        
+        if($('#logo').outerWidth()!=0)
+            $("#text").width($('#logo').outerWidth());
+        
+        console.log($('#logo').outerWidth());
+    });
+        
+    var $win = $(window);
+    $win.on('resize',function(){
+        $("#text").width($('#logo').outerWidth());
+    });
+        
+    $.ajax({
+      url: "http://ip.jsontest.com/",
+      type: "GET",
+     
+      success: function(result){
+        $("#div1").html(result);
+        console.log(result);
+    }
+    });
+       
+        /*
+    $.ajax({
+      type: "POST",
+      url: 'https://httpbin.org/post',
+      data: {
+        name: "fuck you",
+        pass "still fucking you"
+      },
+      success: success,
+      dataType: dataType
+    });
+        
+        */
+var  formData = "name=ravi&age=31";  //Name value Pair or
+var formData = {name:"ravi",age:"31"}; //Array 
+        
+$('#log-in-button').click(function(){
+    
+var  formData = "name=ravi&age=31";  //Name value Pair or
+var formData = {email: "hola", pwd: "mundo"}; //Array
+
+var email = $("#email").val();
+var pwd = $("#pwd").val();  
+var formData = {email: email, pwd:pwd}; 
+console.log(formData);   
+    
+  $.ajax({
+    url : "https://httpbin.org/post",
+    type: "POST",
+    data : formData,
+    success: function(data, textStatus, jqXHR)
+    {
+     console.log(data, textStatus, jqXHR);
+    },
+    error: function (jqXHR, textStatus, errorThrown)
+    {
+        console.log("se jodio");
+    }
+  });  
+});        
+
+    
+
+    
+    </script>
+    
+  </body>
+</html>

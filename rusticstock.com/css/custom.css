@@ -1,0 +1,257 @@
+@font-face {
+font-family: Sanchezregular;
+src: url("../fonts/Sanchezregular.otf") format("opentype");
+}
+@font-face {
+font-family: Sanchezregular;
+src: url("../fonts/Sanchezregular.otf") format("opentype");
+font-weight: 200;
+}
+@font-face {
+font-family: Sanchezregular;
+src: url("../fonts/Sanchezregular.otf") format("opentype");
+font-weight: 400;
+}
+@font-face {
+font-family: Sanchezregular;
+src: url("../fonts/Sanchezregular.otf") format("opentype");
+font-weight: 600;
+}
+@font-face {
+font-family: Sanchezregular;
+src: url("../fonts/Sanchezregular.otf") format("opentype");
+font-weight: 800;
+}
+body {
+  font-family: 'Sanchezregular', serif;
+}
+
+#background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url("../img/v2-l_1_10.jpg") no-repeat;
+    background-size: cover;
+}
+.container h1 {
+    color: white;
+}
+.logo {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.subtext {
+    color: #fff;    
+    text-transform: capitalize;
+    font-size: 3.5vw;
+    text-align: right;
+    
+}
+
+.logo-block {
+    display:inherit;
+    margin: 0 auto;
+    
+    
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    
+}
+
+#text {
+    margin: 0 auto;
+    height: auto;
+    max-width: 100%;
+    min-width: auto;
+    width: 594px;
+}
+
+.under-text {
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5vw;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.under-text-container {   
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    
+}
+.under-text-container:before {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    border-bottom: 4px solid #fff;
+    border-left: 4px solid #fff;
+    border-bottom-left-radius: 40%;
+   
+}
+.under-text-container:after {
+    display: block;
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-top: 4px solid #fff;
+    border-right: 4px solid #fff;
+    border-top-right-radius: 40%;
+}
+
+.middle-top {
+    height: 50vh;
+    position: relative;
+}
+
+.position-top {
+    position: absolute;
+    max-width: 100%;
+    bottom: 20%;
+    width: 80%;
+}
+
+.middle-bottom {
+    height: 50vh;
+    position: relative;
+}
+
+.text-bottom {
+    top: 20%;
+    max-width: 100%;
+}
+
+.counter {
+    text-align: center;
+    color: #929292;
+}
+
+.counter p1{
+    font-size: 45px;
+    margin-top: 5px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    vertical-align: middle;
+}
+
+.counter small{
+    font-size: 15px;
+    vertical-align: middle;
+}
+
+.counter-title {
+    font-size: 30px;
+}
+
+
+#mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.8;
+    background: radial-gradient(transparent, #000) left repeat;
+    background: -webkit-radial-gradient(transparent, #000) left repeat;
+    z-index: -1;
+    
+}
+
+h1, p1, small{
+    
+-webkit-text-shadow: 3px 12px 15px rgba(0, 0, 0, 1);
+-moz-text-shadow: 3px 12px 15px rgba(0, 0, 0, 1);
+text-shadow: 3px 12px 15px rgba(0, 0, 0, 1);
+    
+}
+
+.less-relevant p1{
+    font-size: 20px;
+}
+
+.less-relevant small{
+    font-size: 10px;
+}
+
+@media screen and (min-width: 1080px) {
+    .subtext {font-size: 1.8vw;}
+    .under-text {font-size: 1.9vw;}
+}
+
+@media screen and (max-width: 520px) {
+    .subtext {font-size: 4.5vw;}
+    .under-text {font-size: 4.5vw;}
+    .counter p1 {font-size: 28px;}
+    .counter small {font-size: 9px;}
+    .less-relevant p1{font-size: 12px;}
+    .less-relevant small{font-size: 7px;}
+    .counter {margin-top: -20px;}
+    
+}
+.log-in-half {
+    width: 49%;
+    height: 100%;
+    display: inline-block;
+    margin: 20% 0;
+    padding: 0 5%;
+}
+
+.inner-style {
+    text-align: center;
+}
+
+.check-aling {
+    text-align: left;
+}
+
+.sing-in-half {
+    width: 50%;
+    height: 100%;
+    display: inline-block;    
+    position: relative;
+}
+
+.modal-content input{
+    border-radius: 12px;
+}
+
+#video-half {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url("../img/v2-l_1_10.jpg") no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+.half-center {
+    margin: 20% 0;
+    padding: 0 5%;
+}
