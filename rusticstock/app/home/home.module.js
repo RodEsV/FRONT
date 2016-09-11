@@ -28,7 +28,7 @@ var HomeModule = (function () {
                 login_component_1.LoginComponent,
                 menu_component_1.MenuComponent,
                 barsearch_component_1.BarsearchComponent,
-                modal_component_1.ModalComponent,
+                modal_component_1.ModalComponentKioka,
             ],
             exports: [home_component_1.HomeComponent]
         }), 

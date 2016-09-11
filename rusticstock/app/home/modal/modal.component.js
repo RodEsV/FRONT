@@ -9,25 +9,39 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ModalComponent = (function () {
-    function ModalComponent() {
-        this.items = ['item1', 'item2', 'item3'];
-        this.animationsEnabled = true;
+var ng2_bs3_modal_1 = require('ng2-bs3-modal/ng2-bs3-modal');
+var ModalComponentKioka = (function () {
+    function ModalComponentKioka() {
+        this.animation = true;
+        this.keyboard = true;
+        this.backdrop = true;
+        this.css = false;
     }
-    ModalComponent.prototype.onClose = function (result) {
-        if (result === ModalResult.Close) {
-            this.selected = this.modalSelected;
-        }
+    ModalComponentKioka.prototype.closed = function () {
+        console.log("closed");
     };
-    ModalComponent = __decorate([
+    ModalComponentKioka.prototype.dismissed = function () {
+        console.log("dismissed");
+    };
+    ModalComponentKioka.prototype.opened = function () {
+        console.log("opened");
+    };
+    ModalComponentKioka.prototype.open = function () {
+        this.modal.open();
+    };
+    __decorate([
+        core_1.ViewChild('modal'), 
+        __metadata('design:type', ng2_bs3_modal_1.ModalComponent)
+    ], ModalComponentKioka.prototype, "modal", void 0);
+    ModalComponentKioka = __decorate([
         core_1.Component({
             selector: 'modal-comp',
             templateUrl: 'app/home/modal/modal.html',
             styleUrls: ['app/home/modal/modal.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], ModalComponent);
-    return ModalComponent;
+    ], ModalComponentKioka);
+    return ModalComponentKioka;
 }());
-exports.ModalComponent = ModalComponent;
+exports.ModalComponentKioka = ModalComponentKioka;
 //# sourceMappingURL=modal.component.js.map

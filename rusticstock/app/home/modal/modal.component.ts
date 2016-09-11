@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-
-
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 
 @Component({
   selector: 'modal-comp',
@@ -8,16 +7,27 @@ import { Component } from '@angular/core';
   styleUrls: [ 'app/home/modal/modal.css' ]
 })
 
-export class ModalComponent {
-  items: string[] = ['item1', 'item2', 'item3'];
-    modalSelected: string;
-    selected: string;
-    animationsEnabled: boolean = true;
+export class ModalComponentKioka {
+  @ViewChild('modal')
+    modal: ModalComponent;
+    animation: boolean = true;
+    keyboard: boolean = true;
+    backdrop: string | boolean = true;
+    css: boolean = false;
 
-    onClose(result: ModalResult) {
-        if (result === ModalResult.Close) {
-            this.selected = this.modalSelected;
-        }
-}
-  constructor() {}
+    closed() {
+        console.log("closed");
+    }
+
+    dismissed() {
+        console.log("dismissed");
+    }
+
+    opened() {
+        console.log("opened");
+    }
+
+    open() {
+        this.modal.open();
+    }
 }
