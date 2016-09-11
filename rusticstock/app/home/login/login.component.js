@@ -9,9 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var ng2_bs3_modal_1 = require('ng2-bs3-modal/ng2-bs3-modal');
 var LoginComponent = (function () {
     function LoginComponent() {
     }
+    LoginComponent.prototype.open = function () {
+        this.modal.open();
+    };
+    __decorate([
+        core_1.ViewChild('modal'), 
+        __metadata('design:type', ng2_bs3_modal_1.ModalComponent)
+    ], LoginComponent.prototype, "modal", void 0);
     LoginComponent = __decorate([
         core_1.Component({
             selector: 'login-comp',

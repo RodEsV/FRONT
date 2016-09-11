@@ -1,4 +1,8 @@
-import {Component} from '@angular/core';
+import {
+  Component,
+  ViewChild
+} from '@angular/core';
+import {ModalComponent} from 'ng2-bs3-modal/ng2-bs3-modal';
 
 
 @Component({
@@ -9,4 +13,9 @@ import {Component} from '@angular/core';
 
 export class LoginComponent {
   constructor(){}
+  @ViewChild('modal')
+  modal: ModalComponent;
+  open(){
+    this.modal.open()
+  }
 }
