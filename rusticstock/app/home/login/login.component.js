@@ -10,11 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ng2_bs3_modal_1 = require('ng2-bs3-modal/ng2-bs3-modal');
+var user_component_1 = require('../../models/user.component');
 var LoginComponent = (function () {
     function LoginComponent() {
+        this.model = new user_component_1.UserComponent("rod", "123");
+        this.active = true;
     }
     LoginComponent.prototype.open = function () {
         this.modal.open();
+    };
+    LoginComponent.prototype.getInfo = function () {
+        var _this = this;
+        this.model = new user_component_1.UserComponent("", "");
+        this.active = false;
+        setTimeout(function () { return _this.active = true; }, 0);
     };
     __decorate([
         core_1.ViewChild('modal'), 

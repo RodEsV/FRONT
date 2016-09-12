@@ -29,26 +29,46 @@
   border-right: none;
 }
 
+/*Modal content*/
 
-/*
-.navbar-login {
-  margin-top: 15px;
+
+.log-in-half {
+    width: 49%;
+    height: auto;
+    display: inline-block;
+    margin: 20% 0;
+    padding: 0 5%;
 }
 
-.navbar-login ul li {
-  border-right: 1px solid white;
-  margin-top: 5px;
+.inner-style {
+    text-align: center;
 }
 
-.navbar-login ul li:last-child {
-  border-right: none;
+.check-aling {
+    text-align: left;
 }
 
-.navbar-login ul li a {
-  color: white;
+.sing-in-half {
+    height:auto;
+    width: 50%;
+    display: inline-block;
+    position: relative;
 }
 
-.navbar-login ul li a:hover {
-  background-color: transparent;
+.modal-content input{
+    border-radius: 12px;
 }
-*/
+
+.half-center {
+    margin: 20% 0;
+    padding: 0 5%;
+}
+
+/*Form visuals*/
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}

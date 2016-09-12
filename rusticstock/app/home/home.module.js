@@ -14,12 +14,16 @@ var home_component_1 = require('./home.component');
 var menu_component_1 = require('./menu/menu.component');
 var barsearch_component_1 = require('./barsearch/barsearch.component');
 var ng2_bs3_modal_1 = require('ng2-bs3-modal/ng2-bs3-modal');
+var forms_1 = require('@angular/forms');
+var models_module_1 = require('../models/models.module');
 var HomeModule = (function () {
     function HomeModule() {
     }
     HomeModule = __decorate([
         core_1.NgModule({
             imports: [
+                models_module_1.ModelsModule,
+                forms_1.FormsModule,
                 ng2_bs3_modal_1.Ng2Bs3ModalModule
             ],
             declarations: [
