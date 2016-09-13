@@ -10,6 +10,9 @@ export class UserComponent
 {
   constructor(
     public email: string,
-    public password: string)
+    public password: string,
+    public confirm?: string,
+    public userName?: string,
+  )
   { }
 }

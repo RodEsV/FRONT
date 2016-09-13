@@ -22,21 +22,41 @@ import 'rxjs/add/operator/toPromise';
 export class LoginService{
   constructor(private http: Http){
   }
-
+  status: string = "";
   /*Endpoint Rails*/
-  private userUrl = 'https://kioka.herokuapp.com/api/v1/auth/sign_in.json';
+  private userUrl = 'http://rusticstock.herokuapp.com/api/v1/auth/sign_in.json';
+  private signUpUrl = 'http://rusticstock.herokuapp.com/api/v1/auth';
 
   private extractData( res: Response ){
     let body = res.json();
-    return body.data || {};
+    if (res.status >= 200 || res.status < 300) {
+      this.status = "up";
+    }
+    else {
+      this.status = "down";
+      return body.data || {};
+    }
+
   }
 
   loginUser(email: string, password: string): Observable<UserComponent>{
     let body = JSON.stringify({email, password});
-    let headers = new Headers({'Content-Type':'application/json'});
+    let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({ headers: headers});
 
     return this.http.post(this.userUrl, body, options)
+    .map(this.extractData)
+    .catch(this.handleError);
+  }
+
+
+  signUpUser(name:string, nickname: string, email: string, password: string, password_confirmation: string): Observable<UserComponent> {
+    let body = JSON.stringify({ name, nickname, email, password, password_confirmation});
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers: headers});
+
+    console.log(body);
+    return this.http.post(this.signUpUrl, body, options )
     .map(this.extractData)
     .catch(this.handleError);
   }

@@ -22,18 +22,35 @@ require('rxjs/add/operator/toPromise');
 var LoginService = (function () {
     function LoginService(http) {
         this.http = http;
+        this.status = "";
         /*Endpoint Rails*/
-        this.userUrl = 'https://kioka.herokuapp.com/api/v1/auth/sign_in.json';
+        this.userUrl = 'http://rusticstock.herokuapp.com/api/v1/auth/sign_in.json';
+        this.signUpUrl = 'http://rusticstock.herokuapp.com/api/v1/auth';
     }
     LoginService.prototype.extractData = function (res) {
         var body = res.json();
-        return body.data || {};
+        if (res.status >= 200 || res.status < 300) {
+            this.status = "up";
+        }
+        else {
+            this.status = "down";
+            return body.data || {};
+        }
     };
     LoginService.prototype.loginUser = function (email, password) {
         var body = JSON.stringify({ email: email, password: password });
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
         return this.http.post(this.userUrl, body, options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    LoginService.prototype.signUpUser = function (name, nickname, email, password, password_confirmation) {
+        var body = JSON.stringify({ name: name, nickname: nickname, email: email, password: password, password_confirmation: password_confirmation });
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        console.log(body);
+        return this.http.post(this.signUpUrl, body, options)
             .map(this.extractData)
             .catch(this.handleError);
     };

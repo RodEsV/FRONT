@@ -10,9 +10,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var UserComponent = (function () {
-    function UserComponent(email, password) {
+    function UserComponent(email, password, confirm, userName) {
         this.email = email;
         this.password = password;
+        this.confirm = confirm;
+        this.userName = userName;
     }
     UserComponent = __decorate([
         core_1.Component({
@@ -20,7 +22,7 @@ var UserComponent = (function () {
             template: "",
             styles: []
         }), 
-        __metadata('design:paramtypes', [String, String])
+        __metadata('design:paramtypes', [String, String, String, String])
     ], UserComponent);
     return UserComponent;
 }());

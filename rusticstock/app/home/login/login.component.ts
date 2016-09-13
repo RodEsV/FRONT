@@ -17,11 +17,17 @@ import { LoginService } from './services/login.service';
 export class LoginComponent {
   constructor( private loginService: LoginService){}
   @ViewChild('modal')
+  @ViewChild('modalError')
   modal: ModalComponent;
-  model = new UserComponent("rod","123");
+  modalError: ModalComponent;
+
+  modelLogin =  new UserComponent("","","","");
+  modelSignUp = new UserComponent("","","","");
   active: boolean = true;
   mode = 'Observable';
   errorMessage: string;
+  submitted: boolean = true;
+
 
   open(){
     this.modal.open()
@@ -33,12 +39,29 @@ export class LoginComponent {
     this.loginService.loginUser(email, password)
     .subscribe(
       error => this.errorMessage = <any>error);
+
+
+    console.log("status" + this.loginService.status);
+    this.modelLogin = new UserComponent("","","","");
+    this.active = false;
+    setTimeout( () => this.active = true,0);
+  }
+  name: string = "default";
+  signUpUser(userName: string, email: string, password: string, confirmPass: string) {
+    console.log(this.name,email,password, confirmPass, userName);
+    if (!email || !password || !confirmPass) { return; }
+    this.loginService.signUpUser(this.name, userName,email,password,confirmPass)
+    .subscribe(
+      error => this.errorMessage = <any> error);
+
+
+      this.modelSignUp = new UserComponent("","","","");
+      this.active = false;
+      setTimeout( () => this.active = true,0);
   }
 
-  getInfo()
-  {
-    this.model = new UserComponent("","")
-    this.active = false;
-    setTimeout (() => this.active = true,0);
+
+  onSubmit(){
+    this.submitted = true;
   }
 }

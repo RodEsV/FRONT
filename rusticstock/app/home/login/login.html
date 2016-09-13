@@ -6,6 +6,8 @@
         <li><a (click)="modal.open()" >Sign up</a></li>
       </ul>
     </div>
+
+    <!--Login forms-->
     <section>
       <modal #modal>
         <modal-body>
@@ -18,7 +20,7 @@
                          <div class="form-group">
 
                            <input type="email" class="form-control" id="email" placeholder="Email" required
-                           [(ngModel)] ="model.email" name="email" #email="ngModel"
+                           [(ngModel)] ="modelLogin.email" name="email" #email="ngModel"
                            >
                            <div [hidden]="email.valid || email.pristine"
                               class="alert alert-danger">
@@ -27,7 +29,7 @@
                          </div>
                          <div class="form-group">
                            <input placeholder="Password" type="password" class="form-control" id="pwd" required
-                           [(ngModel)] = "model.password" name="pwd" #pwd="ngModel">
+                           [(ngModel)] = "modelLogin.password" name="pwd" #pwd="ngModel">
                            <!--
                            <div [hidden]="password.valid || password.pristine"
                             class="alert alert-danger">
@@ -47,24 +49,34 @@
                <div class="sing-in-half">
                    <div class=" half-center">
                      <div class="inner-style">
-                         <form>
+                         <form *ngIf = "active" (onSubmit)="onSubmit()" #signUpForm="ngForm">
                            <h5>Sign up</h5>
                            <div class="form-group">
 
-                             <input type="text" class="form-control" placeholder="User" name="User">
+                             <input type="text" class="form-control" placeholder="User"
+                              id="userName" [(ngModel)] = "modelSignUp.userName" name="userName" #userName="ngModel">
+
                            </div>
                            <div class="form-group">
-                             <input placeholder="Email" type="email" class="form-control" name="email">
+                             <input placeholder="Email" type="email" class="form-control"
+                             id="email" required [(ngModel)] = "modelSignUp.email" name="email" #email="ngModel">
+                           </div>
+                           <div [hidden]="email.valid || email.pristine"
+                              class="alert alert-danger">
+                              The email is required
                            </div>
                            <div class="form-group">
-                             <input placeholder="Password" type="password" class="form-control" name="pwd">
+                             <input placeholder="Password" type="password" class="form-control"
+                             id="password" required [(ngModel)] = "modelSignUp.password" name="password" #password="ngModel">
                            </div>
 
                            <div class="form-group">
-                             <input placeholder="Confirm Password" type="password" class="form-control" name="comfirm-pwd">
+                             <input placeholder="Confirm Password" type="password" class="form-control"
+                             id="confirm" required [(ngModel)] = "modelSignUp.confirm" name="confirm" #confirm="ngModel">
                            </div>
 
-                           <button type="submit" class="btn btn-default">Submit</button>
+                           <a id="log-in-button" class="btn btn-default" type="submit"
+                          (click)="signUpUser(userName.value, email.value, password.value, confirm.value)">Submit</a>
                          </form>
                      </div>
                    </div>
