@@ -47,10 +47,11 @@ export class LoginComponent {
     setTimeout( () => this.active = true,0);
   }
   name: string = "default";
+  urlSuccess: string = "/";
   signUpUser(userName: string, email: string, password: string, confirmPass: string) {
     console.log(this.name,email,password, confirmPass, userName);
     if (!email || !password || !confirmPass) { return; }
-    this.loginService.signUpUser(this.name, userName,email,password,confirmPass)
+    this.loginService.signUpUser(this.name, userName,email,password,confirmPass,this.urlSuccess)
     .subscribe(
       error => this.errorMessage = <any> error);
 

@@ -21,6 +21,7 @@ var LoginComponent = (function () {
         this.mode = 'Observable';
         this.submitted = true;
         this.name = "default";
+        this.urlSuccess = "/";
     }
     LoginComponent.prototype.open = function () {
         this.modal.open();
@@ -44,7 +45,7 @@ var LoginComponent = (function () {
         if (!email || !password || !confirmPass) {
             return;
         }
-        this.loginService.signUpUser(this.name, userName, email, password, confirmPass)
+        this.loginService.signUpUser(this.name, userName, email, password, confirmPass, this.urlSuccess)
             .subscribe(function (error) { return _this.errorMessage = error; });
         this.modelSignUp = new user_component_1.UserComponent("", "", "", "");
         this.active = false;

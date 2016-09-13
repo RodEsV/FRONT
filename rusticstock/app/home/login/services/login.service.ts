@@ -50,8 +50,9 @@ export class LoginService{
   }
 
 
-  signUpUser(name:string, nickname: string, email: string, password: string, password_confirmation: string): Observable<UserComponent> {
-    let body = JSON.stringify({ name, nickname, email, password, password_confirmation});
+  signUpUser(name:string, nickname: string, email: string, password: string, password_confirmation: string, confirm_success_url: string): Observable<UserComponent> {
+    //let body = JSON.stringify({ name, nickname, email, password, password_confirmation});
+    let body = JSON.stringify({email, name, password});
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
 
