@@ -9,6 +9,7 @@ import { ModelsModule } from '../../models/models.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { routing } from '../../root/routes/app.routes';
 import { HttpModule, JsonpModule } from '@angular/http';
+import { InfoComponent } from '../information/info.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
     JsonpModule
   ],
   declarations: [
+    InfoComponent,
     HomeComponent,
     LoginComponent,
     MenuComponent,

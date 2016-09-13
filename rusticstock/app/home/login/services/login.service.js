@@ -23,7 +23,7 @@ var LoginService = (function () {
     function LoginService(http) {
         this.http = http;
         /*Endpoint Rails*/
-        this.userUrl = 'auth/sign_in.json';
+        this.userUrl = 'http://rustickstock/api/v1/auth/sign_in.json';
     }
     LoginService.prototype.extractData = function (res) {
         var body = res.json();
