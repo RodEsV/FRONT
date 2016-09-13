@@ -9,17 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var PhotosComponent = (function () {
+    function PhotosComponent() {
     }
-    AppComponent = __decorate([
+    PhotosComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n  <div>\n    <router-outlet></router-outlet>\n    <home-comp></home-comp>\n  </div>\n  "
+            selector: 'photos-comp',
+            templateUrl: './photos.html',
+            styleUrls: ['./photos.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], PhotosComponent);
+    return PhotosComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.PhotosComponent = PhotosComponent;
+//# sourceMappingURL=photos.component.js.map

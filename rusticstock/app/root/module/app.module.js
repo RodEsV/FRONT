@@ -11,15 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var forms_1 = require('@angular/forms');
 var platform_browser_1 = require('@angular/platform-browser');
-var app_component_1 = require('./app.component');
-var home_module_1 = require('../home/home.module');
+var app_component_1 = require('../app.component');
+var home_module_1 = require('../../home/module/home.module');
 var ng2_bs3_modal_1 = require('ng2-bs3-modal/ng2-bs3-modal');
+var app_routes_1 = require('../routes/app.routes');
+var http_1 = require('@angular/http');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [
+                http_1.HttpModule,
+                http_1.JsonpModule,
+                app_routes_1.routing,
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 home_module_1.HomeModule,

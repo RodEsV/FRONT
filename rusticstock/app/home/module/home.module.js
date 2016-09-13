@@ -9,22 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var login_component_1 = require('./login/login.component');
-var home_component_1 = require('./home.component');
-var menu_component_1 = require('./menu/menu.component');
-var barsearch_component_1 = require('./barsearch/barsearch.component');
+var login_component_1 = require('../login/login.component');
+var home_component_1 = require('../home.component');
+var menu_component_1 = require('../menu/menu.component');
+var barsearch_component_1 = require('../barsearch/barsearch.component');
 var ng2_bs3_modal_1 = require('ng2-bs3-modal/ng2-bs3-modal');
 var forms_1 = require('@angular/forms');
-var models_module_1 = require('../models/models.module');
+var models_module_1 = require('../../models/models.module');
+var platform_browser_1 = require('@angular/platform-browser');
+var app_routes_1 = require('../../root/routes/app.routes');
+var http_1 = require('@angular/http');
 var HomeModule = (function () {
     function HomeModule() {
     }
     HomeModule = __decorate([
         core_1.NgModule({
             imports: [
+                app_routes_1.routing,
+                platform_browser_1.BrowserModule,
                 models_module_1.ModelsModule,
                 forms_1.FormsModule,
-                ng2_bs3_modal_1.Ng2Bs3ModalModule
+                ng2_bs3_modal_1.Ng2Bs3ModalModule,
+                http_1.HttpModule,
+                http_1.JsonpModule
             ],
             declarations: [
                 home_component_1.HomeComponent,
