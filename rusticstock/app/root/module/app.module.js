@@ -16,6 +16,7 @@ var home_module_1 = require('../../home/module/home.module');
 var ng2_bs3_modal_1 = require('ng2-bs3-modal/ng2-bs3-modal');
 var app_routes_1 = require('../routes/app.routes');
 var http_1 = require('@angular/http');
+var about_module_1 = require('../../about/module/about.module');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,8 +29,10 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 home_module_1.HomeModule,
+                about_module_1.AboutModule,
                 ng2_bs3_modal_1.Ng2Bs3ModalModule
             ],
+            providers: [app_routes_1.appRoutingProviders],
             declarations: [app_component_1.AppComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 

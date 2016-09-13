@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ContactCOmponent } from '../contact/contact.component';
+import { ContactComponent } from '../contact.component';
 
 @NgModule({
   declarations: [

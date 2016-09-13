@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   `
   <div>
     <router-outlet></router-outlet>
-    <home-comp></home-comp>
   </div>
   `
 })

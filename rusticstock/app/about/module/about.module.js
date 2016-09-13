@@ -9,7 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var about_component_1 = require('./about/about.component');
+var about_component_1 = require('../about.component');
 var AboutModule = (function () {
     function AboutModule() {
     }

@@ -24,7 +24,7 @@ export class LoginService{
   }
 
   /*Endpoint Rails*/
-  private userUrl = 'http://rustickstock/api/v1/auth/sign_in.json';
+  private userUrl = 'https://kioka.herokuapp.com/api/v1/auth/sign_in.json';
 
   private extractData( res: Response ){
     let body = res.json();
