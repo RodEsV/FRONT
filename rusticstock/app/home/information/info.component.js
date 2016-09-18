@@ -9,16 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
 var InfoComponent = (function () {
-    function InfoComponent() {
+    function InfoComponent(router) {
+        this.router = router;
     }
+    InfoComponent.prototype.onSelect = function (page) {
+        if (page == 'about') {
+            this.router.navigate(['/about']);
+        }
+        else if (page == 'contact') {
+            this.router.navigate(['/contact']);
+        }
+    };
     InfoComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'info-comp',
-            templateUrl: 'app/home/information/info.html',
-            styleUrls: ['app/home/information/info.css']
+            templateUrl: 'info.html',
+            styleUrls: ['info.css']
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [router_1.Router])
     ], InfoComponent);
     return InfoComponent;
 }());

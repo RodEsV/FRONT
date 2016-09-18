@@ -14,9 +14,10 @@ var PhotosComponent = (function () {
     }
     PhotosComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'photos-comp',
-            templateUrl: './photos.html',
-            styleUrls: ['./photos.css']
+            templateUrl: 'photos.html',
+            styleUrls: ['photos.css']
         }), 
         __metadata('design:paramtypes', [])
     ], PhotosComponent);

@@ -9,19 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var HomeComponent = (function () {
-    function HomeComponent() {
+var notFound_component_1 = require('../notFound.component');
+var PageNotFoundModule = (function () {
+    function PageNotFoundModule() {
     }
-    HomeComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'home-comp',
-            templateUrl: 'home.html',
-            styleUrls: ['home.css']
+    PageNotFoundModule = __decorate([
+        core_1.NgModule({
+            declarations: [
+                notFound_component_1.PageNotFoundComponent
+            ],
+            exports: [notFound_component_1.PageNotFoundComponent]
         }), 
         __metadata('design:paramtypes', [])
-    ], HomeComponent);
-    return HomeComponent;
+    ], PageNotFoundModule);
+    return PageNotFoundModule;
 }());
-exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=home.component.js.map
+exports.PageNotFoundModule = PageNotFoundModule;
+//# sourceMappingURL=notFound.module.js.map

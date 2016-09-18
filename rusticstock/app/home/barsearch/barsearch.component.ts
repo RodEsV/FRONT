@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
 
 @Component({
+  moduleId: module.id,
   selector: 'barsearch-comp',
-  templateUrl: 'app/home/barsearch/barsearch.html',
-  styleUrls: [ 'app/home/barsearch/barsearch.css' ]
+  templateUrl: 'barsearch.html',
+  styleUrls: [ 'barsearch.css' ]
 })
 
 export class BarsearchComponent {

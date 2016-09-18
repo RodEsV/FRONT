@@ -4,9 +4,7 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template:
   `
-  <div>
     <router-outlet></router-outlet>
-  </div>
   `
 })
 export class AppComponent { }

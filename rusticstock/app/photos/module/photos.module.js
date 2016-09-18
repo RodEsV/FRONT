@@ -10,15 +10,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var photos_component_1 = require('../photos.component');
+var photos_routes_1 = require('../routes/photos.routes');
 var PhotosModule = (function () {
     function PhotosModule() {
     }
     PhotosModule = __decorate([
         core_1.NgModule({
+            imports: [
+                photos_routes_1.photosRouting
+            ],
             declarations: [
                 photos_component_1.PhotosComponent
-            ],
-            exports: [photos_component_1.PhotosComponent]
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], PhotosModule);

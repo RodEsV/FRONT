@@ -14,9 +14,10 @@ var BarsearchComponent = (function () {
     }
     BarsearchComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'barsearch-comp',
-            templateUrl: 'app/home/barsearch/barsearch.html',
-            styleUrls: ['app/home/barsearch/barsearch.css']
+            templateUrl: 'barsearch.html',
+            styleUrls: ['barsearch.css']
         }), 
         __metadata('design:paramtypes', [])
     ], BarsearchComponent);

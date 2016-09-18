@@ -1,11 +1,18 @@
-import  { Component } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
+  moduleId: module.id,
   selector: 'menu-comp',
-  templateUrl: 'app/home/menu/menu.html',
-  styleUrls: [ 'app/home/menu/menu.css']
+  templateUrl: 'menu.html',
+  styleUrls: [ 'menu.css']
 })
 
 export class MenuComponent {
-  constructor(){}
+  constructor( private router: Router ){}
+  onSelect(page: string){
+    if (page == 'photos'){
+      this.router.navigate(['/photos']);
+    }
+  }
 }

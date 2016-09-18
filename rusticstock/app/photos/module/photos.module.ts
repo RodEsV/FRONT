@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { PhotosComponent } from '../photos.component';
+import { photosRouting } from '../routes/photos.routes';
 
 @NgModule({
+  imports: [
+    photosRouting
+  ]
   declarations: [
     PhotosComponent
-  ],
-  exports: [PhotosComponent]
+  ]
 })
 
 export class PhotosModule{

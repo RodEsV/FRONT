@@ -8,9 +8,10 @@ import { UserComponent } from '../../models/user.component';
 import { LoginService } from './services/login.service';
 
 @Component({
+  moduleId: module.id,
   selector: 'login-comp',
-  templateUrl: 'app/home/login/login.html',
-  styleUrls: ['app/home/login/login.css'],
+  templateUrl: 'login.html',
+  styleUrls: ['login.css'],
   providers: [LoginService]
 })
 

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 @Component({
+  moduleId: module.id,
   selector: 'about-comp',
-  templateUrl: 'app/about/about.html',
-  styleUrls: ['app/about/about.css']
+  templateUrl: 'about.html',
+  styleUrls: ['about.css']
 })
 
 export class AboutComponent{

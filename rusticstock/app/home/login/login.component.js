@@ -61,9 +61,10 @@ var LoginComponent = (function () {
     ], LoginComponent.prototype, "modal", void 0);
     LoginComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'login-comp',
-            templateUrl: 'app/home/login/login.html',
-            styleUrls: ['app/home/login/login.css'],
+            templateUrl: 'login.html',
+            styleUrls: ['login.css'],
             providers: [login_service_1.LoginService]
         }), 
         __metadata('design:paramtypes', [login_service_1.LoginService])
