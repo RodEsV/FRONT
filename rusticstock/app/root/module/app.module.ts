@@ -21,6 +21,7 @@ import { PhotosModule } from '../../photos/module/photos.module';
     routing,
     BrowserModule,
     FormsModule,
+    PageNotFoundModule,
     AboutModule,
     PhotosModule,
     HomeModule,

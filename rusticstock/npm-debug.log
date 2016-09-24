@@ -7,7 +7,7 @@
 6 silly lifecycle rustick-stock@1.0.0~prestart: no script for prestart, continuing
 7 info lifecycle rustick-stock@1.0.0~start: rustick-stock@1.0.0
 8 verbose lifecycle rustick-stock@1.0.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle rustick-stock@1.0.0~start: PATH: /usr/lib/node_modules/npm/bin/node-gyp-bin:/home/rodesv/projects/FRONT/rusticstock/node_modules/.bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+9 verbose lifecycle rustick-stock@1.0.0~start: PATH: /usr/lib/node_modules/npm/bin/node-gyp-bin:/home/rodesv/projects/FRONT/rusticstock/node_modules/.bin:/usr/bin:/home/rodesv/.rvm/gems/ruby-2.3.1/bin:/home/rodesv/.rvm/gems/ruby-2.3.1@global/bin:/home/rodesv/.rvm/rubies/ruby-2.3.1/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/rodesv/.rvm/bin:/home/rodesv/.rvm/bin:/home/rodesv/.rvm/bin
 10 verbose lifecycle rustick-stock@1.0.0~start: CWD: /home/rodesv/projects/FRONT/rusticstock
 11 silly lifecycle rustick-stock@1.0.0~start: Args: [ '-c', 'tsc && concurrently "npm run tsc:w" "npm run lite" ' ]
 12 silly lifecycle rustick-stock@1.0.0~start: Returned: code: 2  signal: null

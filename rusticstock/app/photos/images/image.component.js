@@ -9,27 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var photos_component_1 = require('../photos.component');
-var photos_routes_1 = require('../routes/photos.routes');
-var gallery_component_1 = require('../gallery/gallery.component');
-var image_component_1 = require('../images/image.component');
-var PhotosModule = (function () {
-    function PhotosModule() {
+var ImageComponent = (function () {
+    function ImageComponent() {
     }
-    PhotosModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                photos_routes_1.photosRouting
-            ],
-            declarations: [
-                image_component_1.ImageComponent,
-                photos_component_1.PhotosComponent,
-                gallery_component_1.GalleryComponent
-            ]
+    ImageComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: 'image-comp',
+            templateUrl: 'image.html',
+            styleUrls: ['image.css']
         }), 
         __metadata('design:paramtypes', [])
-    ], PhotosModule);
-    return PhotosModule;
+    ], ImageComponent);
+    return ImageComponent;
 }());
-exports.PhotosModule = PhotosModule;
-//# sourceMappingURL=photos.module.js.map
+exports.ImageComponent = ImageComponent;
+//# sourceMappingURL=image.component.js.map

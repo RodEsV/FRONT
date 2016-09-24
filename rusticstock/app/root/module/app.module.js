@@ -17,6 +17,7 @@ var home_module_1 = require('../../home/module/home.module');
 var ng2_bs3_modal_1 = require('ng2-bs3-modal/ng2-bs3-modal');
 var app_routes_1 = require('../routes/app.routes');
 var about_module_1 = require('../../about/module/about.module');
+var notFound_module_1 = require('../../not_found/module/notFound.module');
 var photos_module_1 = require('../../photos/module/photos.module');
 var AppModule = (function () {
     function AppModule() {
@@ -29,6 +30,7 @@ var AppModule = (function () {
                 app_routes_1.routing,
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                notFound_module_1.PageNotFoundModule,
                 about_module_1.AboutModule,
                 photos_module_1.PhotosModule,
                 home_module_1.HomeModule,

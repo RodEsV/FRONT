@@ -10,11 +10,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var notFound_component_1 = require('../notFound.component');
+var notFound_routes_1 = require('../routes/notFound.routes');
 var PageNotFoundModule = (function () {
     function PageNotFoundModule() {
     }
     PageNotFoundModule = __decorate([
         core_1.NgModule({
+            imports: [
+                notFound_routes_1.notFoundRouting
+            ],
             declarations: [
                 notFound_component_1.PageNotFoundComponent
             ],

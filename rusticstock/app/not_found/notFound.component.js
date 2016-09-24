@@ -14,9 +14,10 @@ var PageNotFoundComponent = (function () {
     }
     PageNotFoundComponent = __decorate([
         core_1.Component({
+            moduleId: module.id,
             selector: 'notFound-comp',
-            templateUrl: 'app/not_found/notFound.html',
-            styleUrls: ['app/not_found/notFound.css']
+            templateUrl: 'notFound.html',
+            styleUrls: ['notFound.css']
         }), 
         __metadata('design:paramtypes', [])
     ], PageNotFoundComponent);

@@ -22,20 +22,16 @@ require('rxjs/add/operator/toPromise');
 var LoginService = (function () {
     function LoginService(http) {
         this.http = http;
-        this.status = "";
+        this.status = false;
         /*Endpoint Rails*/
         this.userUrl = 'http://rusticstock.herokuapp.com/api/v1/auth/sign_in.json';
         this.signUpUrl = 'http://rusticstock.herokuapp.com/api/v1/auth';
     }
     LoginService.prototype.extractData = function (res) {
         var body = res.json();
-        if (res.status >= 200 || res.status < 300) {
-            this.status = "up";
-        }
-        else {
-            this.status = "down";
-            return body.data || {};
-        }
+        //return body || {};
+        return res.ok;
+        //return res.ok;
     };
     LoginService.prototype.loginUser = function (email, password) {
         var body = JSON.stringify({ email: email, password: password });

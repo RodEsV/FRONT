@@ -18,7 +18,6 @@ var LoginComponent = (function () {
         this.modelLogin = new user_component_1.UserComponent("", "", "", "");
         this.modelSignUp = new user_component_1.UserComponent("", "", "", "");
         this.active = true;
-        this.mode = 'Observable';
         this.submitted = true;
         this.name = "default";
         this.urlSuccess = "/";
@@ -26,18 +25,24 @@ var LoginComponent = (function () {
     LoginComponent.prototype.open = function () {
         this.modal.open();
     };
-    LoginComponent.prototype.loginUser = function (email, password) {
+    LoginComponent.prototype.loginUser = function (email, password, activeResponse) {
         var _this = this;
         console.log(email, password);
         if (!email || !password) {
             return;
         }
         this.loginService.loginUser(email, password)
-            .subscribe(function (error) { return _this.errorMessage = error; });
-        console.log("status" + this.loginService.status);
-        this.modelLogin = new user_component_1.UserComponent("", "", "", "");
-        this.active = false;
-        setTimeout(function () { return _this.active = true; }, 0);
+            .subscribe(function (response) { return _this.response = response; }, function (error) { return _this.errorMessage = error; });
+        //console.log("error", this.errorMessage);
+        console.log("response ", activeResponse);
+        if (activeResponse) {
+            this.modal.close();
+        }
+        else {
+            this.modelLogin = new user_component_1.UserComponent("", "", "", "");
+            this.active = false;
+            setTimeout(function () { return _this.active = true; }, 0);
+        }
     };
     LoginComponent.prototype.signUpUser = function (userName, email, password, confirmPass) {
         var _this = this;

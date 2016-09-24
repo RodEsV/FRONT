@@ -7,6 +7,7 @@ import {
 } from '@angular/http';
 import { UserComponent } from '../../../models/user.component';
 import { Observable } from 'rxjs/Observable';
+
 import 'rxjs/add/observable/throw';
 
 // Operators
@@ -22,24 +23,20 @@ import 'rxjs/add/operator/toPromise';
 export class LoginService{
   constructor(private http: Http){
   }
-  status: string = "";
+  status: boolean = false;
   /*Endpoint Rails*/
   private userUrl = 'http://rusticstock.herokuapp.com/api/v1/auth/sign_in.json';
   private signUpUrl = 'http://rusticstock.herokuapp.com/api/v1/auth';
 
   private extractData( res: Response ){
     let body = res.json();
-    if (res.status >= 200 || res.status < 300) {
-      this.status = "up";
-    }
-    else {
-      this.status = "down";
-      return body.data || {};
-    }
-
+    //return body || {};
+    return res.ok;
+    
+    //return res.ok;
   }
 
-  loginUser(email: string, password: string): Observable<UserComponent>{
+  loginUser(email: string, password: string) {//: Observable<UserComponent>{
     let body = JSON.stringify({email, password});
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({ headers: headers});
@@ -50,7 +47,7 @@ export class LoginService{
   }
 
 
-  signUpUser(name:string, nickname: string, email: string, password: string, password_confirmation: string, confirm_success_url: string): Observable<UserComponent> {
+  signUpUser(name:string, nickname: string, email: string, password: string, password_confirmation: string, confirm_success_url: string){//: Observable<UserComponent> {
     //let body = JSON.stringify({ name, nickname, email, password, password_confirmation});
     let body = JSON.stringify({email, name, password});
     let headers = new Headers({'Content-Type': 'application/json'});

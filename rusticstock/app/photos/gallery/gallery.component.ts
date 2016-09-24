@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['gallery.css']
 })
 export class GalleryComponent{
-  
+
 }

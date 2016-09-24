@@ -22,6 +22,7 @@
                            <input type="email" class="form-control" id="email" placeholder="Email" required
                            [(ngModel)] ="modelLogin.email" name="email" #email="ngModel"
                            >
+                           <!--{{modelLogin.email}}-->
                            <div [hidden]="email.valid || email.pristine"
                               class="alert alert-danger">
                               The email is required
@@ -40,9 +41,10 @@
                            <label><input type="checkbox"> Remember me</label>
                          </div>
                          <a id="log-in-button"  class="btn btn-default" type="submit"
-                         (click)="loginUser(email.value,pwd.value)" >Submit</a> <!--[disabled]="!loginForm.form.valid"-->
+                         (click)="loginUser(email.value,pwd.value,response)" >Submit</a> <!--[disabled]="!loginForm.form.valid"-->
                        </form>
-                       <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+                       <div *ngIf="response">{{response}}</div>
+                       <div class="error" *ngIf="[(errorMessage)]">{{errorMessage}}</div>
                    </div>
                </div>
 

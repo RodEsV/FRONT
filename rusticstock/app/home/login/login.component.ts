@@ -24,29 +24,40 @@ export class LoginComponent {
 
   modelLogin =  new UserComponent("","","","");
   modelSignUp = new UserComponent("","","","");
+
   active: boolean = true;
-  mode = 'Observable';
   errorMessage: string;
   submitted: boolean = true;
 
+  response: any;
 
   open(){
-    this.modal.open()
+    this.modal.open();
   }
 
-  loginUser( email: string, password: string) {
+  loginUser( email: string, password: string, activeResponse: boolean) {
     console.log(email,password);
     if (!email || !password) { return ;}
     this.loginService.loginUser(email, password)
     .subscribe(
+      response => this.response = response,
       error => this.errorMessage = <any>error);
 
 
-    console.log("status" + this.loginService.status);
-    this.modelLogin = new UserComponent("","","","");
-    this.active = false;
-    setTimeout( () => this.active = true,0);
+    //console.log("error", this.errorMessage);
+    console.log("response ", activeResponse)
+    if (activeResponse){
+      this.modal.close()
+    }
+    else {
+      this.modelLogin = new UserComponent("","","","");
+      this.active = false;
+      setTimeout( () => this.active = true,0);  
+    }
+    
   }
+
+
   name: string = "default";
   urlSuccess: string = "/";
   signUpUser(userName: string, email: string, password: string, confirmPass: string) {
@@ -67,3 +78,4 @@ export class LoginComponent {
     this.submitted = true;
   }
 }
+
