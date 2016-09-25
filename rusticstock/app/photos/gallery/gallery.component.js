@@ -11,6 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var GalleryComponent = (function () {
     function GalleryComponent() {
+        this.urlPhotos = [
+            "../../../images/1.jpg",
+            "../../../images/2.jpg",
+            "../../../images/3.jpg",
+            "../../../images/4.jpg",
+            "../../../images/5.jpg",
+            "../../../images/6.jpg"
+        ];
     }
     GalleryComponent = __decorate([
         core_1.Component({

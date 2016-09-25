@@ -13,7 +13,7 @@ import { LoginService } from './services/login.service';
   selector: 'login-comp',
   templateUrl: 'login.html',
   styleUrls: ['login.css'],
-  providers: [LoginService]
+  providers: [ LoginService ]
 })
 
 export class LoginComponent {
