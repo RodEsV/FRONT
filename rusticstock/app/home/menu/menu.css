@@ -10,6 +10,8 @@
 }
 
 .box-menu .list-inline li a, .box-menu .list-inline li a:hover{
+	cursor: pointer;
+	cursor: hand;	
   color: white;
   text-decoration: none;
 }

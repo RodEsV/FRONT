@@ -26,11 +26,11 @@ var LoginService = (function () {
         /*Endpoint Rails*/
         this.userUrl = 'http://rusticstock.herokuapp.com/api/v1/auth/sign_in.json';
         this.signUpUrl = 'http://rusticstock.herokuapp.com/api/v1/auth';
+        this.logOutUrl = "http://locanhost:3000/auth/sign_out.json";
     }
     LoginService.prototype.extractData = function (res) {
         var body = res.json();
-        //return body || {};
-        return res.ok;
+        return body.data || {};
         //return res.ok;
     };
     LoginService.prototype.loginUser = function (email, password) {
@@ -40,6 +40,8 @@ var LoginService = (function () {
         return this.http.post(this.userUrl, body, options)
             .map(this.extractData)
             .catch(this.handleError);
+    };
+    LoginService.prototype.logOutUser = function () {
     };
     LoginService.prototype.signUpUser = function (name, nickname, email, password, password_confirmation, confirm_success_url) {
         //let body = JSON.stringify({ name, nickname, email, password, password_confirmation});

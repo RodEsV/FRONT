@@ -1,12 +1,22 @@
 
 <div class="login-container">
-    <div class="login-bar">
+    <div class="login-bar" *ngIf="!responseLogIn">
       <ul>
         <li><a (click)="modal.open()">Log in</a></li>
         <li><a (click)="modal.open()" >Sign up</a></li>
       </ul>
     </div>
 
+    <div class="login-bar" *ngIf="responseLogIn">
+      <ul>
+        <li>
+          <a>{{responseLogIn.email}}</a>
+        </li>
+        <li>
+          <a>Log out</a>
+        </li>
+      </ul>
+    </div>
     <!--Login forms-->
     <section>
       <modal #modal>
@@ -41,9 +51,10 @@
                            <label><input type="checkbox"> Remember me</label>
                          </div>
                          <a id="log-in-button"  class="btn btn-default" type="submit"
-                         (click)="loginUser(email.value,pwd.value,response)" >Submit</a> <!--[disabled]="!loginForm.form.valid"-->
+                         (click)="loginUser(email.value,pwd.value)" >Submit</a> <!--[disabled]="!loginForm.form.valid"-->
                        </form>
-                       <div *ngIf="response">{{response}}</div>
+                       <!--<div *ngIf="response" [ngInit]="modal.close()"></div>-->
+                       <div *ngIf="close(response)"></div>
                        <div class="error" *ngIf="[(errorMessage)]">{{errorMessage}}</div>
                    </div>
                </div>
@@ -87,4 +98,5 @@
         </modal-body>
       </modal>
     </section>
+
 </div>

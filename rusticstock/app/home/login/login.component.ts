@@ -7,6 +7,7 @@ import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { UserComponent } from '../../models/user.component';
 import { LoginService } from './services/login.service';
 
+
 @Component({
   moduleId: module.id,
   selector: 'login-comp',
@@ -18,9 +19,7 @@ import { LoginService } from './services/login.service';
 export class LoginComponent {
   constructor( private loginService: LoginService){}
   @ViewChild('modal')
-  @ViewChild('modalError')
   modal: ModalComponent;
-  modalError: ModalComponent;
 
   modelLogin =  new UserComponent("","","","");
   modelSignUp = new UserComponent("","","","");
@@ -29,32 +28,33 @@ export class LoginComponent {
   errorMessage: string;
   submitted: boolean = true;
 
-  response: any;
+  responseLogout: boolean = true;
+  responseLogIn: any;
+  responseSignUp: any;
 
   open(){
     this.modal.open();
   }
 
-  loginUser( email: string, password: string, activeResponse: boolean) {
-    console.log(email,password);
+  close(){
+    if(this.responseLogIn || this.responseSignUp ){
+      this.modal.close();
+    }
+  }
+
+  loginUser( email: string, password: string) {
     if (!email || !password) { return ;}
     this.loginService.loginUser(email, password)
     .subscribe(
-      response => this.response = response,
+      response => this.responseLogIn = response,
       error => this.errorMessage = <any>error);
+    this.modelLogin = new UserComponent("","","","");
+    this.active = false;
+    setTimeout( () => this.active = true,2);  
+  }
 
+  logoutUser(){
 
-    //console.log("error", this.errorMessage);
-    console.log("response ", activeResponse)
-    if (activeResponse){
-      this.modal.close()
-    }
-    else {
-      this.modelLogin = new UserComponent("","","","");
-      this.active = false;
-      setTimeout( () => this.active = true,0);  
-    }
-    
   }
 
 

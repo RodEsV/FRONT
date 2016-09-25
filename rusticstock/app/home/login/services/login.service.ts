@@ -27,11 +27,11 @@ export class LoginService{
   /*Endpoint Rails*/
   private userUrl = 'http://rusticstock.herokuapp.com/api/v1/auth/sign_in.json';
   private signUpUrl = 'http://rusticstock.herokuapp.com/api/v1/auth';
+  private logOutUrl = "http://locanhost:3000/auth/sign_out.json";
 
   private extractData( res: Response ){
     let body = res.json();
-    //return body || {};
-    return res.ok;
+    return body.data || {};
     
     //return res.ok;
   }
@@ -44,6 +44,10 @@ export class LoginService{
     return this.http.post(this.userUrl, body, options)
     .map(this.extractData)
     .catch(this.handleError);
+  }
+
+  logOutUser(){
+    
   }
 
 

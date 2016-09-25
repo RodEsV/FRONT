@@ -19,30 +19,30 @@ var LoginComponent = (function () {
         this.modelSignUp = new user_component_1.UserComponent("", "", "", "");
         this.active = true;
         this.submitted = true;
+        this.responseLogout = true;
         this.name = "default";
         this.urlSuccess = "/";
     }
     LoginComponent.prototype.open = function () {
         this.modal.open();
     };
-    LoginComponent.prototype.loginUser = function (email, password, activeResponse) {
+    LoginComponent.prototype.close = function () {
+        if (this.responseLogIn || this.responseSignUp) {
+            this.modal.close();
+        }
+    };
+    LoginComponent.prototype.loginUser = function (email, password) {
         var _this = this;
-        console.log(email, password);
         if (!email || !password) {
             return;
         }
         this.loginService.loginUser(email, password)
-            .subscribe(function (response) { return _this.response = response; }, function (error) { return _this.errorMessage = error; });
-        //console.log("error", this.errorMessage);
-        console.log("response ", activeResponse);
-        if (activeResponse) {
-            this.modal.close();
-        }
-        else {
-            this.modelLogin = new user_component_1.UserComponent("", "", "", "");
-            this.active = false;
-            setTimeout(function () { return _this.active = true; }, 0);
-        }
+            .subscribe(function (response) { return _this.responseLogIn = response; }, function (error) { return _this.errorMessage = error; });
+        this.modelLogin = new user_component_1.UserComponent("", "", "", "");
+        this.active = false;
+        setTimeout(function () { return _this.active = true; }, 2);
+    };
+    LoginComponent.prototype.logoutUser = function () {
     };
     LoginComponent.prototype.signUpUser = function (userName, email, password, confirmPass) {
         var _this = this;
@@ -60,8 +60,7 @@ var LoginComponent = (function () {
         this.submitted = true;
     };
     __decorate([
-        core_1.ViewChild('modal'),
-        core_1.ViewChild('modalError'), 
+        core_1.ViewChild('modal'), 
         __metadata('design:type', ng2_bs3_modal_1.ModalComponent)
     ], LoginComponent.prototype, "modal", void 0);
     LoginComponent = __decorate([

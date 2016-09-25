@@ -20,6 +20,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var app_routes_1 = require('../../root/routes/app.routes');
 var http_1 = require('@angular/http');
 var info_component_1 = require('../information/info.component');
+var login_directives_1 = require('../login/directives/login.directives');
 var HomeModule = (function () {
     function HomeModule() {
     }
@@ -35,6 +36,7 @@ var HomeModule = (function () {
                 http_1.JsonpModule
             ],
             declarations: [
+                login_directives_1.LoginDirective,
                 info_component_1.InfoComponent,
                 home_component_1.HomeComponent,
                 login_component_1.LoginComponent,

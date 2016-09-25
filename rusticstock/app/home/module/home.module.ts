@@ -10,6 +10,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { routing } from '../../root/routes/app.routes';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { InfoComponent } from '../information/info.component';
+import { LoginDirective } from '../login/directives/login.directives';
+
 
 @NgModule({
   imports: [
@@ -22,6 +24,7 @@ import { InfoComponent } from '../information/info.component';
     JsonpModule
   ],
   declarations: [
+    LoginDirective,
     InfoComponent,
     HomeComponent,
     LoginComponent,

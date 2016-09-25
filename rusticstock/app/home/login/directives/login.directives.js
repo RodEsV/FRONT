@@ -9,20 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var notFound_component_1 = require('../notFound.component');
-var PageNotFoundModule = (function () {
-    function PageNotFoundModule() {
+var LoginDirective = (function () {
+    function LoginDirective() {
     }
-    PageNotFoundModule = __decorate([
-        core_1.NgModule({
-            declarations: [
-                notFound_component_1.PageNotFoundComponent
-            ],
-            exports: [notFound_component_1.PageNotFoundComponent]
+    LoginDirective.prototype.ngOnInit = function () {
+        if (this.ngInit) {
+            this.ngInit();
+        }
+    };
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], LoginDirective.prototype, "ngInit", void 0);
+    LoginDirective = __decorate([
+        core_1.Directive({
+            selector: '[ngInit]'
         }), 
         __metadata('design:paramtypes', [])
-    ], PageNotFoundModule);
-    return PageNotFoundModule;
+    ], LoginDirective);
+    return LoginDirective;
 }());
-exports.PageNotFoundModule = PageNotFoundModule;
-//# sourceMappingURL=notFound.module.js.map
+exports.LoginDirective = LoginDirective;
+//# sourceMappingURL=login.directives.js.map
