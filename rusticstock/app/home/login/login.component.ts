@@ -65,19 +65,44 @@ export class LoginComponent implements OnInit {
       console.log("checking!!");
     }
   }
-
+  
+  /*
+  resultResponse;
   loginUser(){
-    this.loginService.loginUser(JSON.stringify(this.loginForm.value))
-    .subscribe( 
-      response => this.responseLogIn = response,
-      error => this.errorMessage = <any>error)
-    if(this.responseLogIn){
-      this.modal.close();
-    }
+    function exec(){
+        var auxVar;
+        console.log("executing exec");
+        this.loginService.loginUser(JSON.stringify(this.loginForm.value))
+        .subscribe(
+          response => {this.responseLogIn = response; auxVar = response},
+          error => this.errorMessage = <any>error)
+    
+        if(this.responseLogIn){
+          this.modal.close();
+        }
+        return auxVar;
+      }
+      var a = exec();
+      this.resultResponse = a;
   }
+  */
+  resultResponse:any;
+  loginUser(){
+    var auxVar;
+    this.loginService.loginUser(JSON.stringify(this.loginForm.value))
+    .subscribe(
+      response => {this.responseLogIn = response; let auxVar = response},
+      error => this.errorMessage = error,
+      //function(){ LoginComponent['modal'].close();}
+      );
+    console.log(auxVar)
+    this.resultResponse = auxVar;
+  }
+  
 
-  logoutUser(){
-
+  logOutUser(){
+    let infoJSON = this.resultResponse.json().data;
+    this.loginService.logOutUser( infoJSON.auth_token , infoJSON.data.email, this.responseLogIn.headers['Client'] )
   }
 
   signUpUser(){

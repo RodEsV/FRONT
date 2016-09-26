@@ -44,13 +44,15 @@ var LoginComponent = (function () {
     };
     LoginComponent.prototype.loginUser = function () {
         var _this = this;
+        var auxVar;
         this.loginService.loginUser(JSON.stringify(this.loginForm.value))
-            .subscribe(function (response) { return _this.responseLogIn = response; }, function (error) { return _this.errorMessage = error; });
-        if (this.responseLogIn) {
-            this.modal.close();
-        }
+            .subscribe(function (response) { _this.responseLogIn = response; var auxVar = response; }, function (error) { return _this.errorMessage = error; });
+        console.log(auxVar);
+        this.resultResponse = auxVar;
     };
-    LoginComponent.prototype.logoutUser = function () {
+    LoginComponent.prototype.logOutUser = function () {
+        var infoJSON = this.resultResponse.json().data;
+        this.loginService.logOutUser(infoJSON.auth_token, infoJSON.data.email, this.responseLogIn.headers['Client']);
     };
     LoginComponent.prototype.signUpUser = function () {
         var _this = this;

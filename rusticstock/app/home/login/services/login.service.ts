@@ -29,9 +29,13 @@ export class LoginService{
   private signUpUrl = 'http://rusticstock.herokuapp.com/api/v1/auth';
   private logOutUrl = "http://locanhost:3000/auth/sign_out.json";
 
-  private extractData( res: Response ){
+  private extractDataJSON( res: Response ){
     let body = res.json();
     return body.data || {};
+  }
+
+  private extractData(res: Response){
+    return res;
   }
   
   loginUser( body: string){
@@ -42,7 +46,16 @@ export class LoginService{
     .catch(this.handleError);
   }
 
-  logOutUser(){
+  logOutUser(access_token:any, uid:any, client: any){
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json' );
+    headers.append('access_token', access_token );
+    headers.append('uid',uid);
+    headers.append('client',client);
+    let options = new RequestOptions({headers:headers});
+    return this.http.delete(this.logOutUrl, options)
+    .map(this.extractDataJSON)
+    .catch(this.handleError);
     
   }
 
@@ -50,7 +63,7 @@ export class LoginService{
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers:headers});
     return this.http.post(this.signUpUrl,body,options)
-    .map(this.extractData)
+    .map(this.extractDataJSON)
     .catch(this.handleError);
   }
 

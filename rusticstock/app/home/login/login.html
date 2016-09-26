@@ -10,10 +10,10 @@
     <div class="login-bar" *ngIf="responseLogIn">
       <ul>
         <li>
-          <a>{{responseLogIn.email}}</a>
+          <a>{{responseLogIn.json().data.email}}</a>
         </li>
         <li>
-          <a>Log out</a>
+          <a (click)="logOutUser()">Log out</a>
         </li>
       </ul>
     </div>

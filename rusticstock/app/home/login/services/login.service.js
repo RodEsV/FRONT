@@ -28,9 +28,12 @@ var LoginService = (function () {
         this.signUpUrl = 'http://rusticstock.herokuapp.com/api/v1/auth';
         this.logOutUrl = "http://locanhost:3000/auth/sign_out.json";
     }
-    LoginService.prototype.extractData = function (res) {
+    LoginService.prototype.extractDataJSON = function (res) {
         var body = res.json();
         return body.data || {};
+    };
+    LoginService.prototype.extractData = function (res) {
+        return res;
     };
     LoginService.prototype.loginUser = function (body) {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
@@ -39,13 +42,22 @@ var LoginService = (function () {
             .map(this.extractData)
             .catch(this.handleError);
     };
-    LoginService.prototype.logOutUser = function () {
+    LoginService.prototype.logOutUser = function (access_token, uid, client) {
+        var headers = new http_1.Headers();
+        headers.append('Content-Type', 'application/json');
+        headers.append('access_token', access_token);
+        headers.append('uid', uid);
+        headers.append('client', client);
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.delete(this.logOutUrl, options)
+            .map(this.extractDataJSON)
+            .catch(this.handleError);
     };
     LoginService.prototype.signUpUser = function (body) {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
         return this.http.post(this.signUpUrl, body, options)
-            .map(this.extractData)
+            .map(this.extractDataJSON)
             .catch(this.handleError);
     };
     LoginService.prototype.handleError = function (error) {
