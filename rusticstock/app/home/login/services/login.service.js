@@ -24,27 +24,24 @@ var LoginService = (function () {
         this.http = http;
         this.status = false;
         /*Endpoint Rails*/
-        this.userUrl = 'http://rusticstock.herokuapp.com/api/v1/auth/sign_in.json';
+        this.logInUrl = 'http://rusticstock.herokuapp.com/api/v1/auth/sign_in.json';
         this.signUpUrl = 'http://rusticstock.herokuapp.com/api/v1/auth';
         this.logOutUrl = "http://locanhost:3000/auth/sign_out.json";
     }
     LoginService.prototype.extractData = function (res) {
         var body = res.json();
         return body.data || {};
-        //return res.ok;
     };
-    LoginService.prototype.loginUser = function (email, password) {
-        var body = JSON.stringify({ email: email, password: password });
+    LoginService.prototype.loginUser = function (body) {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.post(this.userUrl, body, options)
+        return this.http.post(this.logInUrl, body, options)
             .map(this.extractData)
             .catch(this.handleError);
     };
     LoginService.prototype.logOutUser = function () {
     };
-    LoginService.prototype.signUpUser = function (name, nickname, email, password, password_confirmation) {
-        var body = JSON.stringify({ name: name, nickname: nickname, email: email, password: password, password_confirmation: password_confirmation });
+    LoginService.prototype.signUpUser = function (body) {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
         return this.http.post(this.signUpUrl, body, options)

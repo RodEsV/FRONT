@@ -21,90 +21,51 @@
     <section>
       <modal #modal>
         <modal-body>
+        <!--Login Form-->
           <div class="modal-content">
-               <div class="log-in-half">
-                   <div class="inner-style">
-                       <form *ngIf="active" (ngSubmit)="onSubmit()" #loginForm="ngForm">
-                         <h5>Log in</h5>
-
-                         <div class="form-group">
-
-                           <input type="email" class="form-control" id="email" placeholder="Email" required
-                           [(ngModel)] ="modelLogin.email" name="email" #email="ngModel"
-                           >
-                           <!--{{modelLogin.email}}-->
-                           <div [hidden]="email.valid || email.pristine"
-                              class="alert alert-danger">
-                              The email is required
-                           </div>
-                         </div>
-                         <div class="form-group">
-                           <input placeholder="Password" type="password" class="form-control" id="pwd" required
-                           [(ngModel)] = "modelLogin.password" name="pwd" #pwd="ngModel">
-                           <!--
-                           <div [hidden]="password.valid || password.pristine"
-                            class="alert alert-danger">
-                              The password is required
-                           </div>-->
-                         </div>
-                         <div class="checkbox check-aling">
-                           <label><input type="checkbox"> Remember me</label>
-                         </div>
-                         <a id="log-in-button"  class="btn btn-default" type="submit"
-                         (click)="loginUser(email.value,pwd.value)" >Submit</a> <!--[disabled]="!loginForm.form.valid"-->
-                       </form>
-                       <!--<div *ngIf="response" [ngInit]="modal.close()"></div>-->
-                       <div *ngIf="close()"></div>
-                       <div class="error" *ngIf="[(errorMessage)]">{{errorMessage}}</div>
-                   </div>
-               </div>
-
-               <div class="sing-in-half">
-                   <div class=" half-center">
-                     <div class="inner-style">
-                         <form *ngIf = "active" (onSubmit)="onSubmit()" #signUpForm="ngForm">
-                           <h5>Sign up</h5>
-                           <div class="form-group">
-
-                             <input type="text" class="form-control" placeholder="Name"
-                              id="name" [(ngModel)] = "modelSignUp.name" name="name" #name="ngModel">
-
-                           </div>
-
-                           <div class="form-group" >
-                             <input type="text" placeholder="User name" class="form-control" id="nickname" [(ngModel)]="modelSignUp.userName" name="userName" #userName="ngModel">
-
-                           </div>
-
-                           <div class="form-group">
-                             <input placeholder="Email" type="email" class="form-control"
-                             id="email" required [(ngModel)] = "modelSignUp.email" name="email" #email="ngModel">
-                           </div>
-                           <div [hidden]="email.valid || email.pristine"
-                              class="alert alert-danger">
-                              The email is required
-                           </div>
-                           <div class="form-group">
-                             <input placeholder="Password" type="password" class="form-control"
-                             id="password" required [(ngModel)] = "modelSignUp.password" name="password" #password="ngModel">
-                           </div>
-
-                           <div class="form-group">
-                             <input placeholder="Confirm Password" type="password" class="form-control"
-                             id="confirm" required [(ngModel)] = "modelSignUp.confirm" name="confirm" #confirm="ngModel">
-                           </div>
-
-                           <a id="log-in-button" class="btn btn-default" type="submit"
-                          (click)="signUpUser( name.value, userName.value, email.value, password.value, confirm.value)">Submit</a>
-                         </form>
-                     </div>
-                   </div>
-                 </div>
-
-                 
-               </div>
+            <div class="log-in-half">
+              <div class="inner-style">
+                <form [formGroup]="loginForm">
+                  <h5>Log in</h5>
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="email" formControlName="email">
+                    <br>
+                    <input type="password" class="form-control" placeholder="password" formControlName="password">
+                  </div>
+                  <div class="checkbox check-aling">
+                    <label><input type="checkbox"> Remember me</label>
+                  </div>
+                  <button type="submit" class="btn btn-default" (click)="loginUser()">Submit</button>
+                </form>
+                <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+              </div>
+            </div>
+          
+            <!--Sign Up Form-->
+            <div class="sing-in-half">
+              <div class="half-center">
+                <div class="inner-style">
+                  <form [formGroup]="signUpForm">
+                    <h5>Sign up</h5>
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="name" formControlName="name">
+                      <br>
+                      <input type="text" class="form-control" placeholder="nickname" formControlName="nickname">
+                      <br>
+                      <input type="email" class="form-control" placeholder="email" formControlName="email">
+                      <br>
+                      <input type="password" class="form-control" placeholder="password" formControlName="password">
+                      <br>
+                      <input type="password" class="form-control" placeholder="confirm password" formControlName="password_confirmation">
+                    </div>
+                    <button type="submit"  class="btn btn-default" (click)="signUpUser()">Submit</button>
+                  </form>
+                  <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </modal-body>
       </modal>
     </section>
-
 </div>

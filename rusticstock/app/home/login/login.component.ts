@@ -1,7 +1,17 @@
 import {
   Component,
-  ViewChild
+  ViewChild,
+  OnInit
 } from '@angular/core';
+
+import { 
+  FormBuilder,
+  AbstractControl,
+  FormGroup, 
+  Validators,
+  FormControl,
+  FormArray
+} from '@angular/forms';
 
 import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { UserComponent } from '../../models/user.component';
@@ -16,13 +26,26 @@ import { LoginService } from './services/login.service';
   providers: [ LoginService ]
 })
 
-export class LoginComponent {
-  constructor( private loginService: LoginService){}
+export class LoginComponent implements OnInit {
+  constructor( private loginService: LoginService, private fb: FormBuilder){}
   @ViewChild('modal')
   modal: ModalComponent;
+  loginForm: FormGroup;
+  signUpForm: FormGroup;
 
-  modelLogin =  new UserComponent("","");
-  modelSignUp = new UserComponent("","","","","");
+  ngOnInit(){
+    this.loginForm = this.fb.group({
+      email: [""],
+      password: [""]
+    });
+    this.signUpForm = this.fb.group({
+      name: [""],
+      nickname: [""],
+      email: [""],
+      password: [""],
+      password_confirmation: [""]
+    })
+  }
 
   active: boolean = true;
   errorMessage: string;
@@ -39,46 +62,36 @@ export class LoginComponent {
   close(){
     if(this.responseLogIn || this.responseSignUp ){
       this.modal.close();
+      console.log("checking!!");
     }
   }
 
-  loginUser( email: string, password: string) {
-    if (!email || !password) { return ;}
-    this.loginService.loginUser(email, password)
-    .subscribe(
+  loginUser(){
+    this.loginService.loginUser(JSON.stringify(this.loginForm.value))
+    .subscribe( 
       response => this.responseLogIn = response,
-      error => this.errorMessage = <any>error);
-    this.modelLogin = new UserComponent("","");
-    this.active = false;
-    setTimeout( () => this.active = true,2);  
+      error => this.errorMessage = <any>error)
+    if(this.responseLogIn){
+      this.modal.close();
+    }
   }
 
   logoutUser(){
 
   }
 
-
-   name: string = "default";
-  userName: string = "default";
-  
-  signUpUser(name:string, userName: string, email: string, password: string, confirmPass: string) {
-    console.log(this.name,email,password, confirmPass, userName);
-    if (!email || !password || !confirmPass) { return; }
-    if (!name){
-      name = this.name;
+  signUpUser(){
+    if(this.signUpForm.controls['name'].value == ""){
+      this.signUpForm.controls['name'].setValue("default");
+    } 
+    if(this.signUpForm.controls['nickname'].value == "") {
+      this.signUpForm.controls['nickname'].setValue("default");
     }
-    if (!userName){
-      userName = this.userName;
-    }
-    this.loginService.signUpUser(name, userName,email,password,confirmPass)
+    this.loginService.signUpUser(JSON.stringify(this.signUpForm.value))
     .subscribe(
-      responseSignUp => this.responseSignUp = responseSignUp,
-      error => this.errorMessage = <any> error);
-    
-
-      this.modelSignUp = new UserComponent("","","","","");
-      this.active = false;
-      setTimeout( () => this.active = true,2);
+      response => this.responseSignUp = response,
+      error => this.errorMessage = error
+      );
   }
 
 

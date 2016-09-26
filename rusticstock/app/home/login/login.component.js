@@ -9,58 +9,59 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var forms_1 = require('@angular/forms');
 var ng2_bs3_modal_1 = require('ng2-bs3-modal/ng2-bs3-modal');
-var user_component_1 = require('../../models/user.component');
 var login_service_1 = require('./services/login.service');
 var LoginComponent = (function () {
-    function LoginComponent(loginService) {
+    function LoginComponent(loginService, fb) {
         this.loginService = loginService;
-        this.modelLogin = new user_component_1.UserComponent("", "");
-        this.modelSignUp = new user_component_1.UserComponent("", "", "", "", "");
+        this.fb = fb;
         this.active = true;
         this.submitted = true;
         this.responseLogout = true;
-        this.name = "default";
-        this.userName = "default";
     }
+    LoginComponent.prototype.ngOnInit = function () {
+        this.loginForm = this.fb.group({
+            email: [""],
+            password: [""]
+        });
+        this.signUpForm = this.fb.group({
+            name: [""],
+            nickname: [""],
+            email: [""],
+            password: [""],
+            password_confirmation: [""]
+        });
+    };
     LoginComponent.prototype.open = function () {
         this.modal.open();
     };
     LoginComponent.prototype.close = function () {
         if (this.responseLogIn || this.responseSignUp) {
             this.modal.close();
+            console.log("checking!!");
         }
     };
-    LoginComponent.prototype.loginUser = function (email, password) {
+    LoginComponent.prototype.loginUser = function () {
         var _this = this;
-        if (!email || !password) {
-            return;
-        }
-        this.loginService.loginUser(email, password)
+        this.loginService.loginUser(JSON.stringify(this.loginForm.value))
             .subscribe(function (response) { return _this.responseLogIn = response; }, function (error) { return _this.errorMessage = error; });
-        this.modelLogin = new user_component_1.UserComponent("", "");
-        this.active = false;
-        setTimeout(function () { return _this.active = true; }, 2);
+        if (this.responseLogIn) {
+            this.modal.close();
+        }
     };
     LoginComponent.prototype.logoutUser = function () {
     };
-    LoginComponent.prototype.signUpUser = function (name, userName, email, password, confirmPass) {
+    LoginComponent.prototype.signUpUser = function () {
         var _this = this;
-        console.log(this.name, email, password, confirmPass, userName);
-        if (!email || !password || !confirmPass) {
-            return;
+        if (this.signUpForm.controls['name'].value == "") {
+            this.signUpForm.controls['name'].setValue("default");
         }
-        if (!name) {
-            name = this.name;
+        if (this.signUpForm.controls['nickname'].value == "") {
+            this.signUpForm.controls['nickname'].setValue("default");
         }
-        if (!userName) {
-            userName = this.userName;
-        }
-        this.loginService.signUpUser(name, userName, email, password, confirmPass)
-            .subscribe(function (responseSignUp) { return _this.responseSignUp = responseSignUp; }, function (error) { return _this.errorMessage = error; });
-        this.modelSignUp = new user_component_1.UserComponent("", "", "", "", "");
-        this.active = false;
-        setTimeout(function () { return _this.active = true; }, 2);
+        this.loginService.signUpUser(JSON.stringify(this.signUpForm.value))
+            .subscribe(function (response) { return _this.responseSignUp = response; }, function (error) { return _this.errorMessage = error; });
     };
     LoginComponent.prototype.onSubmit = function () {
         this.submitted = true;
@@ -77,7 +78,7 @@ var LoginComponent = (function () {
             styleUrls: ['login.css'],
             providers: [login_service_1.LoginService]
         }), 
-        __metadata('design:paramtypes', [login_service_1.LoginService])
+        __metadata('design:paramtypes', [login_service_1.LoginService, forms_1.FormBuilder])
     ], LoginComponent);
     return LoginComponent;
 }());

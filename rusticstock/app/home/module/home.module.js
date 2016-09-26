@@ -21,12 +21,14 @@ var app_routes_1 = require('../../root/routes/app.routes');
 var http_1 = require('@angular/http');
 var info_component_1 = require('../information/info.component');
 var login_directives_1 = require('../login/directives/login.directives');
+var forms_2 = require('@angular/forms');
 var HomeModule = (function () {
     function HomeModule() {
     }
     HomeModule = __decorate([
         core_1.NgModule({
             imports: [
+                forms_2.ReactiveFormsModule,
                 app_routes_1.routing,
                 platform_browser_1.BrowserModule,
                 models_module_1.ModelsModule,

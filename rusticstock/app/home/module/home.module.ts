@@ -11,10 +11,13 @@ import { routing } from '../../root/routes/app.routes';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { InfoComponent } from '../information/info.component';
 import { LoginDirective } from '../login/directives/login.directives';
+import { ReactiveFormsModule } from '@angular/forms' ;
+
 
 
 @NgModule({
   imports: [
+    ReactiveFormsModule,
     routing,
     BrowserModule,
     ModelsModule,

@@ -25,23 +25,19 @@ export class LoginService{
   }
   status: boolean = false;
   /*Endpoint Rails*/
-  private userUrl = 'http://rusticstock.herokuapp.com/api/v1/auth/sign_in.json';
+  private logInUrl = 'http://rusticstock.herokuapp.com/api/v1/auth/sign_in.json';
   private signUpUrl = 'http://rusticstock.herokuapp.com/api/v1/auth';
   private logOutUrl = "http://locanhost:3000/auth/sign_out.json";
 
   private extractData( res: Response ){
     let body = res.json();
     return body.data || {};
-    
-    //return res.ok;
   }
-
-  loginUser(email: string, password: string) {//: Observable<UserComponent>{
-    let body = JSON.stringify({email, password});
+  
+  loginUser( body: string){
     let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({ headers: headers});
-
-    return this.http.post(this.userUrl, body, options)
+    let options = new RequestOptions({headers: headers});
+    return this.http.post(this.logInUrl, body, options)
     .map(this.extractData)
     .catch(this.handleError);
   }
@@ -50,13 +46,10 @@ export class LoginService{
     
   }
 
-
-  signUpUser(name:string, nickname: string, email: string, password: string, password_confirmation: string){
-    let body = JSON.stringify({ name, nickname, email, password, password_confirmation});
+  signUpUser(body: string){
     let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({headers: headers});
-    
-    return this.http.post(this.signUpUrl, body, options )
+    let options = new RequestOptions({headers:headers});
+    return this.http.post(this.signUpUrl,body,options)
     .map(this.extractData)
     .catch(this.handleError);
   }
