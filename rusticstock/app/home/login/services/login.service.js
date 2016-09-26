@@ -43,12 +43,10 @@ var LoginService = (function () {
     };
     LoginService.prototype.logOutUser = function () {
     };
-    LoginService.prototype.signUpUser = function (name, nickname, email, password, password_confirmation, confirm_success_url) {
-        //let body = JSON.stringify({ name, nickname, email, password, password_confirmation});
-        var body = JSON.stringify({ email: email, name: name, password: password });
+    LoginService.prototype.signUpUser = function (name, nickname, email, password, password_confirmation) {
+        var body = JSON.stringify({ name: name, nickname: nickname, email: email, password: password, password_confirmation: password_confirmation });
         var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
         var options = new http_1.RequestOptions({ headers: headers });
-        console.log(body);
         return this.http.post(this.signUpUrl, body, options)
             .map(this.extractData)
             .catch(this.handleError);

@@ -21,7 +21,7 @@ var LoginComponent = (function () {
         this.submitted = true;
         this.responseLogout = true;
         this.name = "default";
-        this.urlSuccess = "/";
+        this.userName = "default";
     }
     LoginComponent.prototype.open = function () {
         this.modal.open();
@@ -44,17 +44,23 @@ var LoginComponent = (function () {
     };
     LoginComponent.prototype.logoutUser = function () {
     };
-    LoginComponent.prototype.signUpUser = function (userName, email, password, confirmPass) {
+    LoginComponent.prototype.signUpUser = function (name, userName, email, password, confirmPass) {
         var _this = this;
         console.log(this.name, email, password, confirmPass, userName);
         if (!email || !password || !confirmPass) {
             return;
         }
-        this.loginService.signUpUser(this.name, userName, email, password, confirmPass, this.urlSuccess)
-            .subscribe(function (error) { return _this.errorMessage = error; });
-        this.modelSignUp = new user_component_1.UserComponent("", "", "", "");
+        if (!name) {
+            name = this.name;
+        }
+        if (!userName) {
+            userName = this.userName;
+        }
+        this.loginService.signUpUser(name, userName, email, password, confirmPass)
+            .subscribe(function (responseSignUp) { return _this.responseSignUp = responseSignUp; }, function (error) { return _this.errorMessage = error; });
+        this.modelSignUp = new user_component_1.UserComponent("", "", "", "", "");
         this.active = false;
-        setTimeout(function () { return _this.active = true; }, 0);
+        setTimeout(function () { return _this.active = true; }, 2);
     };
     LoginComponent.prototype.onSubmit = function () {
         this.submitted = true;

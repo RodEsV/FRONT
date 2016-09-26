@@ -58,20 +58,29 @@ export class LoginComponent {
   }
 
 
-  name: string = "default";
-  urlSuccess: string = "/";
-  signUpUser(userName: string, email: string, password: string, confirmPass: string) {
+   name: string = "default";
+  userName: string = "default";
+  
+  signUpUser(name:string, userName: string, email: string, password: string, confirmPass: string) {
     console.log(this.name,email,password, confirmPass, userName);
     if (!email || !password || !confirmPass) { return; }
-    this.loginService.signUpUser(this.name, userName,email,password,confirmPass,this.urlSuccess)
+    if (!name){
+      name = this.name;
+    }
+    if (!userName){
+      userName = this.userName;
+    }
+    this.loginService.signUpUser(name, userName,email,password,confirmPass)
     .subscribe(
+      responseSignUp => this.responseSignUp = responseSignUp,
       error => this.errorMessage = <any> error);
+    
 
-
-      this.modelSignUp = new UserComponent("","","","");
+      this.modelSignUp = new UserComponent("","","","","");
       this.active = false;
-      setTimeout( () => this.active = true,0);
+      setTimeout( () => this.active = true,2);
   }
+
 
 
   onSubmit(){

@@ -51,17 +51,16 @@ export class LoginService{
   }
 
 
-  signUpUser(name:string, nickname: string, email: string, password: string, password_confirmation: string, confirm_success_url: string){//: Observable<UserComponent> {
-    //let body = JSON.stringify({ name, nickname, email, password, password_confirmation});
-    let body = JSON.stringify({email, name, password});
+  signUpUser(name:string, nickname: string, email: string, password: string, password_confirmation: string){
+    let body = JSON.stringify({ name, nickname, email, password, password_confirmation});
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
-
-    console.log(body);
+    
     return this.http.post(this.signUpUrl, body, options )
     .map(this.extractData)
     .catch(this.handleError);
   }
+
 
   private handleError( error: any )
   {
