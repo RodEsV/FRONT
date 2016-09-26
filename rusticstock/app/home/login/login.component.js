@@ -15,8 +15,8 @@ var login_service_1 = require('./services/login.service');
 var LoginComponent = (function () {
     function LoginComponent(loginService) {
         this.loginService = loginService;
-        this.modelLogin = new user_component_1.UserComponent("", "", "", "");
-        this.modelSignUp = new user_component_1.UserComponent("", "", "", "");
+        this.modelLogin = new user_component_1.UserComponent("", "");
+        this.modelSignUp = new user_component_1.UserComponent("", "", "", "", "");
         this.active = true;
         this.submitted = true;
         this.responseLogout = true;
@@ -38,7 +38,7 @@ var LoginComponent = (function () {
         }
         this.loginService.loginUser(email, password)
             .subscribe(function (response) { return _this.responseLogIn = response; }, function (error) { return _this.errorMessage = error; });
-        this.modelLogin = new user_component_1.UserComponent("", "", "", "");
+        this.modelLogin = new user_component_1.UserComponent("", "");
         this.active = false;
         setTimeout(function () { return _this.active = true; }, 2);
     };

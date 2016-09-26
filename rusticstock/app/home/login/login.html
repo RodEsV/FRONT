@@ -54,7 +54,7 @@
                          (click)="loginUser(email.value,pwd.value)" >Submit</a> <!--[disabled]="!loginForm.form.valid"-->
                        </form>
                        <!--<div *ngIf="response" [ngInit]="modal.close()"></div>-->
-                       <div *ngIf="close(response)"></div>
+                       <div *ngIf="close()"></div>
                        <div class="error" *ngIf="[(errorMessage)]">{{errorMessage}}</div>
                    </div>
                </div>

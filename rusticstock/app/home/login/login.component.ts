@@ -21,8 +21,8 @@ export class LoginComponent {
   @ViewChild('modal')
   modal: ModalComponent;
 
-  modelLogin =  new UserComponent("","","","");
-  modelSignUp = new UserComponent("","","","");
+  modelLogin =  new UserComponent("","");
+  modelSignUp = new UserComponent("","","","","");
 
   active: boolean = true;
   errorMessage: string;
@@ -48,7 +48,7 @@ export class LoginComponent {
     .subscribe(
       response => this.responseLogIn = response,
       error => this.errorMessage = <any>error);
-    this.modelLogin = new UserComponent("","","","");
+    this.modelLogin = new UserComponent("","");
     this.active = false;
     setTimeout( () => this.active = true,2);  
   }

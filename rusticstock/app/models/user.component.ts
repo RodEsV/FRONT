@@ -12,7 +12,9 @@ export class UserComponent
     public email: string,
     public password: string,
     public confirm?: string,
-    public userName?: string,
+    public name?: string,
+    public userName?: string
+  
   )
   { }
 }
