@@ -62,7 +62,6 @@ export class LoginComponent implements OnInit {
   close(){
     if(this.responseLogIn || this.responseSignUp ){
       this.modal.close();
-      console.log("checking!!");
     }
   }
   
@@ -88,20 +87,18 @@ export class LoginComponent implements OnInit {
   */
   resultResponse:any;
   loginUser(){
-    var auxVar;
-    this.loginService.loginUser(JSON.stringify(this.loginForm.value))
+    var a = this.loginService.loginUser(JSON.stringify(this.loginForm.value))
     .subscribe(
-      response => {this.responseLogIn = response; let auxVar = response},
+      response => this.responseLogIn = response,
       error => this.errorMessage = error,
-      //function(){ LoginComponent['modal'].close();}
+      ()=> this.close()
       );
-    console.log(auxVar)
-    this.resultResponse = auxVar;
+    return this.responseLogIn;
   }
   
 
-  logOutUser(){
-    let infoJSON = this.resultResponse.json().data;
+  logOutUser(resultResponse){
+    let infoJSON = resultResponse.json().data;
     this.loginService.logOutUser( infoJSON.auth_token , infoJSON.data.email, this.responseLogIn.headers['Client'] )
   }
 

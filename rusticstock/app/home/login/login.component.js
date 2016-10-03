@@ -39,19 +39,16 @@ var LoginComponent = (function () {
     LoginComponent.prototype.close = function () {
         if (this.responseLogIn || this.responseSignUp) {
             this.modal.close();
-            console.log("checking!!");
         }
     };
     LoginComponent.prototype.loginUser = function () {
         var _this = this;
-        var auxVar;
-        this.loginService.loginUser(JSON.stringify(this.loginForm.value))
-            .subscribe(function (response) { _this.responseLogIn = response; var auxVar = response; }, function (error) { return _this.errorMessage = error; });
-        console.log(auxVar);
-        this.resultResponse = auxVar;
+        var a = this.loginService.loginUser(JSON.stringify(this.loginForm.value))
+            .subscribe(function (response) { return _this.responseLogIn = response; }, function (error) { return _this.errorMessage = error; }, function () { return _this.close(); });
+        return this.responseLogIn;
     };
-    LoginComponent.prototype.logOutUser = function () {
-        var infoJSON = this.resultResponse.json().data;
+    LoginComponent.prototype.logOutUser = function (resultResponse) {
+        var infoJSON = resultResponse.json().data;
         this.loginService.logOutUser(infoJSON.auth_token, infoJSON.data.email, this.responseLogIn.headers['Client']);
     };
     LoginComponent.prototype.signUpUser = function () {

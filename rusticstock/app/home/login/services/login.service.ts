@@ -29,6 +29,8 @@ export class LoginService{
   private signUpUrl = 'http://rusticstock.herokuapp.com/api/v1/auth';
   private logOutUrl = "http://locanhost:3000/auth/sign_out.json";
 
+  public responseLogIn;
+
   private extractDataJSON( res: Response ){
     let body = res.json();
     return body.data || {};
