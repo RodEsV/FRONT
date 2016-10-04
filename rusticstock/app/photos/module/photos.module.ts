@@ -3,11 +3,12 @@ import { PhotosComponent } from '../photos.component';
 import { photosRouting } from '../routes/photos.routes';
 import { GalleryComponent } from '../gallery/gallery.component';
 import { ImageComponent } from '../images/image.component';
-
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   imports: [
-    photosRouting
+    photosRouting,
+    CommonModule
   ],
   declarations: [
     ImageComponent,

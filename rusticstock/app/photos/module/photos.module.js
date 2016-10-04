@@ -13,13 +13,15 @@ var photos_component_1 = require('../photos.component');
 var photos_routes_1 = require('../routes/photos.routes');
 var gallery_component_1 = require('../gallery/gallery.component');
 var image_component_1 = require('../images/image.component');
+var common_1 = require('@angular/common');
 var PhotosModule = (function () {
     function PhotosModule() {
     }
     PhotosModule = __decorate([
         core_1.NgModule({
             imports: [
-                photos_routes_1.photosRouting
+                photos_routes_1.photosRouting,
+                common_1.CommonModule
             ],
             declarations: [
                 image_component_1.ImageComponent,
