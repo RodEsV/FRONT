@@ -86,19 +86,25 @@ export class LoginComponent implements OnInit {
   }
   */
   resultResponse:any;
+  assignData(data:any){ 
+    this.resultResponse = data;  
+  }
+
+  
   loginUser(){
-    var a = this.loginService.loginUser(JSON.stringify(this.loginForm.value))
+    this.loginService.loginUser(JSON.stringify(this.loginForm.value))
     .subscribe(
       response => this.responseLogIn = response,
       error => this.errorMessage = error,
-      ()=> this.close()
+      ()=> {this.close(); this.assignData(this.responseLogIn);}
       );
     return this.responseLogIn;
   }
   
-
-  logOutUser(resultResponse){
-    let infoJSON = resultResponse.json().data;
+  // La variable resultResponse tiene el objeto Response pero hay algo raro en los headers
+  logOutUser(){
+    console.log("executing ", this.resultResponse); 
+    let infoJSON = this.resultResponse.json().data;
     this.loginService.logOutUser( infoJSON.auth_token , infoJSON.data.email, this.responseLogIn.headers['Client'] )
   }
 

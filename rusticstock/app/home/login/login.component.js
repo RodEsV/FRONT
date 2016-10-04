@@ -41,14 +41,19 @@ var LoginComponent = (function () {
             this.modal.close();
         }
     };
+    LoginComponent.prototype.assignData = function (data) {
+        this.resultResponse = data;
+    };
     LoginComponent.prototype.loginUser = function () {
         var _this = this;
-        var a = this.loginService.loginUser(JSON.stringify(this.loginForm.value))
-            .subscribe(function (response) { return _this.responseLogIn = response; }, function (error) { return _this.errorMessage = error; }, function () { return _this.close(); });
+        this.loginService.loginUser(JSON.stringify(this.loginForm.value))
+            .subscribe(function (response) { return _this.responseLogIn = response; }, function (error) { return _this.errorMessage = error; }, function () { _this.close(); _this.assignData(_this.responseLogIn); });
         return this.responseLogIn;
     };
-    LoginComponent.prototype.logOutUser = function (resultResponse) {
-        var infoJSON = resultResponse.json().data;
+    // La variable resultResponse tiene el objeto Response pero hay algo raro en los headers
+    LoginComponent.prototype.logOutUser = function () {
+        console.log("executing ", this.resultResponse);
+        var infoJSON = this.resultResponse.json().data;
         this.loginService.logOutUser(infoJSON.auth_token, infoJSON.data.email, this.responseLogIn.headers['Client']);
     };
     LoginComponent.prototype.signUpUser = function () {
