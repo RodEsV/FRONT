@@ -5,14 +5,24 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { 
+  RusticstockRoutingModule,
+  routingComponents 
+} from './app-routing.module';
+
+import { HomeModule } from './home/home.module';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RusticstockRoutingModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
