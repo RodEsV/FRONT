@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-info',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router) { }
 
-  ngOnInit() {
+  onSelect(page: string)
+  {
+    if( page == 'about'){
+      this.router.navigate(['/about']);
+    }
+    else if (page == 'contact'){
+      this.router.navigate(['/contact']);
+    }
+  }
+
+  ngOnInit(){
+    
   }
 
 }

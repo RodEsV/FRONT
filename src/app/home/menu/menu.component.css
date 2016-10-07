@@ -1,0 +1,21 @@
+.box-menu {
+  margin: auto;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.box-menu .list-inline li {
+  border-right: 1px solid white;
+  padding: 10px;
+}
+
+.box-menu .list-inline li a, .box-menu .list-inline li a:hover{
+	cursor: pointer;
+	cursor: hand;	
+  color: white;
+  text-decoration: none;
+}
+
+.box-menu .list-inline li:last-child {
+  border-right: none
+}
