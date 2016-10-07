@@ -4,7 +4,7 @@
 /dist
 /tmp
 src/assets
-rusticstock/dist.zip
+dist.zip
 
 # dependencies
 /node_modules
