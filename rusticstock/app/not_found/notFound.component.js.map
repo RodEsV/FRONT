@@ -1,1 +1,0 @@
-{"version":3,"file":"notFound.component.js","sourceRoot":"","sources":["notFound.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAA0B,eAAe,CAAC,CAAA;AAQ1C;IACE;IAAc,CAAC;IAPjB;QAAC,gBAAS,CAAC;YACV,QAAQ,EAAE,MAAM,CAAC,EAAE;YAClB,QAAQ,EAAE,eAAe;YACzB,WAAW,EAAE,eAAe;YAC5B,SAAS,EAAE,CAAC,cAAc,CAAC;SAC5B,CAAC;;6BAAA;IAGF,4BAAC;AAAD,CAAC,AAFD,IAEC;AAFY,6BAAqB,wBAEjC,CAAA"}

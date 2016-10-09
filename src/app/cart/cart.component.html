@@ -1,0 +1,39 @@
+
+<h1>{{title}}</h1>
+
+<div class="container">
+   <ul class="products">
+      <li *ngFor="let product of products; let i = index"
+        [class.selected]="product === selectedProduct"
+        (click)="onSelect(product)">
+        <div class="responsive">
+          <div class="imagen">
+            <img src={{product.file}} alt={{product.name}} class="img-thumbnail">
+            <div class="desc">{{product.name}} {{i+1}} </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+   </div>
+
+    <div *ngIf="selectedProduct">
+      <div class="information">
+        <h2>Product Information</h2>
+
+        <table>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Resolution</th>
+            <th>Price</th>
+          </tr>
+
+          <tr>
+           <td>{{selectedProduct.id}}</td>
+           <td>{{selectedProduct.name}}</td>
+           <td>{{selectedProduct.resolution}}</td>
+           <td>{{selectedProduct.price}}$</td>
+          </tr>
+         </table>
+      </div>
+    </div>

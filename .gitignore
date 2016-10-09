@@ -1,4 +1,44 @@
+<<<<<<< HEAD
 rusticstock/video
 rusticstock/images
 rusticstock/node_modules
 rusticstock/typings
+=======
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+src/assets/videos
+src/assets/universal/img
+src/assets/universal/js
+dist*.zip
+
+# dependencies
+/node_modules
+/bower_components
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+*.launch
+.settings/
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage/*
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# e2e
+/e2e/*.js
+/e2e/*.map
+
+#System Files
+.DS_Store
+Thumbs.db
+>>>>>>> 725f467c586f2a0d00d6718d6ebc685e0c5d19f3
