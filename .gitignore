@@ -10,6 +10,8 @@ rusticstock/typings
 /dist
 /tmp
 src/assets/videos
+src/assets/universal/img
+src/assets/universal/js
 dist*.zip
 
 # dependencies
