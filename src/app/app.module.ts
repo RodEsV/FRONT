@@ -16,6 +16,7 @@ import { HomeModule } from './home/home.module';
 import { PhotosModule } from './photos/photos.module';
 import { NotfoundModule } from './notfound/notfound.module';
 import { AboutModule } from './about/about.module';
+import { ContactModule } from './contact/contact.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { AboutModule } from './about/about.module';
     PhotosModule,
     NotfoundModule,
     AboutModule
+    ContactModule
   ],
   providers: [],
   bootstrap: [AppComponent]
