@@ -1,10 +1,27 @@
 
-<div class="wrapper">
+<!--<div class="wrapper">
 	<div class="gallery">
 		<ul>
 			<li class="" *ngFor="let photo of urlPhotos">
 				<img src="{{photo}}">
 			</li>
 		</ul>
+	</div>
+</div>-->
+<div id="all">
+	<div id="content">
+		<div class="container">
+			<section>
+				<div class="row portfolio">
+					<div class="col-sm-6 col-md-3">
+						<div class="box-image">
+							<div *ngFor="let photo of urlPhotos" class="image">
+								<img src="{{photo}}" class="img-responsive">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
 	</div>
 </div>
