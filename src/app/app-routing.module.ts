@@ -6,6 +6,8 @@ import { PhotosComponent } from './photos/photos.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
+	//{ path: '', redirectTo: 'angular/dist', pathMatch: 'full'},
+	//{ path: 'angular/dist', component: HomeComponent},
 	{ path: '', component: HomeComponent},
 	{ path: 'photos', component: PhotosComponent},
 	{ path: '**', component: NotfoundComponent}

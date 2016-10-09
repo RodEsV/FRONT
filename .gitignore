@@ -10,7 +10,7 @@ rusticstock/typings
 /dist
 /tmp
 src/assets
-dist.zip
+dist*.zip
 
 # dependencies
 /node_modules
