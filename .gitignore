@@ -9,7 +9,7 @@ rusticstock/typings
 # compiled output
 /dist
 /tmp
-src/assets
+src/assets/videos
 dist*.zip
 
 # dependencies

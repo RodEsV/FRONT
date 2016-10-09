@@ -15,6 +15,8 @@ import {
 import { HomeModule } from './home/home.module';
 import { PhotosModule } from './photos/photos.module';
 import { NotfoundModule } from './notfound/notfound.module';
+import { AboutModule } from './about/about.module';
+import { ContactModule } from './contact/contact.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { NotfoundModule } from './notfound/notfound.module';
     Ng2Bs3ModalModule,
     HomeModule,
     PhotosModule,
-    NotfoundModule
+    NotfoundModule,
+    AboutModule,
+    ContactModule
   ],
   providers: [],
   bootstrap: [AppComponent]
