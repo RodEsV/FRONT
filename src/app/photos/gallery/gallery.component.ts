@@ -16,6 +16,25 @@ export class GalleryComponent implements OnInit {
 		"http://www.planwallpaper.com/static/images/cool-background.jpg",
 		"http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg"
 	];
+
+	urlLocalPhotos =[
+		"../../../assets/images/1.jpg",
+		"../../../assets/images/2.jpg",
+		"../../../assets/images/3.jpg",
+		"../../../assets/images/4.jpg",
+		"../../../assets/images/1.jpg",
+		"../../../assets/images/2.jpg",
+		"../../../assets/images/3.jpg",
+		"../../../assets/images/4.jpg",
+		"../../../assets/images/1.jpg",
+		"../../../assets/images/2.jpg",
+		"../../../assets/images/3.jpg",
+		"../../../assets/images/4.jpg",
+		"../../../assets/images/1.jpg",
+		"../../../assets/images/2.jpg",
+		"../../../assets/images/3.jpg",
+		"../../../assets/images/4.jpg",
+	]
   ngOnInit() {
   }
 

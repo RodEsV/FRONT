@@ -12,6 +12,10 @@ div.gallery ul {
 	margin-left: 35px;
 }
 
+.box {
+	
+}
+
 /* animation */
 
 div.gallery ul li, div.gallery li img {
@@ -30,6 +34,14 @@ div.gallery ul li {
 	margin: 5px;
 	padding: 5px;
 	z-index: 0;
+}
+
+.box-image:hover .custom-hover {
+	position: absolute;
+    -webkit-transform: translate(0, -75%);
+    -ms-transform: translate(0, -75%);
+    -o-transform: translate(0, -75%);
+    transform: translate(0, -75%);
 }
 
 /* Make sure z-index is higher on hover */
