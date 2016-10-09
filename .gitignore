@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+rusticstock/video
+rusticstock/images
+rusticstock/node_modules
+rusticstock/typings
+=======
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
@@ -33,3 +39,4 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+>>>>>>> 725f467c586f2a0d00d6718d6ebc685e0c5d19f3
