@@ -32,7 +32,7 @@ import { ContactModule } from './contact/contact.module';
     HomeModule,
     PhotosModule,
     NotfoundModule,
-    AboutModule
+    AboutModule,
     ContactModule
   ],
   providers: [],

@@ -13,7 +13,7 @@ const routes: Routes = [
 	//{ path: 'angular/dist', component: HomeComponent},
 	{ path: '', component: HomeComponent},
 	{ path: 'photos', component: PhotosComponent},
-	{ path: 'about', component: AboutComponent}
+	{ path: 'about', component: AboutComponent},
 	{ path: 'contact', component: ContactComponent},
 	{ path: '**', component: NotfoundComponent}
 ];
