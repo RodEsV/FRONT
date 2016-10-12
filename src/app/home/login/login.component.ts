@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   constructor( private loginService: LoginService, private fb: FormBuilder){}
   @ViewChild('modal')
-    modal: ModalComponent;
+  modal: ModalComponent;
   loginForm: FormGroup;
   signUpForm: FormGroup;
 
