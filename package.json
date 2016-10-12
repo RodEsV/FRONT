@@ -1,17 +1,24 @@
 {
   "name": "rusticstock",
   "version": "0.0.0",
+  "engines": {
+    "node": "6.6.0",
+    "npm": "3.10.3"
+  },
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "start": "ng serve",
+    "start": "http-server",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "preinstall": "npm install -g http-server",
+    "postinstall": "ng build && mv dist/* ."
   },
   "private": true,
   "dependencies": {
+    "angular-cli": "1.0.0-beta.16",
     "@angular/common": "2.0.2",
     "@angular/compiler": "2.0.2",
     "@angular/core": "2.0.2",
@@ -21,14 +28,12 @@
     "@angular/platform-browser-dynamic": "2.0.2",
     "@angular/router": "3.0.0",
     "core-js": "^2.4.1",
+    "bootstrap": "^3.3.6",
     "ng2-bs3-modal": "^0.10.4",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
-    "zone.js": "^0.6.23"
-  },
-  "devDependencies": {
+    "zone.js": "^0.6.23",
     "@types/jasmine": "^2.2.30",
-    "angular-cli": "1.0.0-beta.16",
     "codelyzer": "~0.0.26",
     "jasmine-core": "2.4.1",
     "jasmine-spec-reporter": "2.5.0",
@@ -41,5 +46,7 @@
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "2.0.2"
+  },
+  "devDependencies": {
   }
 }
