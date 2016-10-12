@@ -25,9 +25,14 @@ export class LoginService{
   }
   status: boolean = false;
   /*Endpoint Rails*/
-  private logInUrl = 'http://rusticstock.herokuapp.com/api/v1/auth/sign_in.json';
-  private signUpUrl = 'http://rusticstock.herokuapp.com/api/v1/auth';
-  private logOutUrl = "http://locanhost:3000/auth/sign_out.json";
+  //private logInUrl = 'http://rusticstock.herokuapp.com/api/v1/auth/sign_in.json';
+  //private signUpUrl = 'http://rusticstock.herokuapp.com/api/v1/auth';
+  //private logOutUrl = "http://locanhost:3000/auth/sign_out.json";
+  private logInUrl = 'http://apirusticstock.herokuapp.com/api/v1/auth/sign_in.json';
+  private signUpUrl = 'http://apirusticstock.herokuapp.com/api/v1/auth';
+  private logOutUrl = "http://apirusticstock.herokuapp.com/api/v1/auth/sign_out.json";
+
+
 
   public responseLogIn;
 
