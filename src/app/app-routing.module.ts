@@ -6,6 +6,7 @@ import { PhotosComponent } from './photos/photos.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { CartviewComponent } from './cart/cartview.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
 	{ path: 'photos', component: PhotosComponent},
 	{ path: 'about', component: AboutComponent},
 	{ path: 'contact', component: ContactComponent},
+	{ path: 'cart', component: CartviewComponent},
 	{ path: '**', component: NotfoundComponent}
 ];
 
@@ -28,5 +30,7 @@ export const routingComponents = [
 	PhotosComponent, 
 	NotfoundComponent, 
 	AboutComponent, 
-	ContactComponent ];
+	ContactComponent,
+	CartviewComponent ];
+
 

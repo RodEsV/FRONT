@@ -18,6 +18,8 @@ import { NotfoundModule } from './notfound/notfound.module';
 import { AboutModule } from './about/about.module';
 import { ContactModule } from './contact/contact.module';
 import { NavbarModule } from './navbar/navbar.module';
+import { CartviewModule } from './cart/cartview.module';
+
 
 @NgModule({
   declarations: [
@@ -34,8 +36,9 @@ import { NavbarModule } from './navbar/navbar.module';
     PhotosModule,
     NotfoundModule,
     AboutModule,
-    ContactModule,
-    NavbarModule
+    NavbarModule,
+    CartviewModule,
+    ContactModule
   ],
   providers: [],
   bootstrap: [AppComponent]
