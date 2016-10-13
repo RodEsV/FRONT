@@ -18,6 +18,8 @@ import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { LoginService } from './login.service';
 
 import { EmailValidator } from './email.validator';
+import { EqualPasswordsValidator } from "./equalPasswords.validator";
+
 
 @Component({
   selector: 'app-login',
@@ -43,10 +45,13 @@ export class LoginComponent implements OnInit {
       name: ["", Validators.minLength(3)],
       nickname: ["", Validators.minLength(3)],
       email: ["", Validators.compose([Validators.required, EmailValidator.validate])],
-      password: [""],
-      password_confirmation: [""]
+      passwords: this.fb.group({
+        password: ["", Validators.minLength(6)],
+        password_confirmation: ["", Validators.minLength(6)]
+      }, { validator: EqualPasswordsValidator.validate('pasword','password_confirmation')})
     })
   }
+  
 
   active: boolean = true;
   errorMessage: string;
@@ -109,8 +114,11 @@ export class LoginComponent implements OnInit {
 
 
 
-  onSubmit(){
+  onSubmit(values:Object):void{
     this.submitted = true;
+    if (this.signUpForm.valid){
+      console.log(values);
+    }
   }
 
 }
