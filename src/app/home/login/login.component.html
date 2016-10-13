@@ -13,9 +13,12 @@
           <a>{{responseLogIn.json().data.email}}</a>
         </li>
         <li>
-          <a (click)="logOutUser()">Log out</a>
+          <!--<a (click)="logOutUser()">Log out</a>-->
+          <a (click)="test(responseLogIn)">Log out</a>
         </li>
       </ul>
+      <br>
+      {{responseLogIn.headers.get('Client')}}
     </div>
     <!--Login forms-->
     <section>

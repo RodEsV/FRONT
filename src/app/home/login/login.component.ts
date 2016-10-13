@@ -17,6 +17,8 @@ import {
 import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { LoginService } from './login.service';
 
+import { EmailValidator } from './email.validator';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -37,10 +39,10 @@ export class LoginComponent implements OnInit {
       email: [""],
       password: [""]
     });
-    this.signUpForm = this.fb.group({
-      name: [""],
-      nickname: [""],
-      email: [""],
+    this.signUpForm = this.fb.group({   
+      name: ["", Validators.minLength(3)],
+      nickname: ["", Validators.minLength(3)],
+      email: ["", Validators.compose([Validators.required, EmailValidator.validate])],
       password: [""],
       password_confirmation: [""]
     })
@@ -64,26 +66,6 @@ export class LoginComponent implements OnInit {
     }
   }
   
-  /*
-  resultResponse;
-  loginUser(){
-    function exec(){
-        var auxVar;
-        console.log("executing exec");
-        this.loginService.loginUser(JSON.stringify(this.loginForm.value))
-        .subscribe(
-          response => {this.responseLogIn = response; auxVar = response},
-          error => this.errorMessage = <any>error)
-    
-        if(this.responseLogIn){
-          this.modal.close();
-        }
-        return auxVar;
-      }
-      var a = exec();
-      this.resultResponse = a;
-  }
-  */
   resultResponse:any;
   assignData(data:any){ 
     this.resultResponse = data;  
@@ -97,12 +79,16 @@ export class LoginComponent implements OnInit {
       error => this.errorMessage = error,
       ()=> {this.close(); this.assignData(this.responseLogIn);}
       );
-    return this.responseLogIn;
+  }
+
+  test(aux:any){
+    console.log("resultResponse", this.resultResponse);
+    console.log("headers", this.responseLogIn.headers.keys());
   }
   
   // La variable resultResponse tiene el objeto Response pero hay algo raro en los headers
   logOutUser(){
-    console.log("executing ", this.resultResponse); 
+    
     let infoJSON = this.resultResponse.json().data;
     this.loginService.logOutUser( infoJSON.auth_token , infoJSON.data.email, this.responseLogIn.headers['Client'] )
   }
