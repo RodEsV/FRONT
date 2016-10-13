@@ -10,8 +10,6 @@ import { CartviewComponent } from './cart/cartview.component';
 
 
 const routes: Routes = [
-	//{ path: '', redirectTo: 'angular/dist', pathMatch: 'full'},
-	//{ path: 'angular/dist', component: HomeComponent},
 	{ path: '', component: HomeComponent},
 	{ path: 'photos', component: PhotosComponent},
 	{ path: 'about', component: AboutComponent},
@@ -27,5 +25,12 @@ const routes: Routes = [
 })
 export class RusticstockRoutingModule { }
 
-export const routingComponents = [ HomeComponent, PhotosComponent, NotfoundComponent, AboutComponent, ContactComponent, CartviewComponent ];
+export const routingComponents = [ 
+	HomeComponent, 
+	PhotosComponent, 
+	NotfoundComponent, 
+	AboutComponent, 
+	ContactComponent,
+	CartviewComponent ];
+
 

@@ -12,10 +12,6 @@ div.gallery ul {
 	margin-left: 35px;
 }
 
-.box {
-	
-}
-
 /* animation */
 
 
@@ -92,6 +88,19 @@ div.box-image div img:hover {
 	top: 65%;
 	left: 65%;
 }*/
-.box {
+
+.custom-box {
+	margin-top: 20%
+}
+
+.custom-container {
+	background-image: url("../../../assets/images/background-images.jpg");
+}
+
+.container {
+
+}
+
+.margin-custom{
 	
 }

@@ -17,6 +17,7 @@ import { PhotosModule } from './photos/photos.module';
 import { NotfoundModule } from './notfound/notfound.module';
 import { AboutModule } from './about/about.module';
 import { ContactModule } from './contact/contact.module';
+import { NavbarModule } from './navbar/navbar.module';
 import { CartviewModule } from './cart/cartview.module';
 
 
@@ -35,6 +36,7 @@ import { CartviewModule } from './cart/cartview.module';
     PhotosModule,
     NotfoundModule,
     AboutModule,
+    NavbarModule,
     CartviewModule,
     ContactModule
   ],
