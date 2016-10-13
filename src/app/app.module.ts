@@ -17,6 +17,8 @@ import { PhotosModule } from './photos/photos.module';
 import { NotfoundModule } from './notfound/notfound.module';
 import { AboutModule } from './about/about.module';
 import { ContactModule } from './contact/contact.module';
+import { CartviewModule } from './cart/Cartview.module';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { ContactModule } from './contact/contact.module';
     PhotosModule,
     NotfoundModule,
     AboutModule,
+    CartviewModule,
     ContactModule
   ],
   providers: [],
