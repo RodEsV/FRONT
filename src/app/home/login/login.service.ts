@@ -25,7 +25,7 @@ export class LoginService{
   }
   status: boolean = false;
   /*Endpoint Rails*/
-  private logInUrl = 'http://apirusticstock.herokuapp.com/api/v1/auth/sign_in.json';
+  private logInUrl  = 'http://apirusticstock.herokuapp.com/api/v1/auth/sign_in.json';
   private signUpUrl = 'http://apirusticstock.herokuapp.com/api/v1/auth';
   private logOutUrl = "http://apirusticstock.herokuapp.com/api/v1/auth/sign_out.json";
 

@@ -78,6 +78,7 @@ export class LoginComponent implements OnInit {
 
   
   loginUser(){
+    console.log(JSON.stringify(this.loginForm.value));
     this.loginService.loginUser(JSON.stringify(this.loginForm.value))
     .subscribe(
       response => this.responseLogIn = response,
@@ -112,10 +113,9 @@ export class LoginComponent implements OnInit {
     let password_confirmation = (<FormGroup> this.signUpForm.controls['passwords']).controls['password_confirmation'].value
 
 
+    console.log(JSON.stringify({name, email, password, password_confirmation}));
     
-    console.log(JSON.stringify({name, nickname, email, password, password_confirmation}));
-    
-    this.loginService.signUpUser(JSON.stringify({name, nickname, email, password, password_confirmation}))
+    this.loginService.signUpUser(JSON.stringify({password, password_confirmation, email, name}))
     .subscribe(
       respnse => this.responseSignUp = respnse,
       error => this.errorMessage = error
