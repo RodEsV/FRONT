@@ -1,63 +1,59 @@
-.wrapper {
-  width: 80%;
-	margin: 50px auto;
-}
 
-div.gallery {
-	margin-top: 30px;
-}
-
-div.gallery ul {
-	list-style-type: none;
-	margin-left: 35px;
-}
 
 /* animation */
 
 
 
-div.gallery ul li {
+.image-wrap {
 	position: relative;
 	float: left;
-	width: 200px;
+	width: 100%;
 	height: 200px;
 	margin: 5px;
 	padding: 5px;
 	z-index: 0;
 }
 
+
 /* Make sure z-index is higher on hover */
 /* Ensure that hover image overlapped the others */
-div.gallery ul li:hover {
+.image-wrap:hover {
 	z-index: 5;
 }
 
+
 /* Image is position nicely under li */
-div.gallery ul li img {
+.image-width {
 	position: absolute;
 	left: 0;
 	top: 0;
-	border: 1px solid #dddddd;
-	padding: 5px;
-	width: 200px;
-	height: 200px;
+	width: 100%;
+	height: auto;
 	background: #f0f0f0;
 }
 
-div.gallery ul li img:hover {
-	width: 400px;
-	height: 400px;
-	margin-top: -130px;
-	margin-left: -130px;
-	top: 65%;
-	left: 65%;
+.image-width:hover {
+	width: 200%;
+	height: auto;
+	top: 25%;
+	left: 50%;
+	transform: translate(-50%,-50%);
 }
 
-div.gallery ul li, div.gallery li img {
-	-webkit-transition: all 0.1s ease-in-out;
-  	-moz-transition: all 0.1s ease-in-out;
-  	-o-transition: all 0.1s ease-in-out;
-  	transition: all 0.1s ease-in-out;
+.image-wrap, .image-width{
+	-webkit-transition: all 0.2s ease-in-out;
+  	-moz-transition: all 0.2s ease-in-out;
+  	-o-transition: all 0.2s ease-in-out;
+  	transition: all 0.2s ease-in-out;
+}
+
+.buttons-bar{
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 5%;
+	background-color: rgba(0,0,0,0.4);
 }
 /*--------------------------------------------*/
 /*
@@ -95,6 +91,10 @@ div.box-image div img:hover {
 
 .custom-container {
 	background-image: url("../../../assets/images/background-images.jpg");
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
 }
 
 .container {
