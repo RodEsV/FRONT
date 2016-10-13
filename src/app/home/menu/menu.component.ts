@@ -27,11 +27,5 @@ export class MenuComponent implements OnInit {
       default:
         break;
     }
-    /*
-    if (page == 'photos'){
-      this.router.navigate(['/photos']);
-    }
-    */
   }
-
 }
