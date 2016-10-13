@@ -105,11 +105,26 @@ export class LoginComponent implements OnInit {
     if(this.signUpForm.controls['nickname'].value == "") {
       this.signUpForm.controls['nickname'].setValue("default");
     }
-    this.loginService.signUpUser(JSON.stringify(this.signUpForm.value))
+    let name = this.signUpForm.controls['name'].value
+    let nickname = this.signUpForm.controls['nickname'].value
+    let email = this.signUpForm.controls['email'].value
+    let password = (<FormGroup> this.signUpForm.controls['passwords']).controls['password'].value
+    let password_confirmation = (<FormGroup> this.signUpForm.controls['passwords']).controls['password_confirmation'].value
+
+
+    
+    console.log(JSON.stringify({name, nickname, email, password, password_confirmation}));
+    
+    this.loginService.signUpUser(JSON.stringify({name, nickname, email, password, password_confirmation}))
+    .subscribe(
+      respnse => this.responseSignUp = respnse,
+      error => this.errorMessage = error
+      );
+    /*this.loginService.signUpUser(JSON.stringify(this.signUpForm.value))
     .subscribe(
       response => this.responseSignUp = response,
       error => this.errorMessage = error
-      );
+      );*/
   }
 
 
