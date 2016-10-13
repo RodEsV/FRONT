@@ -48,7 +48,7 @@
             <div class="sing-in-half">
               <div class="half-center">
                 <div class="inner-style">
-                  <form [formGroup]="signUpForm">
+                  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit(form.value)">
                     <h5>Sign up</h5>
                     <div class="form-group">
                       <input type="text" class="form-control" placeholder="name" formControlName="name">
@@ -57,11 +57,14 @@
                       <br>
                       <input type="email" class="form-control" placeholder="email" formControlName="email">
                       <br>
-                      <input type="password" class="form-control" placeholder="password" formControlName="password">
-                      <br>
-                      <input type="password" class="form-control" placeholder="confirm password" formControlName="password_confirmation">
-                    </div>
+                      <div formGroupName="passwords">
+                        <input type="password" class="form-control" placeholder="password" formControlName="password">
+                        <br>
+                        <input type="password" class="form-control" placeholder="confirm password" formControlName="password_confirmation">
+                      </div>
+                      </div>
                     <button type="submit"  class="btn btn-default" (click)="signUpUser()">Submit</button>
+                    {{signUpForm.value | json}}
                   </form>
                   <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
                 </div>

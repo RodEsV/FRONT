@@ -47,12 +47,12 @@ export class LoginComponent implements OnInit {
       email: ["", Validators.compose([Validators.required, EmailValidator.validate])],
       passwords: this.fb.group({
         password: ["", Validators.minLength(6)],
-        password_confirmation: ["", Validators.minLength(6)]
-      }, { validator: EqualPasswordsValidator.validate('pasword','password_confirmation')})
+        password_confirmation: ["", Validators.minLength(6)],
+      }, 
+      { validator: EqualPasswordsValidator.validate('password','password_confirmation')})
     })
   }
-  
-
+  //, 
   active: boolean = true;
   errorMessage: string;
   submitted: boolean = true;
