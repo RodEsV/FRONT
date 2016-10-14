@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PhotosComponent } from './photos.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   imports: [
@@ -9,7 +10,7 @@ import { GalleryComponent } from './gallery/gallery.component';
   ],
   declarations: [
   	PhotosComponent, 
-  	GalleryComponent
+  	GalleryComponent, DetailComponent
   	],
   exports: [PhotosComponent]
 

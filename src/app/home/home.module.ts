@@ -11,6 +11,7 @@ import { InfoComponent } from './info/info.component';
 import { LoginComponent } from './login/login.component';
 import { MenuComponent } from './menu/menu.component';
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
+import { LogoComponent } from './logo/logo.component';
 
 
 @NgModule({
@@ -23,12 +24,13 @@ import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
     JsonpModule
   ],
   declarations: [
+    LogoComponent,
   	HomeComponent, 
   	BarsearchComponent, 
   	InfoComponent, 
   	LoginComponent, 
-  	MenuComponent
+  	MenuComponent, LogoComponent
   	],
-	exports: [ HomeComponent, LoginComponent, InfoComponent ]
+	exports: [ HomeComponent, LoginComponent, InfoComponent, LogoComponent ]
 })
 export class HomeModule { }
