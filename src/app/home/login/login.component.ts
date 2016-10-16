@@ -31,26 +31,15 @@ import { EqualPasswordsValidator } from "./equalPasswords.validator";
 export class LoginComponent implements OnInit {
 
   constructor( private loginService: LoginService, private fb: FormBuilder){}
-  @ViewChild('modal')
-  modal: ModalComponent;
+  @ViewChild('modallogin')
+  modallogin: ModalComponent;
   loginForm: FormGroup;
-  signUpForm: FormGroup;
 
   ngOnInit(){
     this.loginForm = this.fb.group({
       email: [""],
       password: [""]
     });
-    this.signUpForm = this.fb.group({   
-      name: ["", Validators.minLength(3)],
-      nickname: ["", Validators.minLength(3)],
-      email: ["", Validators.compose([Validators.required, EmailValidator.validate])],
-      passwords: this.fb.group({
-        password: ["", Validators.minLength(6)],
-        password_confirmation: ["", Validators.minLength(6)],
-      }, 
-      { validator: EqualPasswordsValidator.validate('password','password_confirmation')})
-    })
   }
   //, 
   active: boolean = true;
@@ -62,12 +51,12 @@ export class LoginComponent implements OnInit {
   responseSignUp: any;
 
   open(){
-    this.modal.open();
+    this.modallogin.open();
   }
 
   close(){
-    if(this.responseLogIn || this.responseSignUp ){
-      this.modal.close();
+    if(this.responseLogIn){
+      this.modallogin.close();
     }
   }
   
@@ -100,11 +89,11 @@ export class LoginComponent implements OnInit {
   }
 
 
-  onSubmit(values:Object):void{
+  /*onSubmit(values:Object):void{
     this.submitted = true;
     if (this.signUpForm.valid){
       console.log(values);
     }
-  }
+  }*/
 
 }
