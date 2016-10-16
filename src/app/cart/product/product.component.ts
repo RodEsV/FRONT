@@ -4,4 +4,9 @@ export class Product {
   file: string;
   price: number;
   resolution: string;
+
+ // getPrice(): number {
+   //     return this.price;
+  //  }
 }
+
