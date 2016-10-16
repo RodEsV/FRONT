@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-gallery',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+  }
+
   urlPhotos = [
 		"http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg",
 		"http://www.planwallpaper.com/static/images/cool-background.jpg",
@@ -35,7 +40,12 @@ export class GalleryComponent implements OnInit {
 		"../../../assets/images/3.jpg",
 		"../../../assets/images/4.jpg",
 	]
-  ngOnInit() {
+
+  getName(name: string): string{
+  	return name.substring(name.lastIndexOf(name));
+  }
+  onSelect(name: string){
+  	this.router.navigate(["/photos", this.getName(name)])
   }
 
 }

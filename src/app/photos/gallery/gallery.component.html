@@ -2,15 +2,27 @@
 	<div class="container ">
 		<div class="row portfolio custom-box">
 
-			<div class="col-sm-6 col-md-3" *ngFor="let photo of urlLocalPhotos">
+			<div class="col-xs-6 col-sm-3 col-md-2 " *ngFor="let photo of urlLocalPhotos">
 				
 
 				<div class="image-wrap">
 
 					<div class="image-width">
-						<a href="{{photo}}"><img src="{{photo}}" class="img-thumbnail"></a>
+
+						<a (click)="onSelect(photo)"><img src="{{photo}}" class="img-responsive"></a>
+
 						<div class="buttons-bar">
-							ashdashdhas
+							<div class="inner-icons">						
+								<a href="#">
+									<i class="fa fa-cart-plus hvr-bounce-in" aria-hidden="true"></i>
+								</a>
+								<a href="#">
+									<i class="fa fa-star-o hvr-bounce-in" aria-hidden="true"></i>
+								</a>
+								
+							</div>
+							
+
 						</div>
 					</div>
 
@@ -18,6 +30,7 @@
 
 				</div>
 
+				
 
 					<!--
 					<div class="text">
@@ -36,4 +49,12 @@
 			 </div>
 		</div>
 	</div>
+
+<!--
+	<script type="text/javascript">
+		$('.image-wrap').height( $('.image-width').height() );
+		Console.log($('.image-wrap').height());
+	</script>	
+-->
+
 </div>
