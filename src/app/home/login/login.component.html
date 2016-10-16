@@ -2,8 +2,8 @@
 <div class="login-container">
     <div class="login-bar" *ngIf="!responseLogIn">
       <ul>
-        <li><a (click)="modal.open()">Log in</a></li>
-        <li><a (click)="modal.open()" >Sign up</a></li>
+        <li><a (click)="modallogin.open()">Log in</a></li>
+        <li><a (click)="modalsignup.open()">Sign up</a></li>
       </ul>
     </div>
 
@@ -22,7 +22,7 @@
     </div>
     <!--Login forms-->
     <section>
-      <modal #modal>
+      <modal #modallogin>
         <modal-body>
         <!--Login Form-->
           <div class="modal-content">
@@ -41,33 +41,6 @@
                   <button type="submit" class="btn btn-default" (click)="loginUser()">Submit</button>
                 </form>
                 <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
-              </div>
-            </div>
-          
-            <!--Sign Up Form-->
-            <div class="sing-in-half">
-              <div class="half-center">
-                <div class="inner-style">
-                  <form [formGroup]="signUpForm">
-                    <h5>Sign up</h5>
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="name" formControlName="name">
-                      <br>
-                      <input type="text" class="form-control" placeholder="nickname" formControlName="nickname">
-                      <br>
-                      <input type="email" class="form-control" placeholder="email" formControlName="email">
-                      <br>
-                      <div formGroupName="passwords">
-                        <input type="password" class="form-control" placeholder="password" formControlName="password">
-                        <br>
-                        <input type="password" class="form-control" placeholder="confirm password" formControlName="password_confirmation">
-                      </div>
-                    </div>
-                    <button type="submit"  class="btn btn-default" (click)="signUpUser()">Submit</button>
-                    
-                  </form>
-                  <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
-                </div>
               </div>
             </div>
           </div>

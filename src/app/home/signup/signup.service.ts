@@ -20,18 +20,15 @@ import 'rxjs/add/operator/toPromise';
 
 
 @Injectable()
-export class LoginService{
+export class SignupService{
   constructor(private http: Http){
   }
   status: boolean = false;
   /*Endpoint Rails*/
-  private logInUrl  = 'http://apirusticstock.herokuapp.com/api/v1/auth/sign_in.json';
+  
   private signUpUrl = 'http://apirusticstock.herokuapp.com/api/v1/auth';
-  private logOutUrl = "http://apirusticstock.herokuapp.com/api/v1/auth/sign_out.json";
 
-
-
-  public responseLogIn;
+  public responseSignUp;
 
   private extractDataJSON( res: Response ){
     let body = res.json();
@@ -41,26 +38,7 @@ export class LoginService{
   private extractData(res: Response){
     return res;
   }
-  
-  loginUser( body: string){
-    let headers = new Headers({'Content-Type': 'application/json'});
-    let options = new RequestOptions({headers: headers});
-    return this.http.post(this.logInUrl, body, options)
-    //.map(this.extractData)
-    .catch(this.handleError);
-  }
 
-  logOutUser(access_token:any, uid:any, client: any){
-    var headers = new Headers();
-    headers.append('Content-Type', 'application/json' );
-    headers.append('access_token', access_token );
-    headers.append('uid',uid);
-    headers.append('client',client);
-    let options = new RequestOptions({headers:headers});
-    return this.http.get(this.logOutUrl, options)
-    .catch(this.handleError);
-    
-  }
 
   signUpUser(body: string){
     let headers = new Headers({'Content-Type': 'application/json'});

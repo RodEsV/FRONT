@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../home/login/login.component';
+import { SignupComponent } from '../home/signup/signup.component';
 import { InfoComponent } from '../home/info/info.component';
 
 @Component({

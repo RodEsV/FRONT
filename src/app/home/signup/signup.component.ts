@@ -15,32 +15,27 @@ import {
 } from '@angular/forms';
 
 import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
-import { LoginService } from './login.service';
+import { SignupService } from './signup.service';
 
 import { EmailValidator } from './email.validator';
 import { EqualPasswordsValidator } from "./equalPasswords.validator";
 
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  providers: [LoginService],
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.css'],
+  providers: [SignupService],
   encapsulation:ViewEncapsulation.None
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
 
-  constructor( private loginService: LoginService, private fb: FormBuilder){}
+  constructor( private signupService: SignupService, private fb: FormBuilder){}
   @ViewChild('modal')
   modal: ModalComponent;
-  loginForm: FormGroup;
   signUpForm: FormGroup;
 
   ngOnInit(){
-    this.loginForm = this.fb.group({
-      email: [""],
-      password: [""]
-    });
     this.signUpForm = this.fb.group({   
       name: ["", Validators.minLength(3)],
       nickname: ["", Validators.minLength(3)],
@@ -57,8 +52,6 @@ export class LoginComponent implements OnInit {
   errorMessage: string;
   submitted: boolean = true;
 
-  responseLogout: boolean = true;
-  responseLogIn: any;
   responseSignUp: any;
 
   open(){
@@ -66,7 +59,7 @@ export class LoginComponent implements OnInit {
   }
 
   close(){
-    if(this.responseLogIn || this.responseSignUp ){
+    if(this.responseSignUp ){
       this.modal.close();
     }
   }
@@ -76,28 +69,11 @@ export class LoginComponent implements OnInit {
     this.resultResponse = data;  
   }
 
-  
-  loginUser(){
-    console.log(JSON.stringify(this.loginForm.value));
-    this.loginService.loginUser(JSON.stringify(this.loginForm.value))
-    .subscribe(
-      response => this.responseLogIn = response,
-      error => this.errorMessage = error,
-      ()=> {this.close(); this.assignData(this.responseLogIn);}
-      );
-  }
-
   test(aux:any){
     console.log("resultResponse", this.resultResponse);
-    console.log("headers", this.responseLogIn.headers.keys());
+    console.log("headers", this.responseSignUp.headers.keys());
   }
-  
-  // La variable resultResponse tiene el objeto Response pero hay algo raro en los headers
-  logOutUser(){
-    
-    let infoJSON = this.resultResponse.json().data;
-    this.loginService.logOutUser( infoJSON.auth_token , infoJSON.data.email, this.responseLogIn.headers['Client'] )
-  }
+
 
   signUpUser(){
     if(this.signUpForm.controls['name'].value == ""){
@@ -115,7 +91,7 @@ export class LoginComponent implements OnInit {
 
     console.log(JSON.stringify({name, email, password, password_confirmation}));
     
-    this.loginService.signUpUser(JSON.stringify({password, password_confirmation, email, name}))
+    this.signupService.signUpUser(JSON.stringify({password, password_confirmation, email, name}))
     .subscribe(
       respnse => this.responseSignUp = respnse,
       error => this.errorMessage = error

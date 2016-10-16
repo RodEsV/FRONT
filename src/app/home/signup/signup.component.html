@@ -1,9 +1,8 @@
 
-<div class="login-container">
+<div class="signup-container">
     <div class="login-bar" *ngIf="!responseLogIn">
       <ul>
-        <li><a (click)="modal.open()">Log in</a></li>
-        <li><a (click)="modal.open()" >Sign up</a></li>
+        <li><a (click)="modalsignup.open()">Sign up</a></li>
       </ul>
     </div>
 
@@ -20,32 +19,15 @@
       <br>
       {{responseLogIn.headers.get('Client')}}
     </div>
-    <!--Login forms-->
+
+    
     <section>
-      <modal #modal>
+      <modal #modalsignup>
         <modal-body>
-        <!--Login Form-->
-          <div class="modal-content">
-            <div class="log-in-half">
-              <div class="inner-style">
-                <form [formGroup]="loginForm">
-                  <h5>Log in</h5>
-                  <div class="form-group">
-                    <input type="email" class="form-control" placeholder="email" formControlName="email">
-                    <br>
-                    <input type="password" class="form-control" placeholder="password" formControlName="password">
-                  </div>
-                  <div class="checkbox check-aling">
-                    <label><input type="checkbox"> Remember me</label>
-                  </div>
-                  <button type="submit" class="btn btn-default" (click)="loginUser()">Submit</button>
-                </form>
-                <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
-              </div>
-            </div>
-          
+
+          <div class="modal-content">          
             <!--Sign Up Form-->
-            <div class="sing-in-half">
+            <div class="sign-up">
               <div class="half-center">
                 <div class="inner-style">
                   <form [formGroup]="signUpForm">
