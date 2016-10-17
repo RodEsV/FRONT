@@ -73,3 +73,15 @@
 .ng-invalid:not(form)  {
   border-left: 5px solid #a94442; /* red */
 }
+
+@media (max-width: 460px) {
+
+  .login-container {
+  color: white;
+  position: absolute;
+  z-index: 10;
+  top: 10%;
+  left: 2%;
+  }
+
+}
