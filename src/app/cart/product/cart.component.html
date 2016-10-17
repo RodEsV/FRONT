@@ -1,6 +1,56 @@
 
-<h1>Product Purchased</h1>
 
+<div class="row">
+				<div class="callout-dark text-center fade-in-b">
+					<h1>Product Purchased</h1>
+					<p>click on image to see details </p>
+				</div>
+</div>
+
+<div class="row">
+				<div class="callout-block text-center fade-in-b">
+					<h1>
+              <a href="/photos" class="btn btn-warning">Continue Shopping</a>
+              Items: <b>{{items}}</b>
+              Total: <b>${{price}}</b>
+              <a href="#" class="btn btn-success">Checkout</a>
+          </h1>
+				 </div>
+			</div>
+
+
+<div *ngIf="selectedProduct">
+<div class="container">
+	<table id="cart" class="table table-hover table-condensed">
+    				<thead>
+						<tr>
+							<th style="width:30%">Product</th>
+              <th style="width:10%">Id</th>
+							<th style="width:20%">Price</th>
+							<th style="width:20%">Resolution</th>
+							<th style="width:20%"></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td data-th="Product">
+								<div class="row">
+									<div class="col-sm-10">
+										<h4 class="nomargin">{{selectedProduct.name}}</h4>
+									</div>
+								</div>
+							</td>
+              <td data-th="Id">{{selectedProduct.id}}</td>
+							<td data-th="Price">${{selectedProduct.price}}</td>
+							<td data-th="Resolution">{{selectedProduct.resolution}}</td>
+							<td class="actions" data-th="">
+								<button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>								
+							</td>
+						</tr>
+					</tbody>
+			</table>
+</div>
+</div>
 
 <div class="container">
    <ul class="products">
@@ -17,26 +67,6 @@
     </ul>
    </div>
 
-<h2>total: {{price}}</h2>
 
-    <div *ngIf="selectedProduct">
-      <div class="information">
-        <h2>Product Information</h2>
 
-        <table>
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Resolution</th>
-            <th>Price</th>
-          </tr>
-
-          <tr>
-           <td>{{selectedProduct.id}}</td>
-           <td>{{selectedProduct.name}}</td>
-           <td>{{selectedProduct.resolution}}</td>
-           <td>{{selectedProduct.price}}$</td>
-          </tr>
-         </table>
-      </div>
-    </div>
+  

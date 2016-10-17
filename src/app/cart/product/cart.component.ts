@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from './product.component';
 import { products } from './mock-products';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,11 @@ import { products } from './mock-products';
 })
 export class CartComponent implements OnInit {
 
+
+  constructor() { }
+
    
+
   products = products;
   selectedProduct: Product;
   onSelect(product: Product): void {
@@ -34,9 +39,11 @@ export class CartComponent implements OnInit {
     
   }
 
+  items = products.length;
+
   price = this.totalPrice(products);
 
-  constructor() { }
+  
 
   ngOnInit() {}
   
