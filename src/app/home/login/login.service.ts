@@ -25,7 +25,8 @@ export class LoginService{
   }
   status: boolean = false;
   /*Endpoint Rails*/
-  private logInUrl  = 'http://apirusticstock.herokuapp.com/api/v1/auth/sign_in.json';
+  private logInUrl = 'http://apirusticstock.herokuapp.com/api/v1/auth/sign_in.json';
+  private signUpUrl = 'http://apirusticstock.herokuapp.com/api/v1/auth';
   private logOutUrl = "http://apirusticstock.herokuapp.com/api/v1/auth/sign_out.json";
 
 
@@ -60,6 +61,15 @@ export class LoginService{
     .catch(this.handleError);
     
   }
+
+  signUpUser(body: string){
+    let headers = new Headers({'Content-Type': 'application/json'});
+    let options = new RequestOptions({headers:headers});
+    return this.http.post(this.signUpUrl,body,options)
+    .map(this.extractDataJSON)
+    .catch(this.handleError);
+  }
+
 
   private handleError( error: any )
   {
