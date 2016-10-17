@@ -1,22 +1,40 @@
-.page {
+/*.custom-container {
 	background-image: url("../../../assets/images/background-images.jpg");
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
 }
-.custom-container{
+*/
+.container{
 	margin-top: 10%;
 	width: 800px;
 	height: auto;
-}
-.reduce{
-	
 }
 
 .detail-box {
 	width: 400px;
 	position: relative;
-	margin-left: 10%;
 	margin-top: 10%;
+	margin-left: 10%;
 	float: left;
+}
+
+.box-container{
+	position: relative;
+	border: black;
+	box-shadow: initial;
+}
+.content {
+
+}
+.custom-box {
+	margin-top: 30%;
+}
+
+.text {
+	color: black;
+}
+.bar { 
+	border: solid;
+	box-shadow: inset;
 }
