@@ -4,7 +4,8 @@ import { Injectable } from '@angular/core';
 export class DetailService {
 
   constructor() { }
-  getImage(){
-  	
+  // metodo para encontrar la imagen 
+  getImage(idImage: string){
+  	return "../../../assets/images/"+idImage;
   }
 }
