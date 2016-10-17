@@ -1,0 +1,22 @@
+.page {
+	background-image: url("../../../assets/images/background-images.jpg");
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.custom-container{
+	margin-top: 10%;
+	width: 800px;
+	height: auto;
+}
+.reduce{
+	
+}
+
+.detail-box {
+	width: 400px;
+	position: relative;
+	margin-left: 10%;
+	margin-top: 10%;
+	float: left;
+}

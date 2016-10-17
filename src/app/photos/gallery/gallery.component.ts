@@ -13,6 +13,8 @@ export class GalleryComponent implements OnInit {
   ngOnInit() {
   }
 
+
+
   urlPhotos = [
 		"http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg",
 		"http://www.planwallpaper.com/static/images/cool-background.jpg",
@@ -41,11 +43,14 @@ export class GalleryComponent implements OnInit {
 		"../../../assets/images/4.jpg",
 	]
 
+	
+
   getName(name: string): string{
-  	return name.substring(name.lastIndexOf(name));
+  	return name.substring(name.lastIndexOf("/")+1);
   }
   onSelect(name: string){
   	this.router.navigate(["/photos", this.getName(name)])
   }
 
 }
+
