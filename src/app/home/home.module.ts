@@ -8,8 +8,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HomeComponent } from './home.component';
 import { BarsearchComponent } from './barsearch/barsearch.component';
 import { InfoComponent } from './info/info.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { RegistrationComponent } from './registration/registration.component';
 import { MenuComponent } from './menu/menu.component';
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { LogoComponent } from './logo/logo.component';
@@ -29,11 +28,10 @@ import { LogoComponent } from './logo/logo.component';
   	HomeComponent, 
   	BarsearchComponent, 
   	InfoComponent, 
-  	LoginComponent, 
-    SignupComponent,
+  	RegistrationComponent, 
   	MenuComponent, 
     LogoComponent
   	],
-	exports: [ HomeComponent, LoginComponent, InfoComponent, LogoComponent, SignupComponent]
+	exports: [ HomeComponent, InfoComponent, LogoComponent, RegistrationComponent]
 })
 export class HomeModule { }

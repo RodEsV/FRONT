@@ -1,9 +1,10 @@
 .info-container {
-  color: white;
-  position: absolute;
+  color: black;
+  position: relative;
   z-index: 10;
   top: 1%;
   left: -2%;
+  float: left;
 }
 
 .info-bar li {
@@ -12,7 +13,7 @@
 }
 
 .info-bar li a {
-  color: white;
+  color: black;
 }
 
 .info-bar li a:hover {
@@ -23,7 +24,7 @@
 }
 
 .info-bar ul li {
-  border-right:  1px solid white;
+  border-right:  1px solid black;
 }
 
 .info-bar ul li:last-child {

@@ -1,0 +1,24 @@
+<div class="registration-container">
+    <div class="registration-bar" *ngIf="!responseLogIn">
+      <ul>
+        <li><a (click)="onSelect('login')">Log in</a></li>
+        <li><a (click)="onSelect('signup')">Sign up</a></li>
+        
+      </ul>
+    </div>
+
+    <div class="registration-bar" *ngIf="responseLogIn">
+      <ul>
+        <li>
+          <a>{{responseLogIn.json().data.email}}</a>
+        </li>
+        <li>
+          <!--<a (click)="logOutUser()">Log out</a>-->
+          <a (click)="test(responseLogIn)">Log out</a>
+        </li>
+      </ul>
+      <br>
+      {{responseLogIn.headers.get('Client')}}
+    </div>
+</div>
+

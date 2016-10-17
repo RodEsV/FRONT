@@ -1,0 +1,33 @@
+.registration-bar li {
+  display: inline-block;
+  padding: 0 10px;
+  z-index: 10;
+}
+
+.registration-bar li a {
+  color: black;
+}
+
+.registration-bar li a:hover {
+  text-decoration: none;
+  color: #ccc;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.registration-bar ul li {
+  border-right: 1px solid black;
+}
+
+.registration-bar ul li:last-child {
+  border-right: none;
+}
+
+.registration-container {
+  color: black;
+  position: relative;
+  z-index: 10;
+  top: 1%;
+  left: -2%;
+  float: right;
+}

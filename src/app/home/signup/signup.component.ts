@@ -31,8 +31,8 @@ import { EqualPasswordsValidator } from "./equalPasswords.validator";
 export class SignupComponent implements OnInit {
 
   constructor( private signupService: SignupService, private fb: FormBuilder){}
-  @ViewChild('modal')
-  modal: ModalComponent;
+  @ViewChild('modalsignup')
+  modalsignup: ModalComponent;
   signUpForm: FormGroup;
 
   ngOnInit(){
@@ -55,12 +55,12 @@ export class SignupComponent implements OnInit {
   responseSignUp: any;
 
   open(){
-    this.modal.open();
+    this.modalsignup.open();
   }
 
   close(){
     if(this.responseSignUp ){
-      this.modal.close();
+      this.modalsignup.close();
     }
   }
   

@@ -1,30 +1,8 @@
 
-<div class="signup-container">
-    <div class="login-bar" *ngIf="!responseLogIn">
-      <ul>
-        <li><a (click)="modalsignup.open()">Sign up</a></li>
-      </ul>
-    </div>
-
-    <div class="login-bar" *ngIf="responseLogIn">
-      <ul>
-        <li>
-          <a>{{responseLogIn.json().data.email}}</a>
-        </li>
-        <li>
-          <!--<a (click)="logOutUser()">Log out</a>-->
-          <a (click)="test(responseLogIn)">Log out</a>
-        </li>
-      </ul>
-      <br>
-      {{responseLogIn.headers.get('Client')}}
-    </div>
-
-    
+<div class="signup-container">    
     <section>
       <modal #modalsignup>
         <modal-body>
-
           <div class="modal-content">          
             <!--Sign Up Form-->
             <div class="sign-up">
@@ -46,7 +24,6 @@
                       </div>
                     </div>
                     <button type="submit"  class="btn btn-default" (click)="signUpUser()">Submit</button>
-                    
                   </form>
                   <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
                 </div>
@@ -55,9 +32,5 @@
           </div>
         </modal-body>
       </modal>
-
-      
-
-
     </section>
 </div>
