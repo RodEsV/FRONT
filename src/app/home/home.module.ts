@@ -9,6 +9,7 @@ import { HomeComponent } from './home.component';
 import { BarsearchComponent } from './barsearch/barsearch.component';
 import { InfoComponent } from './info/info.component';
 import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 import { MenuComponent } from './menu/menu.component';
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { LogoComponent } from './logo/logo.component';
@@ -29,8 +30,10 @@ import { LogoComponent } from './logo/logo.component';
   	BarsearchComponent, 
   	InfoComponent, 
   	LoginComponent, 
-  	MenuComponent, LogoComponent
+    SignupComponent,
+  	MenuComponent, 
+    LogoComponent
   	],
-	exports: [ HomeComponent, LoginComponent, InfoComponent, LogoComponent ]
+	exports: [ HomeComponent, LoginComponent, InfoComponent, LogoComponent, SignupComponent]
 })
 export class HomeModule { }

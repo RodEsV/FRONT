@@ -23,17 +23,14 @@ export class CartComponent implements OnInit {
   totalPrice(products: Product[]): number {
     
    let price: number;
-   //let temp: number;
+  
+   price = 0;
 
-   //temp = 0;
-       
-   price = 50000 + 20000 + 30000 + 60000 + 80000 + 80000 + 100000;
-        //for (let product in products) {
-          //let price = temp + product.price;
-          //temp = price;
-//}
+   for (var _i = 0; _i < products.length; _i++) {
+    price = price + products[_i].price;;
+    }
 
-        return price;
+    return price;
     
   }
 

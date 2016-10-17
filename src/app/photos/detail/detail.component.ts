@@ -21,7 +21,10 @@ export class DetailComponent implements OnInit {
   ngOnInit() {
   	this.route.params.forEach((params: Params) =>{
   		//let id = +params['id']
-  		this.detailService.getImage(params['id']).then(photo => this.image = photo );
+      /*Waiting for implementation of service of images*/
+      // Implement promise when api available
+  		//this.detailService.getImage(params['id']).then(photo => this.image = photo );
+      this.image = this.detailService.getImage(params['id'])+".jpg";
   	})
   }
 

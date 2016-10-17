@@ -1,1 +1,7 @@
 /* your styles go here */
+
+.team-member {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

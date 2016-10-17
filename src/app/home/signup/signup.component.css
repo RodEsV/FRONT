@@ -1,0 +1,67 @@
+.signup-container {
+  color: white;
+  position: absolute;
+  z-index: 10;
+  top: 1%;
+  right: 2%;
+}
+
+.login-bar li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.login-bar li a {
+  color: white;
+}
+
+.login-bar li a:hover {
+  text-decoration: none;
+  color: #ccc;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.login-bar ul li {
+  border-right: 1px solid white;
+}
+
+.login-bar ul li:last-child {
+  border-right: none;
+}
+
+/*Modal content*/
+
+
+.inner-style {
+    text-align: center;
+}
+
+.check-aling {
+    text-align: left;
+}
+
+.sign-up{
+    height:auto;
+    width: 98%;
+    display: inline-block;
+    position: relative;
+}
+
+.modal-content input{
+    border-radius: 12px;
+}
+
+.half-center {
+    margin: 20% 0;
+    padding: 0 5%;
+}
+
+/*Form visuals*/
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
