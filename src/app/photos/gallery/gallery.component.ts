@@ -46,7 +46,7 @@ export class GalleryComponent implements OnInit {
 	
 
   getName(name: string): string{
-  	return name.substring(name.lastIndexOf("/")+1);
+  	return name.substring(name.lastIndexOf("/")+1,name.lastIndexOf("."));
   }
   onSelect(name: string){
   	this.router.navigate(["/photos", this.getName(name)])
