@@ -120,11 +120,6 @@ export class LoginComponent implements OnInit {
       respnse => this.responseSignUp = respnse,
       error => this.errorMessage = error
       );
-    /*this.loginService.signUpUser(JSON.stringify(this.signUpForm.value))
-    .subscribe(
-      response => this.responseSignUp = response,
-      error => this.errorMessage = error
-      );*/
   }
 
 
