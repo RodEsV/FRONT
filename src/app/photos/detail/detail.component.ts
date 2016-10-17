@@ -24,7 +24,7 @@ export class DetailComponent implements OnInit {
       /*Waiting for implementation of service of images*/
       // Implement promise when api available
   		//this.detailService.getImage(params['id']).then(photo => this.image = photo );
-      this.image = this.detailService.getImage(params['id']);
+      this.image = this.detailService.getImage(params['id'])+".jpg";
   	})
   }
 
