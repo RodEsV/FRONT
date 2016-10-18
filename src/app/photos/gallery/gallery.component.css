@@ -152,7 +152,7 @@ div.box-image div img:hover {
  }
  
 .custom-container {
-	background-image: url("../../../assets/images/background-images.jpg");
+	background-image: url("../../../assets/images/background-images-white.jpg");
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
