@@ -34,7 +34,7 @@
 }
 
 .image-width:hover {
-	width: 200%;
+	width: 110%;
 	height: auto;
 	top: 25%;
 	left: 50%;
@@ -42,10 +42,12 @@
 }
 
 .image-wrap, .image-width{
+	border: 3px black;
 	-webkit-transition: all 0.2s ease-in-out;
   	-moz-transition: all 0.2s ease-in-out;
   	-o-transition: all 0.2s ease-in-out;
   	transition: all 0.2s ease-in-out;
+
 }
 
 .buttons-bar{
@@ -96,8 +98,8 @@
   transition-duration: 0.5s;
 }
 .hvr-bounce-in:hover, .hvr-bounce-in:focus, .hvr-bounce-in:active {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
   -webkit-transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
   transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
@@ -153,10 +155,7 @@ div.box-image div img:hover {
  
 .custom-container {
 	background-image: url("../../../assets/images/background-images-white.jpg");
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	height: 100vh;
+
 }
 
 .container {
@@ -165,4 +164,46 @@ div.box-image div img:hover {
 
 .margin-custom{
 	
+}
+
+.img{
+	border: 1px black;
+}
+
+.img-responsive{
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px black;
+}
+
+#heading-breadcrumbs {
+  background: url('../assets/images/texture1.jpg') center center repeat;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+.bar.background-gray {
+	background: #DAD5C1;
+  	background-position: center center;
+	background-size: fill;
+	background-repeat: no-repeat;
+	height: 100vh;
+}
+ 
+.text p {
+  color: #574C3C;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #574C3C;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#role {
+  color: #5B544A;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
