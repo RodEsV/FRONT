@@ -1,10 +1,46 @@
+.btn-right{
+  float: right;
+}
 
+.img-responsive{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#heading-breadcrumbs {
+  background: url('../../assets/images/texture1.jpg') center center repeat;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+.bar.background-gray {
+  background: #DAD5C1;
+}
+ 
+.text p {
+  color: #574C3C;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #574C3C;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#role {
+  color: #5B544A;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
 
 
 .callout-dark {
-	padding: 30px;
-	color: #fff;
-	background-color: #252525;
+  padding: 30px;
+  background: url('texture1.jpg') center center repeat;
+  color: #fff;
+  background-color: #252525;
   }
 
 
@@ -95,32 +131,32 @@ img {
 }
 @media screen and (max-width: 600px) {
     table#cart tbody td .form-control{
-		width:20%;
-		display: inline !important;
-	}
-	.actions .btn{
-		width:36%;
-		margin:1.5em 0;
-	}
-	
-	.actions .btn-info{
-		float:left;
-	}
-	.actions .btn-danger{
-		float:right;
-	}
-	
-	table#cart thead { display: none; }
-	table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
-	table#cart tbody tr td:first-child { background: #333; color: #fff; }
-	table#cart tbody td:before {
-		content: attr(data-th); font-weight: bold;
-		display: inline-block; width: 8rem;
-	}
-	
-	
-	
-	table#cart tfoot td{display:block; }
-	table#cart tfoot td .btn{display:block;}
-	
+    width:20%;
+    display: inline !important;
+  }
+  .actions .btn{
+    width:36%;
+    margin:1.5em 0;
+  }
+  
+  .actions .btn-info{
+    float:left;
+  }
+  .actions .btn-danger{
+    float:right;
+  }
+  
+  table#cart thead { display: none; }
+  table#cart tbody td { display: block; padding: .6rem; min-width:320px;}
+  table#cart tbody tr td:first-child { background: #333; color: #fff; }
+  table#cart tbody td:before {
+    content: attr(data-th); font-weight: bold;
+    display: inline-block; width: 8rem;
+  }
+  
+  
+  
+  table#cart tfoot td{display:block; }
+  table#cart tfoot td .btn{display:block;}
+  
 }

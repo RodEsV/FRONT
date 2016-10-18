@@ -1,22 +1,55 @@
+<div id="aboutus">        
+        <div id="heading-breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1>My Cart</h1>
+                    </div>
+                    <div class="col-md-5">
+                        <ul class="breadcrumb">
+                            <li><a href="index.html">Home</a>
+                            </li>
+                            <li>Cart</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+ <div id="content">
+ 	<div class="container">
+ 		<section>
 
-<div class="row">
-				<div class="callout-dark text-center fade-in-b">
-					<h1>Product Purchased</h1>
-					<p>click on image to see details </p>
-				</div>
-</div>
-
-<div class="row">
-				<div class="callout-block text-center fade-in-b">
-					<h1>
-              <a href="/photos" class="btn btn-warning">Continue Shopping</a>
-              Items: <b>{{items}}</b>
-              Total: <b>${{price}}</b>
-              <a href="#" class="btn btn-success">Checkout</a>
-          </h1>
-				 </div>
+		<div class="row">
+			<div class="col-md-12">
+				<p class="text-muted lead">Click on each image for details</p>
 			</div>
+				
+			<div class="col-md-1">
+			</div>
+
+			<div class="col-md-3">
+            	<a href="/photos" class="btn btn-warning">Continue Shopping</a>
+            </div>
+
+            <div class="col-md-2">
+            	<h4>Items: <b>{{items}}</b></h4>
+            </div>
+
+            <div class="col-md-2">
+            	<h4>Total: <b>${{price}}</b></h4>
+            </div>
+
+            <div class="col-md-3">
+            	<a href="#" class="btn btn-success btn-right">Checkout</a>
+            </div>
+
+            <div class="col-md-1">
+			</div>
+
+		</div>
+		</section>
+	</div>
 
 
 <div *ngIf="selectedProduct">
@@ -66,7 +99,92 @@
       </li>
     </ul>
    </div>
+</div>
 
+        <!-- *** FOOTER ***
+_________________________________________________________ -->
+
+        <footer id="footer">
+            <div class="container">
+                <div class="col-md-4 col-sm-6">
+                    <h4>About us</h4>
+
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                    <hr>
+
+                    <h4>Join our monthly newsletter</h4>
+
+                    <form>
+                        <div class="input-group">
+
+                            <input type="text" class="form-control">
+
+                            <span class="input-group-btn">
+
+                        <button class="btn btn-default" type="button"><i class="fa fa-send"></i></button>
+
+                    </span>
+
+                        </div>
+                        <!-- /input-group -->
+                    </form>
+
+                    <hr class="hidden-md hidden-lg hidden-sm">
+
+                </div>
+                <!-- /.col-md-3 -->
+
+                <div class="col-md-4">
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+
+                    <h4>Contact</h4>
+
+                    <p><strong>123 Fake St.</strong>
+                        <br>Fake apt num
+                        <br>Fake city
+                        <br>Fake zip code
+                        <br>Colombia
+
+                    </p>
+
+                    <a href="contact.html" class="btn btn-small btn-template-main">Contact us</a>
+
+                    <hr class="hidden-md hidden-lg hidden-sm">
+
+                </div>
+                <!-- /.col-md-3 -->
+
+
+            </div>
+            <!-- /.container -->
+        </footer>
+        <!-- /#footer -->
+
+        <!-- *** FOOTER END *** -->
+
+        <!-- *** COPYRIGHT ***
+_________________________________________________________ -->
+
+        <div id="copyright">
+            <div class="container">
+                <div class="col-md-12">
+                    <p class="pull-left">&copy; 2016. RusticStock</p>
+                    <p class="pull-right">Template by <a href="http://bootstrapious.com/free-templates">Bootstrapious</a> 
+                        <!-- Not removing these links is part of the licence conditions of the template. Thanks for understanding :) -->
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <!-- /#copyright -->
+
+        <!-- *** COPYRIGHT END *** -->
+
+
+</div>
 
 
   
