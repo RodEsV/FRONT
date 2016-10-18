@@ -4,7 +4,7 @@
 			<div class="col-xs-6 col-sm-3 col-md-2 " *ngFor="let photo of urlLocalPhotos">
 				<div class="image-wrap">
 					<div class="image-width">
-						<a (click)="onSelect(photo)"><img src="{{photo.image_link}}" class="img-responsive"></a>
+						<a (click)="onSelect(photo.id)"><img src="{{photo.image_link}}" class="img-responsive"></a>
 						<div class="buttons-bar">
 							<div class="inner-icons">						
 								<a href="#">

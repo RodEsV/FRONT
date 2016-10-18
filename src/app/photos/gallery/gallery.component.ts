@@ -16,7 +16,6 @@ export class GalleryComponent implements OnInit {
   urlLocalPhotos:any;
   response:any;
 	assignData(data){
-		console.log(data.json()[0].image_link);
 		this.urlLocalPhotos = data.json();
   }
 
@@ -43,33 +42,14 @@ export class GalleryComponent implements OnInit {
 		"http://www.planwallpaper.com/static/images/cool-background.jpg",
 		"http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg"
 	];
-/*
-	urlLocalPhotos =[
-		"../../../assets/images/1.jpg",
-		"../../../assets/images/2.jpg",
-		"../../../assets/images/3.jpg",
-		"../../../assets/images/4.jpg",
-		"../../../assets/images/1.jpg",
-		"../../../assets/images/2.jpg",
-		"../../../assets/images/3.jpg",
-		"../../../assets/images/4.jpg",
-		"../../../assets/images/1.jpg",
-		"../../../assets/images/2.jpg",
-		"../../../assets/images/3.jpg",
-		"../../../assets/images/4.jpg",
-		"../../../assets/images/1.jpg",
-		"../../../assets/images/2.jpg",
-		"../../../assets/images/3.jpg",
-		"../../../assets/images/4.jpg",
-	]
-*/
-	
 
   getName(name: string): string{
 	return name.substring(name.lastIndexOf("/")+1,name.lastIndexOf("."));
   }
   onSelect(name: string){
-	this.router.navigate(["/photos", this.getName(name)])
+  	console.log("name: ", name)
+	//this.router.navigate(["/photos", this.getName(name)])
+	this.router.navigate(["/photos", name])
   }
 
 }

@@ -44,6 +44,15 @@ export class GalleryService {
   	.catch(this.handleError);
   }
 
+  getImage(id: number){
+    let headers = new Headers({'Content-Type': 'application/json'})
+    let options = new RequestOptions({headers: headers});
+    console.log("path: ", this.urlGetImages+'/'+id );
+    return this.http.get(this.urlGetImages+"/" + id, options)
+    .map(this.extractDataJSON)
+    .catch(this.handleError); 
+  }
+
   private handleError( error: any ) {
     let errMsg = (error.message) ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
