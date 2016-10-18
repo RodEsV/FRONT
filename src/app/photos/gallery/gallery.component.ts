@@ -16,8 +16,8 @@ export class GalleryComponent implements OnInit {
   urlLocalPhotos:any;
   response:any;
 	assignData(data){
-		console.log(data._body);
-		this.urlLocalPhotos = data;
+		console.log(data.json()[0].image_link);
+		this.urlLocalPhotos = data.json();
   }
 
   ngOnInit() {
