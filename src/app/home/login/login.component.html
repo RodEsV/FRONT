@@ -1,23 +1,27 @@
 <div class="login-container">
-    <div class="login-bar" *ngIf="!responseLogIn">
+    <div class="login-bar" *ngIf="!check()">
       <ul>
         <li><a (click)="modal.open()">Log in</a></li>
         <li><a (click)="modal.open()" >Sign up</a></li>
       </ul>
     </div>
 
-    <div class="login-bar" *ngIf="responseLogIn">
+    <div class="login-bar" *ngIf="check()">
       <ul>
-        <li>
+        <li *ngIf="responseLogIn">
           <a>{{responseLogIn.json().data.email}}</a>
         </li>
+        <li *ngIf="responseSignUp">
+          <a>{{responseSignUp.json().data.email}}</a>
+        </li>
+          
         <li>
           <!--<a (click)="logOutUser()">Log out</a>-->
           <a (click)="test(responseLogIn)">Log out</a>
         </li>
       </ul>
       <br>
-      {{responseLogIn.headers.get('Client')}}
+      <!--{{responseLogIn.headers.get('Client')}}-->
     </div>
     <!--Login forms-->
     <section>

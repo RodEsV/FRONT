@@ -66,7 +66,7 @@ export class LoginService{
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers:headers});
     return this.http.post(this.signUpUrl,body,options)
-    .map(this.extractDataJSON)
+    //.map(this.extractData)
     .catch(this.handleError);
   }
 

@@ -71,6 +71,12 @@ export class LoginComponent implements OnInit {
     }
   }
   
+  check(){
+    if (this.responseLogIn || this.responseSignUp){
+      return true;
+    }
+    return false;
+  }
   resultResponse:any;
   assignData(data:any){ 
     this.resultResponse = data;  
@@ -113,12 +119,13 @@ export class LoginComponent implements OnInit {
 
 
     
-    console.log(JSON.stringify({name, nickname, email, password, password_confirmation}));
+    //console.log(JSON.stringify({name, nickname, email, password, password_confirmation}));
     
     this.loginService.signUpUser(JSON.stringify({name, nickname, email, password, password_confirmation}))
     .subscribe(
-      respnse => this.responseSignUp = respnse,
-      error => this.errorMessage = error
+      response => this.responseSignUp = response,
+      error => this.errorMessage = error,
+      () => {this.close();}
       );
   }
 
