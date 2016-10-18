@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { PhotosComponent } from './photos.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { DetailComponent } from './detail/detail.component';
-import { ImagesService } from "./images.service";
 import { HomeModule } from "../home/home.module";
-
+import { HttpModule, JsonpModule } from '@angular/http';
 
 @NgModule({
   imports: [
     CommonModule,
+    JsonpModule,
+    HttpModule,
     HomeModule
   ],
   declarations: [
@@ -17,7 +18,6 @@ import { HomeModule } from "../home/home.module";
   	GalleryComponent, DetailComponent
   	],
   exports: [PhotosComponent],
-  providers: [ImagesService]
 
 })
 export class PhotosModule { }

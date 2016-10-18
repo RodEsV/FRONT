@@ -132,16 +132,31 @@ div.box-image div img:hover {
 	left: 65%;
 }*/
 
+
 .custom-box {
-	margin-top: 20%
+	margin-top: 20%;
 }
 
+@media all and (max-width: 460px) {
+	.custom-box {
+	margin-top: 30%;
+	}
+
+ }
+
+ @media all and (max-width: 300px) {
+	.custom-box {
+	margin-top: 38%;
+	}
+
+ }
+ 
 .custom-container {
 	background-image: url("../../../assets/images/background-images.jpg");
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
-
+	height: 100vh;
 }
 
 .container {
