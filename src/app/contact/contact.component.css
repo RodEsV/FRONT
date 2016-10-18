@@ -1,0 +1,33 @@
+.img-responsive{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#heading-breadcrumbs {
+  background: url('../assets/images/texture1.jpg') center center repeat;
+  padding: 20px 0;
+  margin-bottom: 40px;
+}
+
+.bar.background-gray {
+  background: #DAD5C1;
+  border-radius: 25px;
+}
+ 
+.text p {
+  color: #574C3C;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #574C3C;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+#role {
+  color: #5B544A;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
