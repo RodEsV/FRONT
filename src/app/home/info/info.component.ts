@@ -21,6 +21,9 @@ export class InfoComponent implements OnInit {
     else if (page == 'cart'){
       this.router.navigate(['/cart']);
     }
+    else if (page == "home"){
+      this.router.navigate(['/']);
+    }
   }
 
   ngOnInit(){

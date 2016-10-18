@@ -9,11 +9,15 @@
   padding: 10px;
 }
 
-.box-menu .list-inline li a, .box-menu .list-inline li a:hover{
+.box-menu .list-inline li a{
 	cursor: pointer;
 	cursor: hand;	
   color: white;
   text-decoration: none;
+}
+
+.box-menu .list-inline li a:hover{
+  color: #ccc;
 }
 
 .box-menu .list-inline li:last-child {
