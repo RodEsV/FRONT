@@ -8,9 +8,15 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { CartviewComponent } from './cart/cartview.component';
 import { DetailComponent } from './photos/detail/detail.component';
+import { AdminComponent } from "./admin/admin.component";
+
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent},
+	{ path: 'admin', 
+		redirectTo: 'admin/login',
+		pathMatch: 'full',
+		component: AdminComponent},
 	{ path: 'photos', component: PhotosComponent},
 	{ path: 'photos/:id', component: DetailComponent},
 	{ path: 'about', component: AboutComponent},
