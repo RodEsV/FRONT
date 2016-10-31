@@ -13,10 +13,10 @@ import { AdminComponent } from "./admin/admin.component";
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent},
-	{ path: 'admin', 
+	{ path: 'admin',
 		redirectTo: 'admin/login',
-		pathMatch: 'full',
-		component: AdminComponent},
+		pathMatch: 'full'},
+  { path: 'admin/login', component: AdminComponent },
 	{ path: 'photos', component: PhotosComponent},
 	{ path: 'photos/:id', component: DetailComponent},
 	{ path: 'about', component: AboutComponent},
@@ -32,11 +32,11 @@ const routes: Routes = [
 })
 export class RusticstockRoutingModule { }
 
-export const routingComponents = [ 
-	HomeComponent, 
-	PhotosComponent, 
-	NotfoundComponent, 
-	AboutComponent, 
+export const routingComponents = [
+	HomeComponent,
+	PhotosComponent,
+	NotfoundComponent,
+	AboutComponent,
 	ContactComponent,
 	CartviewComponent ];
 
