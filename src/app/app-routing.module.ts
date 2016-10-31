@@ -13,15 +13,12 @@ import { AdminComponent } from "./admin/admin.component";
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent},
-	{ path: 'admin',
-		redirectTo: 'admin/login',
-		pathMatch: 'full'},
-  { path: 'admin/login', component: AdminComponent },
 	{ path: 'photos', component: PhotosComponent},
 	{ path: 'photos/:id', component: DetailComponent},
 	{ path: 'about', component: AboutComponent},
 	{ path: 'contact', component: ContactComponent},
 	{ path: 'cart', component: CartviewComponent},
+  { path: 'admin', redirectTo: 'admin', pathMatch: 'full'},
 	{ path: '**', component: NotfoundComponent}
 ];
 
