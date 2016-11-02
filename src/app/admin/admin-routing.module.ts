@@ -5,6 +5,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { AdminComponent } from "./admin.component";
 import { AdminLoginComponent } from "./admin-login/admin-login.component";
+import { AdminUploadImagesComponent } from "./admin-upload-images/admin-upload-images.component";
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { AdminLoginComponent } from "./admin-login/admin-login.component";
         path: 'admin', component: AdminComponent,
         children: [
           { path: '', redirectTo: 'login', pathMatch: 'full' },
-          { path: 'login', component: AdminLoginComponent }
+          { path: 'login', component: AdminLoginComponent },
+          { path: 'uploadImages' , component: AdminUploadImagesComponent}
         ]
       }
     ])
