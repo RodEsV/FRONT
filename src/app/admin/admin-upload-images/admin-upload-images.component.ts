@@ -12,7 +12,7 @@ export class AdminUploadImagesComponent implements OnInit {
   ngOnInit() {
   }
 
-  public dropZoneTemplate = `<div class="centering center-dropzone">I'm dropzone</div>`;
+  public dropZoneTemplate = `<div class='style-dropzone text-center'>I'm dropzone</div>`;
 
   fileUploaded(success, response, file){
     success && console.log("uploaded - awesome", response, file);
