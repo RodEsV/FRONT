@@ -13,9 +13,9 @@
 	box-shadow: initial;
 }
 .content {
-	background-position: center  center; 
+	background-position: center  center;
   	background-size: fill;
-  	min-width: 100%; 
+  	min-width: 100%;
   	overflow: hidden;
 
 }
@@ -26,7 +26,7 @@
 .text {
 	color: black;
 }
-.bar { 
+.bar {
 	border: solid;
 	box-shadow: inset;
 }
@@ -46,7 +46,7 @@
   background: #DAD5C1;
   border-radius: 25px;
 }
- 
+
 .text p {
   color: #574C3C;
   font-size: 16px;
@@ -63,4 +63,8 @@ h3 {
   color: #5B544A;
   font-size: 18px;
   margin-bottom: 20px;
+}
+
+.spacing {
+  margin-top: 1%;
 }
