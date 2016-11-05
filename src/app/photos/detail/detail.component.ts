@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { 
+import {
 	Router,
 	ActivatedRoute,
 	Params
@@ -16,16 +16,17 @@ import { GalleryService } from "../gallery/gallery.service";
 })
 export class DetailComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute, 
+  constructor(private router: Router, private route: ActivatedRoute,
     private detailService: DetailService, private galleryService: GalleryService) { }
-  image: string;
+  imageLink: string;
+  nameProduct: string;
   response: any;
   errorMessage: string;
 
   assignData(data){
     console.log("getImage log", data.json().image_link);
-    this.image = data.json().image_link.replace('"','');
-    console.log("image: ", this.image);
+    this.imageLink = data.json().image_link.replace('"','');
+    this.nameProduct = data.json().name
   }
 
   getImage(id){
