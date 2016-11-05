@@ -9,10 +9,20 @@ export class AdminUploadImagesComponent implements OnInit {
 
   constructor() { }
 
+  /*public dropZoneTemplate = `
+  <div class="container">
+    <div class="row">
+      Click here to upload images
+    </div>
+  </div>
+  `;*/
+
+  public dropZoneTemplate = `
+    <h3>Click here to drop your images</h3>  
+`;
+
   ngOnInit() {
   }
-
-  public dropZoneTemplate = `<div class='style-dropzone text-center'>I'm dropzone</div>`;
 
   fileUploaded(success, response, file){
     success && console.log("uploaded - awesome", response, file);

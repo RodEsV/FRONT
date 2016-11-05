@@ -1,24 +1,25 @@
-<div class="centering">
-  <img src="../../../assets/images/logo_final.png" class="img-responsive">
+<div class="container-fluid" >
+  <div class="container">
+    <div class="row">
+      <img src="../../../assets/images/logo_final.png" class="img-responsive spacing">
+      <div class="col-xs-12 style-dropzone text-container">
+        <fileDroppa
+          [url]="'https://quiet-escarpment-61251.herokuapp.com/upload'"
+          [autoUpload]="false"
+          [showFilesList]="true"
+          [beforeRequest]="beforeRequest"
+          [beforeFileUpload]="beforeFileUpload"
+          [beforeAddFile]="beforeAddFile"
+          [dropZoneTemplate]="dropZoneTemplate"
+          (filesUpdated)="filesUpdated($event)"
+          (fileUploaded)="fileUploaded($event)"
+        >
+          <!--<h1>-->
+          <!--You can pass anything you want here-->
+          <!--You can set you own file list here-->
+          <!--</h1>-->
+        </fileDroppa>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="centering">
-  <fileDroppa
-    [url]="'https://quiet-escarpment-61251.herokuapp.com/upload'"
-    [autoUpload]="false"
-    [showFilesList]="true"
-    [beforeRequest]="beforeRequest"
-    [beforeFileUpload]="beforeFileUpload"
-    [beforeAddFile]="beforeAddFile"
-    [dropZoneTemplate]="dropZoneTemplate"
-    (filesUpdated)="filesUpdated($event)"
-    (fileUploaded)="fileUploaded($event)"
-  >
-    <!--<h1>-->
-    <!--You can pass anything you want here-->
-    <!--You can set you own file list here-->
-    <!--</h1>-->
-  </fileDroppa>
-</div>
-
-
-
