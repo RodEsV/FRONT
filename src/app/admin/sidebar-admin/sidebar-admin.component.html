@@ -2,8 +2,29 @@
   <table class="table table-bordered">
     <tr>
       <td>
-        <label>
+        <label (click)="onSelected('upImg')">
           Upload Images
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label (click)="onSelected('login')">
+          Login
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label (click)="onSelected('upVid')">
+          Upload Videos
+        </label>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <label (click)="onSelected('editGal')">
+          Edit gallery
         </label>
       </td>
     </tr>
