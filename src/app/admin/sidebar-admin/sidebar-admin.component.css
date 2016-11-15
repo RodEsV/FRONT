@@ -1,7 +1,7 @@
-.left {
-  position: absolute;
-  left: 0;
-  top: 92px;
-  bottom: 0;
-  width: 178px;
-}
+  .left {
+    position: absolute;
+    left: 0;
+    top: 92px;
+    bottom: 0;
+    width: 178px;
+  }
