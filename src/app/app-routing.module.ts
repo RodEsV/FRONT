@@ -8,6 +8,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { CartviewComponent } from './cart/cartview.component';
 import { DetailComponent } from './photos/detail/detail.component';
+import { AdminComponent } from "./admin/admin.component";
+
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent},
@@ -16,6 +18,7 @@ const routes: Routes = [
 	{ path: 'about', component: AboutComponent},
 	{ path: 'contact', component: ContactComponent},
 	{ path: 'cart', component: CartviewComponent},
+  { path: 'admin', redirectTo: 'admin', pathMatch: 'full'},
 	{ path: '**', component: NotfoundComponent}
 ];
 
@@ -26,11 +29,11 @@ const routes: Routes = [
 })
 export class RusticstockRoutingModule { }
 
-export const routingComponents = [ 
-	HomeComponent, 
-	PhotosComponent, 
-	NotfoundComponent, 
-	AboutComponent, 
+export const routingComponents = [
+	HomeComponent,
+	PhotosComponent,
+	NotfoundComponent,
+	AboutComponent,
 	ContactComponent,
 	CartviewComponent ];
 

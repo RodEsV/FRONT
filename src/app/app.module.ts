@@ -6,10 +6,9 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { Ng2Bs3ModalModule } from 'ng2-bs3-modal/ng2-bs3-modal';
 
-
-import { 
+import {
   RusticstockRoutingModule,
-  routingComponents 
+  routingComponents
 } from './app-routing.module';
 
 import { HomeModule } from './home/home.module';
@@ -19,6 +18,8 @@ import { AboutModule } from './about/about.module';
 import { ContactModule } from './contact/contact.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { CartviewModule } from './cart/cartview.module';
+import { AdminModule } from "./admin/admin.module";
+
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CartviewModule } from './cart/cartview.module';
     FormsModule,
     HttpModule,
     JsonpModule,
+    AdminModule,
     RusticstockRoutingModule,
     Ng2Bs3ModalModule,
     HomeModule,
@@ -38,7 +40,8 @@ import { CartviewModule } from './cart/cartview.module';
     AboutModule,
     NavbarModule,
     CartviewModule,
-    ContactModule
+    ContactModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
