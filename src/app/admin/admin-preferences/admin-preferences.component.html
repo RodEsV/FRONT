@@ -144,3 +144,286 @@
         </div>
     </div>
 </div>
+=======
+<div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+  <div class="login-box">
+    <h1 class="text-center login-title">Login</h1>
+    <form class="form form-horizontal">
+      <fieldset>
+        <div class="form-group">
+          <input type="text" class="form-control border-flat" placeholder="Username">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control border-flat" placeholder="Password">
+        </div>
+        <div class="pull-right">
+          <button type="button" class="btn btn-primary btn-block border-flat">Login</button>
+          <span>{{ username }}</span>
+        </div>
+        <div class="clearfix"></div>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+
+  <!-- *** LOGIN MODAL ***
+_________________________________________________________ -->
+
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="Login">Customer login</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form action="customer-orders.html" method="post">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="email_modal" placeholder="email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="password_modal" placeholder="password">
+                            </div>
+
+                            <p class="text-center">
+                                <button class="btn btn-template-main"><i class="fa fa-sign-in"></i> Log in</button>
+                            </p>
+
+                        </form>
+
+                        <p class="text-center text-muted">Not registered yet?</p>
+                        <p class="text-center text-muted"><a href="customer-register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- *** LOGIN MODAL END *** -->
+
+        <div id="heading-breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1>My account</h1>
+                    </div>
+                    <div class="col-md-5">
+                        <ul class="breadcrumb">
+
+                            <li><a href="index.html">Home</a>
+                            </li>
+                            <li>My account</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content" class="clearfix">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <!-- *** LEFT COLUMN ***
+       _________________________________________________________ -->
+
+                    <div class="col-md-9 clearfix" id="customer-account">
+
+                        <p class="lead">Change your personal details or your password here.</p>
+                        <p class="text-muted">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                        <div class="box">
+
+                            <div class="heading">
+                                <h3 class="text-uppercase">Change password</h3>
+                            </div>
+
+                            <form>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="password_old">Old password</label>
+                                            <input type="password" class="form-control" id="password_old">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="password_1">New password</label>
+                                            <input type="password" class="form-control" id="password_1">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="password_2">Retype new password</label>
+                                            <input type="password" class="form-control" id="password_2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-template-main"><i class="fa fa-save"></i> Save new password</button>
+                                </div>
+                            </form>
+
+                        </div>
+                        <!-- /.box -->
+
+
+                        <div class="box clearfix">
+                            <div class="heading">
+                                <h3 class="text-uppercase">Personal details</h3>
+                            </div>
+
+                            <form>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="firstname">Firstname</label>
+                                            <input type="text" class="form-control" id="firstname">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="lastname">Lastname</label>
+                                            <input type="text" class="form-control" id="lastname">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="company">Company</label>
+                                            <input type="text" class="form-control" id="company">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="street">Street</label>
+                                            <input type="text" class="form-control" id="street">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-3">
+                                        <div class="form-group">
+                                            <label for="city">Company</label>
+                                            <input type="text" class="form-control" id="city">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3">
+                                        <div class="form-group">
+                                            <label for="zip">ZIP</label>
+                                            <input type="text" class="form-control" id="zip">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3">
+                                        <div class="form-group">
+                                            <label for="state">State</label>
+                                            <select class="form-control" id="state"></select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-3">
+                                        <div class="form-group">
+                                            <label for="country">Country</label>
+                                            <select class="form-control" id="country"></select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="phone">Telephone</label>
+                                            <input type="text" class="form-control" id="phone">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="email_account">Email</label>
+                                            <input type="text" class="form-control" id="email_account">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 text-center">
+                                        <button type="submit" class="btn btn-template-main"><i class="fa fa-save"></i> Save changes</button>
+
+                                    </div>
+
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                    <!-- /.col-md-9 -->
+
+                    <!-- *** LEFT COLUMN END *** -->
+
+                    <!-- *** RIGHT COLUMN ***
+       _________________________________________________________ -->
+
+                    <div class="col-md-3">
+                        <!-- *** CUSTOMER MENU ***
+ _________________________________________________________ -->
+                        <div class="panel panel-default sidebar-menu">
+
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Customer section</h3>
+                            </div>
+
+                            <div class="panel-body">
+
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li class="active">
+                                        <a href="customer-orders.html"><i class="fa fa-list"></i> My orders</a>
+                                    </li>
+                                    <li>
+                                        <a href="customer-wishlist.html"><i class="fa fa-heart"></i> My wishlist</a>
+                                    </li>
+                                    <li>
+                                        <a href="customer-account.html"><i class="fa fa-user"></i> My account</a>
+                                    </li>
+                                    <li>
+                                        <a href="index.html"><i class="fa fa-sign-out"></i> Logout</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!-- /.col-md-3 -->
+
+                        <!-- *** CUSTOMER MENU END *** -->
+                    </div>
+
+                    <!-- *** RIGHT COLUMN END *** -->
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+
+        <!-- *** GET IT ***
+_________________________________________________________ -->
+
+        <div id="get-it">
+            <div class="container">
+                <div class="col-md-8 col-sm-12">
+                    <h3>Do you want cool website like this one?</h3>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <a href="#" class="btn btn-template-transparent-primary">Buy this template now</a>
+                </div>
+            </div>
+        </div>
