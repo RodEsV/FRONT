@@ -1,5 +1,32 @@
   .left {
     position: absolute;
     left: 0;
-    width: 200px;
+    width: 170px;
   }
+
+  .admin-navbar-header {
+  	background: #f7f7f7;
+  	margin: 20px 0 20px;
+  	padding: 20px;
+  	border-bottom: solid 1px #eeeeee;
+  	text-transform: uppercase;
+  	letter-spacing: 0.08em;
+  }
+
+  .admin-navbar-header:before,
+  .admin-navbar-header:after {
+    content: " ";
+    display: table;
+  }
+  .admin-navbar-header:after {
+    clear: both;
+  }
+  .admin-navbar-header:before,
+  .admin-navbar-header:after {
+    content: " ";
+    display: table;
+  }
+  .admin-navbar-header:after {
+    clear: both;
+  }
+

@@ -18,6 +18,9 @@ export class SidebarAdminComponent implements OnInit {
       case "upImg":
         this.router.navigate(['/admin/uploadImages']);
             break;
+      case 'preferences':
+        this.router.navigate(['admin/adminPreferences']);
+            break;
       case 'login':
         this.router.navigate(['admin/login'])
         break;
