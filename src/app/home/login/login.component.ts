@@ -5,10 +5,10 @@ import {
   OnInit
 } from '@angular/core';
 
-import { 
+import {
   FormBuilder,
   AbstractControl,
-  FormGroup, 
+  FormGroup,
   Validators,
   FormControl,
   FormArray
@@ -41,18 +41,18 @@ export class LoginComponent implements OnInit {
       email: [""],
       password: [""]
     });
-    this.signUpForm = this.fb.group({   
+    this.signUpForm = this.fb.group({
       name: ["", Validators.minLength(3)],
       nickname: ["", Validators.minLength(3)],
       email: ["", Validators.compose([Validators.required, EmailValidator.validate])],
       passwords: this.fb.group({
         password: ["", Validators.minLength(6)],
         password_confirmation: ["", Validators.minLength(6)],
-      }, 
+      },
       { validator: EqualPasswordsValidator.validate('password','password_confirmation')})
     })
   }
-  //, 
+  //,
   active: boolean = true;
   errorMessage: string;
   submitted: boolean = true;
@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
       this.modal.close();
     }
   }
-  
+
   check(){
     if (this.responseLogIn || this.responseSignUp){
       return true;
@@ -78,11 +78,11 @@ export class LoginComponent implements OnInit {
     return false;
   }
   resultResponse:any;
-  assignData(data:any){ 
-    this.resultResponse = data;  
+  assignData(data:any){
+    this.resultResponse = data;
   }
 
-  
+
   loginUser(){
     this.loginService.loginUser(JSON.stringify(this.loginForm.value))
     .subscribe(
@@ -96,18 +96,25 @@ export class LoginComponent implements OnInit {
     console.log("resultResponse", this.resultResponse);
     console.log("headers", this.responseLogIn.headers.keys());
   }
-  
+
+
   // La variable resultResponse tiene el objeto Response pero hay algo raro en los headers
   logOutUser(){
-    
     let infoJSON = this.resultResponse.json().data;
-    this.loginService.logOutUser( infoJSON.auth_token , infoJSON.data.email, this.responseLogIn.headers['Client'] )
+    console.log(infoJSON.email);
+    this.loginService.logOutUser(infoJSON.email)
+      .subscribe(
+        response => this.responseLogout = response,
+        error => this.errorMessage = error,
+        () => {this.assignData((this.responseLogout))}
+      )
+    console.log(this.resultResponse);
   }
 
   signUpUser(){
     if(this.signUpForm.controls['name'].value == ""){
       this.signUpForm.controls['name'].setValue("default");
-    } 
+    }
     if(this.signUpForm.controls['nickname'].value == "") {
       this.signUpForm.controls['nickname'].setValue("default");
     }
@@ -118,9 +125,6 @@ export class LoginComponent implements OnInit {
     let password_confirmation = (<FormGroup> this.signUpForm.controls['passwords']).controls['password_confirmation'].value
 
 
-    
-    //console.log(JSON.stringify({name, nickname, email, password, password_confirmation}));
-    
     this.loginService.signUpUser(JSON.stringify({name, nickname, email, password, password_confirmation}))
     .subscribe(
       response => this.responseSignUp = response,

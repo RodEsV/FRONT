@@ -10,6 +10,8 @@ import {
   RusticstockRoutingModule,
   routingComponents
 } from './app-routing.module';
+import { Angular2TokenService } from 'angular2-token';
+
 
 import { HomeModule } from './home/home.module';
 import { PhotosModule } from './photos/photos.module';
@@ -43,7 +45,7 @@ import { AdminModule } from "./admin/admin.module";
     ContactModule,
 
   ],
-  providers: [],
+  providers: [ Angular2TokenService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
