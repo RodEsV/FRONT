@@ -1,5 +1,31 @@
-<app-sidebar-admin></app-sidebar-admin>
-<div class="main">
-  <router-outlet></router-outlet>
+<div id="heading-breadcrumbs">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<h1>Admin Home</h1>
+			</div>
+			<div class="col-md-5">
+				<ul class="breadcrumb">
+					<li><a href="index.html">Home</a>
+					</li>
+					<li>About us</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
+
+ <div id="content">
+ 	<div class="container">
+
+ 		<app-sidebar-admin></app-sidebar-admin>
+
+		<div class="main">
+			<div class="row">
+    			<router-outlet></router-outlet>
+			</div>
+		</div>
+	</div>
+</div>
+
 
