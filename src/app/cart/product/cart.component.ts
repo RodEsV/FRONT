@@ -17,18 +17,16 @@ export class CartComponent implements OnInit {
 
   constructor() { }
 
-   
-
   products = products;
   selectedProduct: Product;
   onSelect(product: Product): void {
     this.selectedProduct = product;
   }
-  
+
   totalPrice(products: Product[]): number {
-    
+
    let price: number;
-  
+
    price = 0;
 
    for (var _i = 0; _i < products.length; _i++) {
@@ -36,16 +34,16 @@ export class CartComponent implements OnInit {
     }
 
     return price;
-    
+
   }
 
   items = products.length;
 
   price = this.totalPrice(products);
 
-  
+
 
   ngOnInit() {}
-  
+
 }
 
