@@ -2,7 +2,8 @@ import {
   Component,
   ViewChild,
   ViewEncapsulation,
-  OnInit
+  OnInit, Output,
+  EventEmitter
 } from '@angular/core';
 
 import {
@@ -19,6 +20,7 @@ import { LoginService } from './login.service';
 
 import { EmailValidator } from './email.validator';
 import { EqualPasswordsValidator } from "./equalPasswords.validator";
+import * as globals from "../../../globals";
 
 
 @Component({
@@ -30,9 +32,14 @@ import { EqualPasswordsValidator } from "./equalPasswords.validator";
 })
 export class LoginComponent implements OnInit {
 
-  constructor( private loginService: LoginService, private fb: FormBuilder){}
+  @Output() userCredentials = new EventEmitter();
+  constructor( private loginService: LoginService, private fb: FormBuilder){
+  }
   @ViewChild('modal')
   modal: ModalComponent;
+
+
+
   loginForm: FormGroup;
   signUpForm: FormGroup;
 
@@ -88,7 +95,12 @@ export class LoginComponent implements OnInit {
     .subscribe(
       response => this.responseLogIn = response,
       error => this.errorMessage = error,
-      ()=> {this.close(); this.assignData(this.responseLogIn);}
+      ()=> {
+        this.close();
+        this.assignData(this.responseLogIn);
+        //console.log("responses ", this.responseLogIn, this.resultResponse);
+        this.userCredentials.emit(this.responseLogIn);
+      }
       );
   }
 
@@ -133,13 +145,10 @@ export class LoginComponent implements OnInit {
       );
   }
 
-
-
   onSubmit(values:Object):void{
     this.submitted = true;
     if (this.signUpForm.valid){
       console.log(values);
     }
   }
-
 }

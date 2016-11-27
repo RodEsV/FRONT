@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { LoginComponent } from '../home/login/login.component';
-import { SignupComponent } from '../home/signup/signup.component';
-import { InfoComponent } from '../home/info/info.component';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -10,9 +7,14 @@ import { InfoComponent } from '../home/info/info.component';
 })
 export class NavbarComponent implements OnInit {
 
+  @Output() credentials = new EventEmitter();
   constructor() { }
-
   ngOnInit() {
   }
+
+  userCredentials(string){
+    this.credentials.emit(string);
+  }
+
 
 }

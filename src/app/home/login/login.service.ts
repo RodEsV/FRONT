@@ -39,6 +39,7 @@ export class LoginService{
   }
 
   private extractData(res: Response){
+    this.responseLogIn = res;
     return res;
   }
 
@@ -46,7 +47,7 @@ export class LoginService{
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
     return this.http.post(this.logInUrl, body, options)
-    //.map(this.extractData)
+    .map(this.extractData)
     .catch(this.handleError);
   }
 
