@@ -25,6 +25,9 @@ export class InfoComponent implements OnInit {
     else if (page == "home"){
       this.router.navigate(['/']);
     }
+    else if (page == "admin"){
+      this.router.navigate(['/admin']);
+    }
   }
 
   ngOnInit(){

@@ -22,7 +22,6 @@
       Plase confirm your identity
     </h4>
   </modal-header>
-
   <modal-body>
     <form [formGroup]="loginForm">
       <div class="form-group">
@@ -44,10 +43,15 @@
 </modal>
 
 <div id="content">
-	<div class="container bar background-white">
+	<div class="container bar background-gray">
 		<section>
 		<div class="row">
-			<div class="col-xs-6 col-sm-3 col-md-2 " *ngFor="let photo of urlLocalPhotos">
+
+		<div class="heading">
+            <h3 class="text-uppercase">CURRENT AVAILABLE PRODUCTS</h3>
+        </div>
+
+			<div class="col-xs-4 col-sm-3 col-md-2 " *ngFor="let photo of urlLocalPhotos">
 				<div class="image-wrap">
 					<div class="image-width">
 						<a (click)="onSelect(photo.id)"><img src="{{photo.image_link}}" class="img-responsive"></a>
