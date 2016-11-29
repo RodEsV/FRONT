@@ -8,12 +8,13 @@ import { CartViewService } from "./cart-view.service";
 import { RouterModule, RouterOutlet } from "@angular/router";
 
 
+
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     CommonModule,
-    RouterModule
+    RouterModule,
   ],
   declarations: [
   	CartviewComponent,

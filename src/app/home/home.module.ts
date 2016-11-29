@@ -37,8 +37,4 @@ import { LogoComponent } from './logo/logo.component';
 	exports: [ HomeComponent, LoginComponent, InfoComponent, LogoComponent, SignupComponent]
 })
 export class HomeModule {
-  userCredentials(string){
-    console.log("from hom module");
-    console.log(string);
-  }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { LoginService } from "../home/login/login.service";
 
 
 @Component({
@@ -9,10 +10,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CartviewComponent implements OnInit {
 
   @Input() credentials;
-  constructor() { }
+  constructor(private  _loginService: LoginService) { }
 
   ngOnInit() {
     console.log("credentials ", this.credentials)
+    console.log("login service ", this._loginService.responseLogIn);
+
   }
+
+
 
 }

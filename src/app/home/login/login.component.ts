@@ -12,7 +12,7 @@ import {
   FormGroup,
   Validators,
   FormControl,
-  FormArray
+  FormArray, Validator
 } from '@angular/forms';
 
 import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
@@ -27,7 +27,6 @@ import * as globals from "../../../globals";
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [LoginService],
   encapsulation:ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
@@ -45,8 +44,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(){
     this.loginForm = this.fb.group({
-      email: [""],
-      password: [""]
+      email: ["", EmailValidator.validate],
+      password: ["", Validators.minLength(6)]
     });
     this.signUpForm = this.fb.group({
       name: ["", Validators.minLength(3)],

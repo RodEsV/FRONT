@@ -16,8 +16,9 @@ export class AppComponent {
     console.log(credentials);
     this.credentials = credentials;
   }
-  constructor(private _tokenService: Angular2TokenService){
-    /*this._tokenService.init({
+  constructor(){}
+  /*constructor(private _tokenService: Angular2TokenService){
+    this._tokenService.init({
       apiPath:                    "http://apirusticstock.herokuapp.com/api/v1/",
 
       signInPath:                 'auth/sign_in.json',
@@ -45,6 +46,5 @@ export class AppComponent {
         }
       }
     });*/
-  }
 }
 
