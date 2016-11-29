@@ -26,14 +26,15 @@ import { LogoComponent } from './logo/logo.component';
   ],
   declarations: [
     LogoComponent,
-  	HomeComponent, 
-  	BarsearchComponent, 
-  	InfoComponent, 
-  	LoginComponent, 
+  	HomeComponent,
+  	BarsearchComponent,
+  	InfoComponent,
+  	LoginComponent,
     SignupComponent,
-  	MenuComponent, 
+  	MenuComponent,
     LogoComponent
   	],
 	exports: [ HomeComponent, LoginComponent, InfoComponent, LogoComponent, SignupComponent]
 })
-export class HomeModule { }
+export class HomeModule {
+}

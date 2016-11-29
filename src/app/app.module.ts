@@ -21,6 +21,8 @@ import { ContactModule } from './contact/contact.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { CartviewModule } from './cart/cartview.module';
 import { AdminModule } from "./admin/admin.module";
+import { MainService } from "./main.service";
+import { LoginService } from "./home/login/login.service";
 import { CategoriesModule } from "./categories/categories.module";
 
 
@@ -45,9 +47,8 @@ import { CategoriesModule } from "./categories/categories.module";
     CartviewModule,
     ContactModule,
     CategoriesModule,
-
   ],
-  providers: [ Angular2TokenService ],
-  bootstrap: [AppComponent]
+  providers: [ LoginService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from './product.component';
 import { products } from './mock-products';
 import { Router } from '@angular/router';
+import { LoginService } from "../../home/login/login.service";
 
 
 @Component({
@@ -15,20 +16,18 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
 
 
-  constructor() { }
-
-   
+  constructor(private _loginService: LoginService) { }
 
   products = products;
   selectedProduct: Product;
   onSelect(product: Product): void {
     this.selectedProduct = product;
   }
-  
+
   totalPrice(products: Product[]): number {
-    
+
    let price: number;
-  
+
    price = 0;
 
    for (var _i = 0; _i < products.length; _i++) {
@@ -36,16 +35,19 @@ export class CartComponent implements OnInit {
     }
 
     return price;
-    
+
   }
 
   items = products.length;
 
   price = this.totalPrice(products);
 
-  
 
-  ngOnInit() {}
-  
+
+  ngOnInit() {
+    console.log(this._loginService.responseLogIn);
+
+  }
+
 }
 

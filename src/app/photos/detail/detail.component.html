@@ -35,63 +35,39 @@
                   <div class="table-responsive">
                     <table class="table table-hover">
                       <tbody>
-                      <tr>
-                        <td>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" value="">
-                              HD
-                            </label>
-                          </div>
-                        </td>
-                        <td>
-                          <div class="checkbox">
-                            <label class="">1920 x 1080</label>
-                          </div>
-                        </td>
-                      </tr>
+                          <tr *ngFor="let option of subProduct">
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  <input type="checkbox"  value="">
+                                  <span [ngSwitch]="option.resolution" >
+                                    <span *ngSwitchCase="'200*400'" >Low</span>
+                                    <span *ngSwitchCase="'200x400'" >Low</span>
+                                    <span *ngSwitchCase="'400*800'" >Medium</span>
+                                    <span *ngSwitchCase="'400x800'" >Medium</span>
+                                    <span *ngSwitchCase="'800*1600'" >High</span>
+                                    <span *ngSwitchCase="'800x1600'" >High</span>
+                                  </span>
+                                </label>
+                              </div>
+                            </td>
 
-                      <tr>
-                        <td>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" value="">
-                              Medium
-                            </label>
-                          </div>
-                        </td>
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  {{option.resolution}}
+                                </label>
+                              </div>
+                            </td>
 
-                        <td>
-                          <div class="checkbox">
-                            <label>
-                              852 x 480
-                            </label>
-                          </div>
-                        </td>
-
-                      </tr>
-
-
-                      <tr>
-                        <td>
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox" value="">
-                              Low
-                            </label>
-                          </div>
-                        </td>
-
-                        <td>
-                          <div class="checkbox">
-                            <label>
-                              426 x 240
-                            </label>
-                          </div>
-                        </td>
-
-                      </tr>
-
+                            <td>
+                              <div class="checkbox">
+                                <label>
+                                  {{option.price}}
+                                </label>
+                              </div>
+                            </td>
+                          </tr>
                       </tbody>
                     </table>
                   </div>
@@ -100,12 +76,22 @@
 
                 <div class="col-xs-6 ">
                   <button class="btn btn-primary btn-lg btn-block">
-                    Add to cart
+                    <i class="glyphicon glyphicon-shopping-cart">
+
+                    </i>
+                    <span class="hidden-xs">
+                      Add to cart
+                    </span>
                   </button>
                 </div>
                 <div class="col-xs-6 ">
                   <button type="button" class="btn btn-primary btn-lg btn-block">
-                    Add to wishlist
+                    <i class="glyphicon glyphicon-star-empty">
+
+                    </i>
+                    <span class="hidden-xs">
+                      Add to wishlist
+                    </span>
                   </button>
                 </div>
               </div>
