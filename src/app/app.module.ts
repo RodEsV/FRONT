@@ -21,6 +21,7 @@ import { ContactModule } from './contact/contact.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { CartviewModule } from './cart/cartview.module';
 import { AdminModule } from "./admin/admin.module";
+import { CategoriesModule } from "./categories/categories.module";
 
 
 
@@ -43,6 +44,7 @@ import { AdminModule } from "./admin/admin.module";
     NavbarModule,
     CartviewModule,
     ContactModule,
+    CategoriesModule,
 
   ],
   providers: [ Angular2TokenService ],
