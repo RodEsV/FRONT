@@ -7,6 +7,7 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { EmailValidator } from "../../home/login/email.validator";
 
 
+
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -24,11 +25,42 @@ export class GalleryComponent implements OnInit {
   @ViewChild('modalLogin')
   modal: ModalComponent;
 
-  openModal(){
-    if( !this._loginService.responseLogIn ){
+  sendRequest(idPhoto: number){
+    console.log("headers ", this.responseLogin.headers._headers.get('access-token')[0]);
+    var headers = [
+      this.responseLogin.headers._headers.get('access-token')[0],
+      this.responseLogin.headers._headers.get('client')[0],
+      this.responseLogin.headers._headers.get('expiry')[0],
+      this.responseLogin.headers._headers.get('token-type')[0],
+      this.responseLogin.headers._headers.get('uid')[0],
+    ]
+    this.galleryService.putImagesToCart(idPhoto, this.responseLogin.json().data.id, headers)
+      .subscribe(
+        response => this.response = response,
+        error => this.errorMessage = error,
+        () => {  console.log("operacion realizada");  }
+      )
+  }
+
+  sendCredentials(){
+    this._loginService.loginUser(JSON.stringify(this.loginForm.value))
+      .subscribe(
+        response => this.responseLogin = response,
+        error => this.errorMessage = error,
+        ()=> {
+          this.close();
+          this.assignDataLogin(this.responseLogin);
+        }
+      );
+  }
+
+  openModal(idPhoto: number){
+    if( !this.responseLogin ) {
       this.modal.open("sm");
+      this.sendCredentials();
     }
-    // falta llamar aqui a la ruta para agregar el producto
+
+    this.sendRequest(idPhoto)
   }
 
   loginForm: FormGroup;
@@ -64,19 +96,6 @@ export class GalleryComponent implements OnInit {
   assignDataLogin(response){
     this.responseLogin = response;
   }
-
-  sendCredentials(){
-    this._loginService.loginUser(JSON.stringify(this.loginForm.value))
-      .subscribe(
-        response => this.responseLogin = response,
-        error => this.errorMessage = error,
-        ()=> {
-          this.close();
-          this.assignDataLogin(this.responseLogin);
-        }
-      );
-    }
-
 
   urlPhotos = [
 		"http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg",
