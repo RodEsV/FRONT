@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from './product.component';
 import { products } from './mock-products';
-import { Router } from '@angular/router';
 import { LoginService } from "../../home/login/login.service";
+import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { EmailValidator } from "../../home/login/email.validator";
 
 
 @Component({
@@ -16,7 +18,37 @@ import { LoginService } from "../../home/login/login.service";
 export class CartComponent implements OnInit {
 
 
-  constructor(private _loginService: LoginService) { }
+  constructor(private _loginService: LoginService, private fb: FormBuilder) { }
+
+  @ViewChild('modalLogin')
+  modal: ModalComponent;
+  loginForm: FormGroup;
+  responseLogin: any;
+  errorMessage:string;
+
+  assignDataLogin(response){
+    this.responseLogin = response.json();
+  }
+
+  close(){
+    this.modal.close();
+  }
+
+  sendCredentials(){
+    this._loginService.loginUser(JSON.stringify(this.loginForm.value))
+      .subscribe(
+        response => this.responseLogin = response,
+        error => this.errorMessage = error,
+        ()=> {
+          this.close();
+          this.assignDataLogin(this.responseLogin);
+        }
+      );
+  }
+
+  openModal(){
+    this.modal.open("sm");
+  }
 
   products = products;
   selectedProduct: Product;
@@ -45,8 +77,12 @@ export class CartComponent implements OnInit {
 
 
   ngOnInit() {
-    console.log(this._loginService.responseLogIn);
+    this.loginForm = this.fb.group({
+      email: ["", Validators.compose([Validators.required, EmailValidator.validate ])],
+      password: ["", Validators.compose([Validators.required, Validators.minLength(6)])]
+    })
 
+    this.openModal();
   }
 
 }

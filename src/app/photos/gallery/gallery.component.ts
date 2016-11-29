@@ -5,7 +5,7 @@ import { LoginService } from "../../home/login/login.service";
 import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { EmailValidator } from "../../home/login/email.validator";
-import { error } from "util";
+
 
 
 @Component({
@@ -26,8 +26,15 @@ export class GalleryComponent implements OnInit {
   modal: ModalComponent;
 
   sendRequest(idPhoto: number){
-    //console.log()
-    this.galleryService.putImagesToCart(idPhoto, this.responseLogin.data.id)
+    console.log("headers ", this.responseLogin.headers._headers.get('access-token')[0]);
+    var headers = [
+      this.responseLogin.headers._headers.get('access-token')[0],
+      this.responseLogin.headers._headers.get('client')[0],
+      this.responseLogin.headers._headers.get('expiry')[0],
+      this.responseLogin.headers._headers.get('token-type')[0],
+      this.responseLogin.headers._headers.get('uid')[0],
+    ]
+    this.galleryService.putImagesToCart(idPhoto, this.responseLogin.json().data.id, headers)
       .subscribe(
         response => this.response = response,
         error => this.errorMessage = error,
@@ -52,6 +59,7 @@ export class GalleryComponent implements OnInit {
       this.modal.open("sm");
       this.sendCredentials();
     }
+
     this.sendRequest(idPhoto)
   }
 
@@ -86,7 +94,7 @@ export class GalleryComponent implements OnInit {
   }
 
   assignDataLogin(response){
-    this.responseLogin = response.json();
+    this.responseLogin = response;
   }
 
   urlPhotos = [
