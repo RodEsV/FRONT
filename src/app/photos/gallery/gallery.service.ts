@@ -40,18 +40,33 @@ export class GalleryService {
   	let headers = new Headers({'Content-Type': 'application/json'})
   	let options = new RequestOptions({headers: headers});
   	return this.http.get(this.urlGetImages, options)
-  	.map(this.extractDataJSON)
+  	//.map(this.extractDataJSON)
   	.catch(this.handleError);
   }
 
   getImage(id: number){
     let headers = new Headers({'Content-Type': 'application/json'})
     let options = new RequestOptions({headers: headers});
-    console.log("path: ", this.urlGetImages+'/'+id );
+    //console.log("path: ", this.urlGetImages+'/'+id );
     return this.http.get(this.urlGetImages+"/" + id, options)
-    .map(this.extractDataJSON)
-    .catch(this.handleError); 
+    //.map(this.extractDataJSON)
+    .catch(this.handleError);
   }
+
+  private getUrlPutProduct(id: number){
+    return "http://apirusticstock.herokuapp.com/api/v1/users/" + id + "/add_to_cart";
+  }
+
+  putImagesToCart(idPhoto: number, idUser: number){
+    let headers = new Headers({'Content-Type': 'application/json'})
+    let options = new RequestOptions({headers: headers})
+    var url = this.getUrlPutProduct(idUser);
+    console.log("from gallery service url " + url)
+    console.log("item " + idPhoto)
+    return this.http.put(url,idPhoto, options)
+      .catch(this.handleError);
+  }
+
 
   private handleError( error: any ) {
     let errMsg = (error.message) ? error.message :

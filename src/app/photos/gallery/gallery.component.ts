@@ -5,6 +5,7 @@ import { LoginService } from "../../home/login/login.service";
 import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { EmailValidator } from "../../home/login/email.validator";
+import { error } from "util";
 
 
 @Component({
@@ -24,11 +25,34 @@ export class GalleryComponent implements OnInit {
   @ViewChild('modalLogin')
   modal: ModalComponent;
 
-  openModal(){
-    if( !this._loginService.responseLogIn ){
+  sendRequest(idPhoto: number){
+    //console.log()
+    this.galleryService.putImagesToCart(idPhoto, this.responseLogin.data.id)
+      .subscribe(
+        response => this.response = response,
+        error => this.errorMessage = error,
+        () => {  console.log("operacion realizada");  }
+      )
+  }
+
+  sendCredentials(){
+    this._loginService.loginUser(JSON.stringify(this.loginForm.value))
+      .subscribe(
+        response => this.responseLogin = response,
+        error => this.errorMessage = error,
+        ()=> {
+          this.close();
+          this.assignDataLogin(this.responseLogin);
+        }
+      );
+  }
+
+  openModal(idPhoto: number){
+    if( !this.responseLogin ) {
       this.modal.open("sm");
+      this.sendCredentials();
     }
-    // falta llamar aqui a la ruta para agregar el producto
+    this.sendRequest(idPhoto)
   }
 
   loginForm: FormGroup;
@@ -62,21 +86,8 @@ export class GalleryComponent implements OnInit {
   }
 
   assignDataLogin(response){
-    this.responseLogin = response;
+    this.responseLogin = response.json();
   }
-
-  sendCredentials(){
-    this._loginService.loginUser(JSON.stringify(this.loginForm.value))
-      .subscribe(
-        response => this.responseLogin = response,
-        error => this.errorMessage = error,
-        ()=> {
-          this.close();
-          this.assignDataLogin(this.responseLogin);
-        }
-      );
-    }
-
 
   urlPhotos = [
 		"http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg",
