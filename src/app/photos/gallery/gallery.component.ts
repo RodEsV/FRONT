@@ -28,12 +28,13 @@ export class GalleryComponent implements OnInit {
   sendRequest(idPhoto: number){
     console.log("headers ", this.responseLogin.headers._headers.get('access-token')[0]);
     var headers = [
-      this.responseLogin.headers._headers.get('access-token')[0],
-      this.responseLogin.headers._headers.get('client')[0],
-      this.responseLogin.headers._headers.get('expiry')[0],
-      this.responseLogin.headers._headers.get('token-type')[0],
-      this.responseLogin.headers._headers.get('uid')[0],
+      this.responseLogin.headers._headers.get('access-token')[0].toString(),
+      this.responseLogin.headers._headers.get('client')[0].toString(),
+      this.responseLogin.headers._headers.get('expiry')[0].toString(),
+      this.responseLogin.headers._headers.get('token-type')[0].toString(),
+      this.responseLogin.headers._headers.get('uid')[0].toString(),
     ]
+
     this.galleryService.putImagesToCart(idPhoto, this.responseLogin.json().data.id, headers)
       .subscribe(
         response => this.response = response,

@@ -3,7 +3,7 @@ import {
   Http,
   Headers,
   Response,
-  RequestOptions
+  RequestOptions, URLSearchParams
 } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
@@ -60,18 +60,29 @@ export class GalleryService {
 
   putImagesToCart(idPhoto: number, idUser: number, headers){
     //let headers = new Headers({'Content-Type': 'application/json'})
+    headers[4] = headers[4].substring(0, headers[4].indexOf('@')) + '%40' + headers[4].substring(headers[4].indexOf('@')+1,);
     let requestHeaders = new Headers();
-    requestHeaders.append('Content-Type','application/json');
+    //requestHeaders.append('Content-Type','application/json');
     requestHeaders.append('access-token',headers[0]);
     requestHeaders.append('client',headers[1]);
     requestHeaders.append('expiry',headers[2]);
     requestHeaders.append('token-type',headers[3]);
     requestHeaders.append('uid',headers[4]);
-    //let options = new RequestOptions({headers: requestHeaders})
+
+    let params = new URLSearchParams();
+    params.set('access-token',headers[0]);
+    params.set('client',headers[1]);
+    params.set('expiry', headers[2]);
+    params.set('token-type', headers[3]);
+
+    params.set('uid', headers[4]);
+
+
+
     var url = this.getUrlPutProduct(idUser);
     console.log("from gallery service url " + url)
     console.log("item " + idPhoto)
-    return this.http.put(url,idPhoto, {headers: requestHeaders})
+    return this.http.put(url, {'"subproduct"' : idPhoto} ,{search: params, headers: requestHeaders})
       .catch(this.handleError);
   }
 
