@@ -1,0 +1,25 @@
+<modal #modalLogin>
+  <modal-header>
+    <h4>
+      Plase confirm your identity
+    </h4>
+  </modal-header>
+  <modal-body>
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">
+        @
+      </span>
+          <input type="email" class="form-control" placeholder="email" aria-describedby="basic-addon1" formControlName="email">
+        </div>
+        <input type="password" class="form-control" placeholder="password" formControlName="password">
+      </div>
+    </form>
+  </modal-body>
+  <modal-footer>
+    <button type="button" class="btn btn-default" (click)="sendCredentials()">
+      submit
+    </button>
+  </modal-footer>
+</modal>
