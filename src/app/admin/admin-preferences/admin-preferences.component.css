@@ -1,0 +1,21 @@
+.login-box {
+	margin-top: 10%;
+	padding: 20px 40px;
+	background-color: #EEEEEE;
+	box-shadow: 0 0 1px #DDDDDD;
+}
+
+.login-title {
+	margin: 10px;
+	margin-bottom: 20px;
+	padding: 15px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.border-flat {
+	border-radius: 0;
+}
+
+.spacing {
+  margin-top: 10%;
+}

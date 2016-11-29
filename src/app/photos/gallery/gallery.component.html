@@ -1,33 +1,59 @@
-        <div id="heading-breadcrumbs">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <h1>PHOTOS</h1>
-                    </div>
-                    <div class="col-md-5">
-                        <ul class="breadcrumb">
-                            <li><a href="index.html">Home</a>
-                            </li>
-                            <li>Photos</li>
-                        </ul>
+<div id="heading-breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1>PHOTOS</h1>
+            </div>
+            <div class="col-md-5">
+                <ul class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li>Photos</li>
+                </ul>
 
-                    </div>
-                </div>
             </div>
         </div>
+    </div>
+</div>
 
-<div id="content"> 
+<modal #modalLogin>
+  <modal-header>
+    <h4>
+      Plase confirm your identity
+    </h4>
+  </modal-header>
+
+  <modal-body>
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">
+        @
+      </span>
+          <input type="email" class="form-control" placeholder="email" aria-describedby="basic-addon1" formControlName="email">
+        </div>
+        <input type="password" class="form-control" placeholder="password" formControlName="password">
+      </div>
+    </form>
+  </modal-body>
+  <modal-footer>
+    <button type="button" class="btn btn-default" (click)="sendCredentials()">
+      submit
+    </button>
+  </modal-footer>
+</modal>
+
+<div id="content">
 	<div class="container bar background-white">
 		<section>
 		<div class="row">
-		
 			<div class="col-xs-6 col-sm-3 col-md-2 " *ngFor="let photo of urlLocalPhotos">
 				<div class="image-wrap">
 					<div class="image-width">
 						<a (click)="onSelect(photo.id)"><img src="{{photo.image_link}}" class="img-responsive"></a>
 						<div class="buttons-bar">
-							<div class="inner-icons">						
-								<a href="#">
+							<div class="inner-icons">
+								<a (click)="openModal()">
 									<i class="fa fa-cart-plus hvr-bounce-in" aria-hidden="true"></i>
 								</a>
 								<a href="#">
@@ -39,6 +65,6 @@
 				</div>
 			 </div>
 		</div>
-		</section>		
+		</section>
 	</div>
 </div>

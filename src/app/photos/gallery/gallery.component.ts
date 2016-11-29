@@ -1,6 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { GalleryService } from "./gallery.service";
+import { LoginService } from "../../home/login/login.service";
+import { ModalComponent } from 'ng2-bs3-modal/ng2-bs3-modal';
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { EmailValidator } from "../../home/login/email.validator";
 
 
 @Component({
@@ -11,16 +15,37 @@ import { GalleryService } from "./gallery.service";
 })
 export class GalleryComponent implements OnInit {
 
-  constructor(private router: Router, private galleryService: GalleryService) { }
+  constructor(private router: Router, private galleryService: GalleryService, private _loginService: LoginService,
+  private fb: FormBuilder) { }
   errorMessage:string;
   urlLocalPhotos:any;
   response:any;
+
+  @ViewChild('modalLogin')
+  modal: ModalComponent;
+
+  openModal(){
+    if( !this._loginService.responseLogIn ){
+      this.modal.open("sm");
+    }
+    // falta llamar aqui a la ruta para agregar el producto
+  }
+
+  loginForm: FormGroup;
+  responseLogin: any;
+
+
 	assignData(data){
 		this.urlLocalPhotos = data.json();
   }
 
   ngOnInit() {
   	this.getImages();
+
+  	this.loginForm = this.fb.group({
+      email: ["", Validators.compose([Validators.required, EmailValidator.validate ])],
+      password: ["", Validators.compose([Validators.required, Validators.minLength(6)])]
+  	})
   }
 
   getImages(){
@@ -32,7 +57,26 @@ export class GalleryComponent implements OnInit {
 			)
   }
 
-  
+  close(){
+    this.modal.close();
+  }
+
+  assignDataLogin(response){
+    this.responseLogin = response;
+  }
+
+  sendCredentials(){
+    this._loginService.loginUser(JSON.stringify(this.loginForm.value))
+      .subscribe(
+        response => this.responseLogin = response,
+        error => this.errorMessage = error,
+        ()=> {
+          this.close();
+          this.assignDataLogin(this.responseLogin);
+        }
+      );
+    }
+
 
   urlPhotos = [
 		"http://www.planwallpaper.com/static/images/colorful-triangles-background_yB0qTG6.jpg",

@@ -21,12 +21,16 @@ export class DetailComponent implements OnInit {
   imageLink: string;
   nameProduct: string;
   response: any;
+  subProduct: any;
   errorMessage: string;
+  nameResolution: string;
+
 
   assignData(data){
-    console.log("getImage log", data.json().image_link);
+    //console.log("getImage log", data.json().image_link);
     this.imageLink = data.json().image_link.replace('"','');
-    this.nameProduct = data.json().name
+    this.nameProduct = data.json().name;
+    this.subProduct = data.json().subproducts;
   }
 
   getImage(id){
@@ -37,6 +41,7 @@ export class DetailComponent implements OnInit {
       () => this.assignData(this.response)
       )
   }
+
 
   ngOnInit() {
   	this.route.params.forEach((params: Params) =>{

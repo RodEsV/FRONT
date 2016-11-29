@@ -2,3 +2,8 @@
   position: absolute;
   left:178px; top:92px; right:0; bottom:0;
 }
+
+#heading-breadcrumbs {
+  background: url('../assets/images/texture1.jpg') center center repeat;
+  padding: 20px 0;
+}

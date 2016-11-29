@@ -30,7 +30,7 @@ export class LoginService{
   private logOutUrl = "http://apirusticstock.herokuapp.com/api/v1/types/sign_out";
 
 
-
+  public credentials;
   public responseLogIn;
 
   private extractDataJSON( res: Response ){
@@ -39,14 +39,17 @@ export class LoginService{
   }
 
   private extractData(res: Response){
+    this.responseLogIn = res;
+    console.log("from login service " , this.responseLogIn);
     return res;
   }
 
   loginUser( body: string){
+    this.credentials = body;
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
     return this.http.post(this.logInUrl, body, options)
-    //.map(this.extractData)
+    .map(this.extractData)
     .catch(this.handleError);
   }
 
