@@ -19,8 +19,8 @@ const routes: Routes = [
 	{ path: 'about', component: AboutComponent},
 	{ path: 'contact', component: ContactComponent},
 	{ path: 'cart', component: CartviewComponent},
-  { path: 'admin', redirectTo: 'admin', pathMatch: 'full'},
-  { path: 'categories', component: CategoriesComponent},
+ 	{ path: 'admin', redirectTo: 'admin', pathMatch: 'full'},
+  	{ path: 'categories', component: CategoriesComponent},
 	{ path: '**', component: NotfoundComponent}
 ];
 
@@ -37,6 +37,7 @@ export const routingComponents = [
 	NotfoundComponent,
 	AboutComponent,
 	ContactComponent,
+	CategoriesComponent,
 	CartviewComponent ];
 
 

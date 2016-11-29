@@ -46,7 +46,7 @@ import { CategoriesModule } from "./categories/categories.module";
     NavbarModule,
     CartviewModule,
     ContactModule,
-    CategoriesModule
+    CategoriesModule,
   ],
   providers: [ LoginService ],
   bootstrap: [ AppComponent ]
