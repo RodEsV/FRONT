@@ -28,6 +28,7 @@ export class GalleryComponent implements OnInit {
     if( !this._loginService.responseLogIn ){
       this.modal.open("sm");
     }
+    // falta llamar aqui a la ruta para agregar el producto
   }
 
   loginForm: FormGroup;
