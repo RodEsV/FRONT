@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { CartviewComponent } from './cart/cartview.component';
 import { DetailComponent } from './photos/detail/detail.component';
 import { AdminComponent } from "./admin/admin.component";
+import { CategoriesComponent } from "./categories/categories.component";
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
 	{ path: 'contact', component: ContactComponent},
 	{ path: 'cart', component: CartviewComponent},
   { path: 'admin', redirectTo: 'admin', pathMatch: 'full'},
+  { path: 'categories', component: CategoriesComponent},
 	{ path: '**', component: NotfoundComponent}
 ];
 

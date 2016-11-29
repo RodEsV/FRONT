@@ -23,6 +23,7 @@ import { CartviewModule } from './cart/cartview.module';
 import { AdminModule } from "./admin/admin.module";
 import { MainService } from "./main.service";
 import { LoginService } from "./home/login/login.service";
+import { CategoriesModule } from "./categories/categories.module";
 
 
 
@@ -45,7 +46,7 @@ import { LoginService } from "./home/login/login.service";
     NavbarModule,
     CartviewModule,
     ContactModule,
-
+    CategoriesModule
   ],
   providers: [ LoginService ],
   bootstrap: [ AppComponent ]
