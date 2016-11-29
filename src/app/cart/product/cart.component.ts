@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from './product.component';
 import { products } from './mock-products';
 import { Router } from '@angular/router';
+import { LoginService } from "../../home/login/login.service";
 
 
 @Component({
@@ -15,7 +16,7 @@ import { Router } from '@angular/router';
 export class CartComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private _loginService: LoginService) { }
 
   products = products;
   selectedProduct: Product;
@@ -43,7 +44,10 @@ export class CartComponent implements OnInit {
 
 
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this._loginService.responseLogIn);
+
+  }
 
 }
 
